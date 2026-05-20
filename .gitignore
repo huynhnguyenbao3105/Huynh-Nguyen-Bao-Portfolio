@@ -40,3 +40,6 @@ msbuild.wrn
 
 .fake
 .antigravity.md
+
+# Cursor agent (skills, rules — local only, do not push)
+.cursor/

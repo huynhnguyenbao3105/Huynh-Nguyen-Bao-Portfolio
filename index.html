@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio của Huỳnh Nguyên Bảo — Kỹ thuật phần mềm, thực tập FPT Software."
+    />
+    <title>Huỳnh Nguyên Bảo | Portfolio</title>
+    <link rel="icon" href="assets/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="assets/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="bg-blob bg-blob--1" aria-hidden="true"></div>
+    <div class="bg-blob bg-blob--2" aria-hidden="true"></div>
+
+    <header class="site-header glass">
+      <a class="logo" href="#hero" aria-label="Huỳnh Nguyên Bảo — về đầu trang">
+        <img
+          class="logo__icon"
+          src="assets/favicon.png"
+          alt=""
+          width="32"
+          height="32"
+        />
+        <span class="logo__text">HNB</span>
+      </a>
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-nav"
+        aria-label="Mở menu"
+      >
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="site-nav" class="site-nav">
+        <a href="#about">Giới thiệu</a>
+        <a href="#experience">Kinh nghiệm</a>
+        <a href="#projects">Dự án</a>
+        <a href="#contact">Liên hệ</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="hero" class="hero">
+        <div class="hero__content glass">
+          <p class="label-caps">Portfolio · Kỹ thuật phần mềm</p>
+          <h1>Huỳnh Nguyên Bảo</h1>
+          <p class="hero__lead">
+            Sinh viên chuyên ngành <strong>Kỹ thuật phần mềm</strong>, tốt
+            nghiệp dự kiến <strong>2021–2025</strong>. Từng thực tập tại
+            <strong>FPT Software</strong> với dự án thương mại điện tử
+            <strong>G1Mart</strong>.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#projects">Xem dự án</a>
+            <a class="btn btn--ghost" href="#contact">Liên hệ</a>
+          </div>
+        </div>
+        <div class="hero__stats">
+          <article class="stat-card glass">
+            <span class="stat-card__value">3+</span>
+            <span class="stat-card__label">Dự án nổi bật</span>
+          </article>
+          <article class="stat-card glass">
+            <span class="stat-card__value">.NET</span>
+            <span class="stat-card__label">ASP.NET Core</span>
+          </article>
+          <article class="stat-card glass">
+            <span class="stat-card__value">Java</span>
+            <span class="stat-card__label">Spring Boot</span>
+          </article>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <div class="section__header">
+          <p class="label-caps">Giới thiệu</p>
+          <h2>Về tôi</h2>
+        </div>
+        <div class="about-grid">
+          <article class="glass about-card">
+            <h3>Học vấn</h3>
+            <p>
+              Chuyên ngành <strong>Kỹ thuật phần mềm</strong>, thời gian học
+              <strong>2021–2025</strong>. Hướng phát triển backend và full-stack
+              với ASP.NET Core, Spring Boot và kiến trúc nhiều lớp.
+            </p>
+          </article>
+          <article class="glass about-card">
+            <h3>Kỹ năng</h3>
+            <ul class="tag-list">
+              <li>C# / .NET 8–9</li>
+              <li>ASP.NET Core MVC &amp; API</li>
+              <li>Entity Framework Core</li>
+              <li>Java 17 / Spring Boot</li>
+              <li>PostgreSQL &amp; SQL Server</li>
+              <li>JWT, REST API</li>
+            </ul>
+          </article>
+          <article class="glass about-card about-card--wide">
+            <h3>Định hướng</h3>
+            <p>
+              Xây dựng hệ thống web có cấu trúc rõ ràng, bảo mật và dễ mở rộng —
+              từ sàn giao dịch, thương mại điện tử đến nền tảng cộng đồng học
+              tập.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="experience" class="section">
+        <div class="section__header">
+          <p class="label-caps">Kinh nghiệm</p>
+          <h2>Thực tập</h2>
+        </div>
+        <article class="timeline-card glass">
+          <div class="timeline-card__meta">
+            <span class="label-caps">FPT Software</span>
+            <time datetime="2024">Thực tập</time>
+          </div>
+          <h3>Dự án G1Mart</h3>
+          <p>
+            Tham gia phát triển backend thương mại điện tử
+            <strong>G1Mart</strong> — REST API với Spring Boot, PostgreSQL, JWT,
+            VNPay, quản lý sản phẩm, đơn hàng, kho và phân quyền đa vai trò.
+          </p>
+          <a
+            class="link-arrow"
+            href="https://gitlab.com/myproject31052003/G1Mart"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Xem trên GitLab
+          </a>
+        </article>
+      </section>
+
+      <section id="projects" class="section">
+        <div class="section__header">
+          <p class="label-caps">Dự án</p>
+          <h2>Sản phẩm &amp; mã nguồn</h2>
+        </div>
+        <div class="bento">
+          <article class="project-card glass project-card--featured">
+            <span class="project-card__badge">Thực tập · FPT</span>
+            <h3>G1Mart</h3>
+            <p>
+              Backend e-commerce: Spring Boot 3, PostgreSQL, Spring Security +
+              JWT, VNPay, Swagger, quản lý sản phẩm, giỏ hàng, đơn hàng, kho,
+              voucher và báo cáo.
+            </p>
+            <div class="project-card__tags">
+              <span>Java 17</span>
+              <span>Spring Boot</span>
+              <span>PostgreSQL</span>
+            </div>
+            <a
+              class="btn btn--sm"
+              href="https://gitlab.com/myproject31052003/G1Mart"
+              target="_blank"
+              rel="noopener noreferrer"
+              >GitLab</a
+            >
+          </article>
+
+          <article class="project-card glass">
+            <span class="project-card__badge">Full-stack</span>
+            <h3>AccountMarket</h3>
+            <p>
+              Sàn giao dịch tài khoản game — ASP.NET Core MVC (.NET 9), EF Core,
+              JWT, ví nội bộ, thanh toán MoMo, Cloudinary, kiến trúc Web →
+              Business → DataAccess.
+            </p>
+            <div class="project-card__tags">
+              <span>.NET 9</span>
+              <span>EF Core</span>
+              <span>MoMo</span>
+            </div>
+            <a
+              class="btn btn--sm"
+              href="https://gitlab.com/myproject31052003/salegameaccount"
+              target="_blank"
+              rel="noopener noreferrer"
+              >GitLab</a
+            >
+          </article>
+
+          <article class="project-card glass">
+            <span class="project-card__badge">Social · Education</span>
+            <h3>FUS</h3>
+            <p>
+              Mạng xã hội học tập: bài viết, nhóm, tài liệu, sự kiện, chat
+              realtime SignalR. .NET 8, MVC client + REST API, JWT Bearer,
+              Azure Blob, Google OAuth.
+            </p>
+            <div class="project-card__tags">
+              <span>.NET 8</span>
+              <span>JWT</span>
+              <span>SignalR</span>
+              <span>SQL Server</span>
+            </div>
+            <a
+              class="btn btn--sm"
+              href="https://gitlab.com/g38592114/project"
+              target="_blank"
+              rel="noopener noreferrer"
+              >GitLab</a
+            >
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="section section--contact">
+        <div class="contact-wrap glass">
+          <div class="section__header section__header--inline">
+            <p class="label-caps">Liên hệ</p>
+            <h2>Hợp tác hoặc tuyển dụng?</h2>
+            <p class="contact-wrap__lead">
+              Sẵn sàng trao đổi về cơ hội thực tập, fresher hoặc dự án phần mềm.
+            </p>
+          </div>
+          <ul class="contact-list">
+            <li class="contact-list__item">
+              <span class="label-caps">Email</span>
+              <a href="mailto:huynhnguyenbao3105@gmail.com">huynhnguyenbao3105@gmail.com</a>
+            </li>
+            <li class="contact-list__item">
+              <span class="label-caps">Điện thoại</span>
+              <a href="tel:+84939082419">0939 082 419</a>
+            </li>
+          </ul>
+          <a
+            class="btn btn--primary btn--block"
+            href="mailto:huynhnguyenbao3105@gmail.com"
+            >Gửi email</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; <span id="year"></span> Huỳnh Nguyên Bảo. Portfolio cá nhân.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
