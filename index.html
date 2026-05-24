@@ -166,9 +166,13 @@
           <h3>Dự án G1Mart</h3>
           <p class="timeline-card__role label-caps">Leader BE</p>
           <p>
-            Phát triển backend thương mại điện tử
-            <strong>G1Mart</strong> — REST API với Spring Boot, PostgreSQL, JWT,
-            VNPay, quản lý sản phẩm, đơn hàng, kho và phân quyền đa vai trò.
+            Phát triển hệ thống thương mại điện tử
+            <strong>G1Mart</strong> — REST API Spring Boot, PostgreSQL, JWT,
+            VNPay, quản lý sản phẩm, đơn hàng, kho và phân quyền đa vai trò. Đã
+            triển khai production: <strong>frontend</strong> React trên
+            <strong>Netlify</strong>, <strong>backend</strong> trên
+            <strong>Render</strong>, <strong>database</strong> PostgreSQL trên
+            <strong>Neon</strong>.
           </p>
           <div class="timeline-card__leadership">
             <p class="label-caps timeline-card__leadership-title">
@@ -232,14 +236,24 @@
               </li>
             </ul>
           </div>
-          <a
-            class="link-arrow"
-            href="https://gitlab.com/myproject31052003/G1Mart"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Xem trên GitLab
-          </a>
+          <div class="timeline-card__links">
+            <a
+              class="link-arrow"
+              href="https://g1mart.netlify.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Xem bản deploy
+            </a>
+            <a
+              class="link-arrow"
+              href="https://gitlab.com/myproject31052003/G1Mart"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Mã nguồn GitLab
+            </a>
+          </div>
         </article>
       </section>
 
@@ -251,27 +265,84 @@
         <div class="bento">
           <article class="project-card glass project-card--featured">
             <div class="project-card__meta">
-              <span class="project-card__badge">Thực tập · FPT Software</span>
+              <span class="project-card__badge"
+                >INTERN FU CT 2024 · Nhóm G1</span
+              >
               <span class="project-card__role">Leader BE</span>
             </div>
-            <h3>G1Mart</h3>
+            <h3>
+              G1Mart <span class="project-card__subtitle">(G1 Shop)</span>
+            </h3>
             <p>
-              Backend e-commerce: Spring Boot 3, PostgreSQL, Spring Security +
-              JWT, VNPay, Swagger, quản lý sản phẩm, giỏ hàng, đơn hàng, kho,
-              voucher và báo cáo.
+              Hệ thống thương mại điện tử <strong>G1Mart</strong> (G1 Shop) —
+              <strong>storefront</strong> (lọc &amp; mua hàng, giỏ, COD/VNPay,
+              đơn, địa chỉ, voucher) và <strong>admin</strong> (sản phẩm, biến
+              thể, kho, đơn hàng, voucher, banner, shipper, hoàn trả, báo cáo).
+              Monorepo: <strong>FE</strong> React 18 + Vite + MUI trên
+              <strong>Netlify</strong>, <strong>BE</strong> Spring Boot 3 +
+              PostgreSQL + JWT + VNPay trên <strong>Render</strong>,
+              <strong>DB</strong> trên <strong>Neon</strong>; Cloudinary, phân
+              quyền đa vai trò, Swagger (local).
             </p>
             <div class="project-card__tags">
+              <span>React</span>
+              <span>Vite</span>
+              <span>MUI</span>
               <span>Java 17</span>
               <span>Spring Boot</span>
               <span>PostgreSQL</span>
+              <span>Cloudinary</span>
+              <span>VNPay</span>
+              <span>JWT</span>
             </div>
-            <a
-              class="btn btn--sm"
-              href="https://gitlab.com/myproject31052003/G1Mart"
-              target="_blank"
-              rel="noopener noreferrer"
-              >GitLab</a
-            >
+            <div class="project-card__actions">
+              <a
+                class="btn btn--sm btn--primary"
+                href="https://g1mart.netlify.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Live demo</a
+              >
+              <a
+                class="btn btn--sm"
+                href="https://gitlab.com/myproject31052003/G1Mart"
+                target="_blank"
+                rel="noopener noreferrer"
+                >GitLab</a
+              >
+            </div>
+            <div class="demo-credentials-grid">
+              <div class="demo-credentials" role="note">
+                <p class="label-caps demo-credentials__label">
+                  Tài khoản demo (admin)
+                </p>
+                <dl class="demo-credentials__list">
+                  <div class="demo-credentials__row">
+                    <dt>Username</dt>
+                    <dd><code>admin</code></dd>
+                  </div>
+                  <div class="demo-credentials__row">
+                    <dt>Password</dt>
+                    <dd><code>123</code></dd>
+                  </div>
+                </dl>
+              </div>
+              <div class="demo-credentials" role="note">
+                <p class="label-caps demo-credentials__label">
+                  Tài khoản demo (user)
+                </p>
+                <dl class="demo-credentials__list">
+                  <div class="demo-credentials__row">
+                    <dt>Username</dt>
+                    <dd><code>0912345678</code></dd>
+                  </div>
+                  <div class="demo-credentials__row">
+                    <dt>Password</dt>
+                    <dd><code>123456Aa</code></dd>
+                  </div>
+                </dl>
+              </div>
+            </div>
           </article>
 
           <article class="project-card glass">
@@ -282,14 +353,14 @@
             <h3>AccountMarket</h3>
             <p>
               Sàn giao dịch tài khoản game — ASP.NET Core MVC (.NET 9), EF Core,
-              JWT, ví nội bộ, thanh toán MoMo, Cloudinary, kiến trúc Web →
+              JWT, ví nội bộ, thanh toán Sepay, Cloudinary, kiến trúc Web →
               Business → DataAccess.
             </p>
             <div class="project-card__tags">
               <span>.NET 9</span>
               <span>Code First</span>
               <span>EF Core</span>
-              <span>MoMo</span>
+              <span>Sepay</span>
             </div>
             <a
               class="btn btn--sm"
