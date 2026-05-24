@@ -480,7 +480,7 @@ main {
 /* Projects — bento */
 .bento {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   gap: var(--space-md);
 }
 
@@ -828,14 +828,6 @@ main {
   }
 
   .about-grid,
-  .bento {
-    grid-template-columns: 1fr;
-  }
-
-  .project-card--featured {
-    grid-column: auto;
-  }
-
   .contact-wrap .btn--block {
     grid-column: 1 / -1;
   }
