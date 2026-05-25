@@ -27,15 +27,8 @@
     <div class="bg-blob bg-blob--2" aria-hidden="true"></div>
 
     <header class="site-header glass">
-      <a class="logo" href="#hero" aria-label="Huỳnh Nguyên Bảo — về đầu trang">
-        <img
-          class="logo__icon"
-          src="assets/favicon.png"
-          alt=""
-          width="32"
-          height="32"
-        />
-        <span class="logo__text">HNB</span>
+      <a class="logo" href="#landing" aria-label="Portfolio — về đầu trang">
+        <span class="logo__text">My Portfolio</span>
       </a>
       <button
         class="nav-toggle"
@@ -55,47 +48,94 @@
     </header>
 
     <main>
-      <section id="hero" class="hero">
-        <div class="hero__content glass">
-          <div class="hero__profile">
-            <img
-              class="hero__avatar"
-              src="assets/profile.png"
-              alt="Ảnh chân dung Huỳnh Nguyên Bảo"
-              width="180"
-              height="220"
-              loading="eager"
-            />
-          </div>
-          <div class="hero__text">
-            <p class="label-caps">Portfolio · Kỹ thuật phần mềm · Cần Thơ</p>
-            <h1>Huỳnh Nguyên Bảo</h1>
-            <p class="hero__lead">
-              <strong>FPT University</strong> — chuyên ngành
-              <strong>Kỹ thuật phần mềm</strong> (<strong>2021–2025</strong>) —
-              đào tạo chuyên sâu kỹ năng backend và full-stack với ASP.NET Core,
-              Spring Boot và kiến trúc nhiều lớp.
-            </p>
-            <div class="hero__actions">
-              <a class="btn btn--primary" href="#projects">Xem dự án</a>
-              <a class="btn btn--ghost" href="#contact">Liên hệ</a>
+      <section id="landing" class="landing" aria-label="Trang chào mừng">
+        <div class="landing__orb landing__orb--1" aria-hidden="true"></div>
+        <div class="landing__orb landing__orb--2" aria-hidden="true"></div>
+
+        <div class="landing__wrap">
+          <div class="landing__shell">
+            <div class="landing__copy">
+              <div class="landing__badge glass">
+                <span class="landing__badge-dot" aria-hidden="true"></span>
+                <span class="landing__badge-text"
+                  >Backend / Full-stack · Cần Thơ</span
+                >
+              </div>
+
+              <h1 class="landing__title">
+                <span class="landing__title-eyebrow">Xin chào, tôi là</span>
+                <span class="landing__title-name">Huỳnh Nguyên Bảo</span>
+              </h1>
+
+              <p class="landing__lead">
+                Học <strong>Kỹ thuật phần mềm</strong> tại
+                <strong>FPT University</strong> (<strong>2021–2025</strong>).
+                Tập trung <strong>backend / full-stack</strong> với
+                <strong>ASP.NET Core</strong>, <strong>Spring Boot</strong> và
+                kiến trúc nhiều lớp.
+              </p>
+
+              <ul class="landing__stack" aria-label="Công nghệ chính">
+                <li>+3 Project</li>
+                <li>ASP.NET Core</li>
+                <li>Spring Boot</li>
+              </ul>
+
+              <div class="landing__actions">
+                <a class="btn btn--primary landing__cta" href="#about">
+                  Khám phá portfolio
+                  <svg
+                    class="landing__cta-icon"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M5 12h14M13 6l6 6-6 6"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+                <a class="btn btn--ghost" href="#contact">Liên hệ</a>
+              </div>
+            </div>
+
+            <div class="landing__stage">
+              <div class="landing__frame glass">
+                <div class="landing__frame-bar">
+                  <span class="landing__frame-dots" aria-hidden="true"></span>
+                  <span class="landing__frame-label label-caps"
+                    >Huỳnh Nguyên Bảo</span
+                  >
+                </div>
+                <div class="landing__canvas">
+                  <img
+                    class="landing__avatar"
+                    src="assets/profile.png"
+                    alt="Ảnh chân dung Huỳnh Nguyên Bảo"
+                    width="480"
+                    height="480"
+                    loading="eager"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="hero__stats">
-          <article class="stat-card glass">
-            <span class="stat-card__value">3+</span>
-            <span class="stat-card__label">Dự án nổi bật</span>
-          </article>
-          <article class="stat-card glass">
-            <span class="stat-card__value">.NET</span>
-            <span class="stat-card__label">ASP.NET Core</span>
-          </article>
-          <article class="stat-card glass">
-            <span class="stat-card__value">Java</span>
-            <span class="stat-card__label">Spring Boot</span>
-          </article>
-        </div>
+
+        <a
+          class="landing__scroll glass"
+          href="#about"
+          aria-label="Cuộn xuống giới thiệu"
+        >
+          <span class="landing__scroll-label">Giới thiệu</span>
+          <span class="landing__scroll-chevron" aria-hidden="true"></span>
+        </a>
       </section>
 
       <section id="about" class="section">
@@ -264,6 +304,7 @@
           <h2>Sản phẩm &amp; mã nguồn</h2>
         </div>
         <div class="bento">
+          <!-- Dự án 1 — G1Mart: link demo/GitLab; .demo-credentials = tài khoản thử (đổi <code> bên trong) -->
           <article class="project-card glass project-card--featured">
             <div class="project-card__meta">
               <span class="project-card__badge"
@@ -346,6 +387,7 @@
             </div>
           </article>
 
+          <!-- Dự án 2 — AccountMarket (SALECCOUNT) -->
           <article class="project-card glass project-card--featured">
             <div class="project-card__meta">
               <span class="project-card__badge">e-commerce</span>
@@ -424,6 +466,7 @@
             </div>
           </article>
 
+          <!-- Dự án 3 — FUS (chỉ GitLab, không live demo) -->
           <article class="project-card glass project-card--featured">
             <div class="project-card__meta">
               <span class="project-card__badge">Social · Education</span>

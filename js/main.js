@@ -1,11 +1,27 @@
+/**
+ * main.js — Hành vi tương tác portfolio (Huỳnh Nguyên Bảo)
+ *
+ * Khối chức năng (theo thứ tự chạy):
+ * 1. Năm footer (#year)
+ * 2. Menu mobile (.nav-toggle ↔ #site-nav)
+ * 3. Cuộn mượt tới anchor (#landing, #about, ...)
+ * 4. Header khi scroll + thanh tiến độ (.scroll-progress__bar)
+ * 5. Parallax nhẹ blob theo chuột (--pointer-x/y) — desktop
+ * 6. Animation reveal / stagger khi section vào viewport
+ * 7. Highlight link menu đang xem (section đang hiển thị)
+ *
+ * Tắt animation: user bật "reduce motion" trong OS → chỉ hiện nội dung, không observer.
+ */
 (function () {
   document.documentElement.classList.add("js-enabled");
 
+  /* ——— 1. Footer: năm hiện tại ——— */
   const yearEl = document.getElementById("year");
   if (yearEl) {
     yearEl.textContent = String(new Date().getFullYear());
   }
 
+  /* ——— 2. Menu mobile: hamburger mở/đóng .site-nav ——— */
   const toggle = document.querySelector(".nav-toggle");
   const nav = document.getElementById("site-nav");
 
@@ -24,6 +40,7 @@
     });
   }
 
+  /* ——— 3. Smooth scroll: mọi link href="#..." ——— */
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
     anchor.addEventListener("click", function (e) {
       const id = anchor.getAttribute("href");
@@ -35,6 +52,7 @@
     });
   });
 
+  /* ——— 4. Header + thanh progress khi cuộn trang ——— */
   const header = document.querySelector(".site-header");
   const progressBar = document.querySelector(".scroll-progress__bar");
   const prefersReduced = window.matchMedia(
@@ -57,6 +75,7 @@
     window.addEventListener("scroll", onScroll, { passive: true });
   }
 
+  /* ——— 5. Blob nền theo con trỏ (chỉ desktop, có chuột) ——— */
   if (!prefersReduced && window.matchMedia("(pointer: fine)").matches) {
     document.addEventListener(
       "mousemove",
@@ -70,6 +89,7 @@
     );
   }
 
+  /** Gắn class stagger + delay CSS cho từng phần tử con (animation lần lượt) */
   function setupStaggerGroup(root, itemSelector, stepMs) {
     if (!root) return;
     root.classList.add("stagger-group");
@@ -86,6 +106,7 @@
     }
   }
 
+  /* ——— 6. Reveal khi scroll: gán class .reveal / stagger cho từng khu vực HTML ——— */
   if (!prefersReduced) {
     document.querySelectorAll(".about-card").forEach(function (card) {
       setupStaggerGroup(card, ".tag-list li", 55);
@@ -172,6 +193,7 @@
     if (progressBar) progressBar.style.width = "0%";
   }
 
+  /* ——— 7. Menu: class .is-active trên link trùng section đang nhìn ——— */
   var sectionIds = ["about", "experience", "projects", "contact"];
   var navLinks = document.querySelectorAll(".site-nav a[href^='#']");
 
