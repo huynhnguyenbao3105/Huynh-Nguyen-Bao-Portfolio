@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
+      id="meta-description"
       name="description"
       content="Portfolio Huỳnh Nguyên Bảo — Backend / Full-stack Developer, ASP.NET Core, Spring Boot, thực tập FPT Software."
     />
@@ -28,7 +29,7 @@
 
     <header class="site-header glass">
       <a class="logo" href="#landing" aria-label="Portfolio — về đầu trang">
-        <span class="logo__text">My Portfolio</span>
+        <span class="logo__text" data-i18n="header.logo">My Portfolio</span>
       </a>
       <button
         class="nav-toggle"
@@ -36,19 +37,48 @@
         aria-expanded="false"
         aria-controls="site-nav"
         aria-label="Mở menu"
+        data-i18n-aria="header.menuAria"
       >
         <span></span><span></span><span></span>
       </button>
       <nav id="site-nav" class="site-nav">
-        <a href="#about">Giới thiệu</a>
-        <a href="#experience">Kinh nghiệm</a>
-        <a href="#projects">Dự án</a>
-        <a href="#contact">Liên hệ</a>
+        <a href="#about" data-i18n="nav.about">Giới thiệu</a>
+        <a href="#experience" data-i18n="nav.experience">Kinh nghiệm</a>
+        <a href="#projects" data-i18n="nav.projects">Dự án</a>
+        <a href="#contact" data-i18n="nav.contact">Liên hệ</a>
+        <div
+          class="lang-switch"
+          role="group"
+          aria-label="Ngôn ngữ"
+          data-i18n-aria="header.langGroupAria"
+        >
+          <button
+            class="lang-switch__btn"
+            type="button"
+            data-lang-set="vi"
+            aria-pressed="true"
+          >
+            VI
+          </button>
+          <button
+            class="lang-switch__btn"
+            type="button"
+            data-lang-set="en"
+            aria-pressed="false"
+          >
+            EN
+          </button>
+        </div>
       </nav>
     </header>
 
     <main>
-      <section id="landing" class="landing" aria-label="Trang chào mừng">
+      <section
+        id="landing"
+        class="landing"
+        aria-label="Trang chào mừng"
+        data-i18n-aria="landing.aria"
+      >
         <div class="landing__orb landing__orb--1" aria-hidden="true"></div>
         <div class="landing__orb landing__orb--2" aria-hidden="true"></div>
 
@@ -58,16 +88,21 @@
               <div class="landing__badge glass">
                 <span class="landing__badge-dot" aria-hidden="true"></span>
                 <span class="landing__badge-text"
+                  data-i18n="landing.badge"
                   >Backend / Full-stack · Cần Thơ</span
                 >
               </div>
 
               <h1 class="landing__title">
-                <span class="landing__title-eyebrow">Xin chào, tôi là</span>
-                <span class="landing__title-name">Huỳnh Nguyên Bảo</span>
+                <span class="landing__title-eyebrow" data-i18n="landing.eyebrow"
+                  >Xin chào, tôi là</span
+                >
+                <span class="landing__title-name" data-i18n="landing.name"
+                  >Huỳnh Nguyên Bảo</span
+                >
               </h1>
 
-              <p class="landing__lead">
+              <p class="landing__lead" data-i18n-html="landing.lead">
                 Học <strong>Kỹ thuật phần mềm</strong> tại
                 <strong>FPT University</strong> (<strong>2021–2025</strong>).
                 Tập trung <strong>backend / full-stack</strong> với
@@ -75,15 +110,19 @@
                 kiến trúc nhiều lớp.
               </p>
 
-              <ul class="landing__stack" aria-label="Công nghệ chính">
-                <li>+3 Project</li>
+              <ul
+                class="landing__stack"
+                aria-label="Công nghệ chính"
+                data-i18n-aria="landing.stackAria"
+              >
+                <li data-i18n="landing.stack1">+3 Project</li>
                 <li>ASP.NET Core</li>
                 <li>Spring Boot</li>
               </ul>
 
               <div class="landing__actions">
                 <a class="btn btn--primary landing__cta" href="#about">
-                  Khám phá portfolio
+                  <span data-i18n="landing.ctaExplore">Khám phá portfolio</span>
                   <svg
                     class="landing__cta-icon"
                     width="18"
@@ -101,7 +140,20 @@
                     />
                   </svg>
                 </a>
-                <a class="btn btn--ghost" href="#contact">Liên hệ</a>
+                <a
+                  class="btn btn--ghost"
+                  href="#contact"
+                  data-i18n="landing.ctaContact"
+                  >Liên hệ</a
+                >
+                <a
+                  class="btn btn--ghost"
+                  href="assets/Huynh-Nguyen-Bao-VN.pdf"
+                  download="Huynh-Nguyen-Bao-CV-VI.pdf"
+                  data-cv-download
+                  data-i18n="landing.ctaDownloadCV"
+                  >Tải CV</a
+                >
               </div>
             </div>
 
@@ -110,6 +162,7 @@
                 <div class="landing__frame-bar">
                   <span class="landing__frame-dots" aria-hidden="true"></span>
                   <span class="landing__frame-label label-caps"
+                    data-i18n="landing.frameLabel"
                     >Huỳnh Nguyên Bảo</span
                   >
                 </div>
@@ -118,6 +171,7 @@
                     class="landing__avatar"
                     src="assets/profile.png"
                     alt="Ảnh chân dung Huỳnh Nguyên Bảo"
+                    data-i18n-alt="landing.avatarAlt"
                     width="480"
                     height="480"
                     loading="eager"
@@ -132,24 +186,29 @@
           class="landing__scroll glass"
           href="#about"
           aria-label="Cuộn xuống giới thiệu"
+          data-i18n-aria="landing.scrollAria"
         >
-          <span class="landing__scroll-label">Giới thiệu</span>
+          <span class="landing__scroll-label" data-i18n="landing.scrollLabel"
+            >Giới thiệu</span
+          >
           <span class="landing__scroll-chevron" aria-hidden="true"></span>
         </a>
       </section>
 
       <section id="about" class="section">
         <div class="section__header">
-          <p class="label-caps">Giới thiệu</p>
-          <h2>Về tôi</h2>
+          <p class="label-caps" data-i18n="about.kicker">Giới thiệu</p>
+          <h2 data-i18n="about.title">Về tôi</h2>
         </div>
         <div class="about-grid">
           <article class="glass about-card">
-            <h3>Ngoại Ngữ</h3>
-            <p><strong>Tiếng Anh</strong> — TOEIC 500+;</p>
+            <h3 data-i18n="about.langTitle">Ngoại Ngữ</h3>
+            <p data-i18n-html="about.langBody">
+              <strong>Tiếng Anh</strong> — TOEIC 500+;
+            </p>
           </article>
           <article class="glass about-card">
-            <h3>Kỹ năng mềm</h3>
+            <h3 data-i18n="about.softTitle">Kỹ năng mềm</h3>
             <ul class="tag-list">
               <li>Teamwork</li>
               <li>Communication</li>
@@ -161,7 +220,7 @@
             </ul>
           </article>
           <article class="glass about-card about-card--wide">
-            <h3>Kỹ năng kỹ thuật</h3>
+            <h3 data-i18n="about.techTitle">Kỹ năng kỹ thuật</h3>
             <ul class="tag-list">
               <li>C# / Java / JavaScript</li>
               <li>.NET 8–9 · ASP.NET Core MVC &amp; Web API</li>
@@ -176,19 +235,19 @@
             </ul>
           </article>
           <article class="glass about-card about-card--wide">
-            <h3>Định hướng</h3>
-            <p>
+            <h3 data-i18n="about.goalTitle">Định hướng</h3>
+            <p data-i18n="about.goalP1">
               Thiết kế API rõ ràng, bảo mật, tính nhất quán dữ liệu và code dễ
               bảo trì — từ sàn giao dịch, thương mại điện tử đến mạng xã hội học
               tập.
             </p>
-            <p>
-              Hướng tới vị trí
-              <strong>Backend / Full-stack Developer</strong> sau tốt nghiệp:
-              chuyên sâu REST API, kiến trúc nhiều lớp, JWT và thiết kế cơ sở dữ
-              liệu (Code First &amp; Database First). Luôn học thêm qua nghiên
-              cứu, làm việc nhóm và tận dụng AI để tăng năng suất, đồng thời
-              nâng dần tiếng Anh để làm việc với tài liệu và đội ngũ quốc tế.
+            <p data-i18n-html="about.goalP2">
+              Hướng tới vị trí <strong>Backend / Full-stack Developer</strong>
+              sau tốt nghiệp: chuyên sâu REST API, kiến trúc nhiều lớp, JWT và
+              thiết kế cơ sở dữ liệu (Code First &amp; Database First). Luôn
+              học thêm qua nghiên cứu, làm việc nhóm và tận dụng AI để tăng năng
+              suất, đồng thời nâng dần tiếng Anh để làm việc với tài liệu và đội
+              ngũ quốc tế.
             </p>
           </article>
         </div>
@@ -196,17 +255,19 @@
 
       <section id="experience" class="section">
         <div class="section__header">
-          <p class="label-caps">Kinh nghiệm</p>
-          <h2>Thực tập</h2>
+          <p class="label-caps" data-i18n="exp.kicker">Kinh nghiệm</p>
+          <h2 data-i18n="exp.title">Thực tập</h2>
         </div>
         <article class="timeline-card glass">
           <div class="timeline-card__meta">
-            <span class="label-caps">INTERN FPT Software</span>
-            <time datetime="2024">Thực tập 2024</time>
+            <span class="label-caps" data-i18n="exp.meta1">INTERN FPT Software</span>
+            <time datetime="2024" data-i18n="exp.meta2">Thực tập 2024</time>
           </div>
-          <h3>Dự án G1Mart</h3>
-          <p class="timeline-card__role label-caps">Backend Team Lead</p>
-          <p>
+          <h3 data-i18n="exp.projectTitle">Dự án G1Mart</h3>
+          <p class="timeline-card__role label-caps" data-i18n="exp.role">
+            Backend Team Lead
+          </p>
+          <p data-i18n-html="exp.summary">
             Điều phối nhóm backend, theo dõi milestone và review kỹ thuật cho hệ
             thống thương mại điện tử <strong>G1Mart</strong>. Xây dựng REST API
             <strong>Spring Boot 3.3</strong>, Java 17, PostgreSQL, Spring
@@ -221,38 +282,38 @@
             </p>
 
             <h4 class="timeline-card__duty-heading">
-              Quản lý &amp; Giám sát Tiến độ
+              <span data-i18n="exp.h4_1">Quản lý &amp; Giám sát Tiến độ</span>
               <span class="timeline-card__duty-en"
                 >(Project Tracking &amp; Team Coordination)</span
               >
             </h4>
             <ul class="timeline-card__duties">
-              <li>
+              <li data-i18n="exp.li_1_1">
                 Chủ trì điều phối và phân chia hạng mục công việc cho nhóm
                 Backend; thiết lập quy trình theo dõi tiến độ chặt chẽ qua các
                 công cụ quản lý nhằm đảm bảo dự án vận hành đúng lộ trình
                 (milestones).
               </li>
-              <li>
+              <li data-i18n="exp.li_1_2">
                 Thúc đẩy sự kết nối và giải quyết xung đột thông tin giữa các
                 thành viên, duy trì hiệu suất làm việc tối ưu của toàn đội ngũ.
               </li>
             </ul>
 
             <h4 class="timeline-card__duty-heading">
-              Kiểm soát Nghiệp vụ &amp; Đồng bộ Dữ liệu
+              <span data-i18n="exp.h4_2">Kiểm soát Nghiệp vụ &amp; Đồng bộ Dữ liệu</span>
               <span class="timeline-card__duty-en"
                 >(Business Logic &amp; Data Consistency)</span
               >
             </h4>
             <ul class="timeline-card__duties">
-              <li>
+              <li data-i18n="exp.li_2_1">
                 Trực tiếp rà soát, chuẩn hóa hệ thống logic phức tạp liên quan
                 đến giá sản phẩm (pricing), các chiến dịch khuyến mãi
                 (promotions), và toàn bộ luồng nghiệp vụ đơn hàng (order
                 processing).
               </li>
-              <li>
+              <li data-i18n="exp.li_2_2">
                 Đảm bảo tính toàn vẹn dữ liệu (data integrity), ngăn chặn triệt
                 để tình trạng sai lệch thông tin hệ thống, tối ưu hóa trải
                 nghiệm người dùng cuối.
@@ -260,17 +321,17 @@
             </ul>
 
             <h4 class="timeline-card__duty-heading">
-              Báo cáo &amp; Tham vấn Chuyên gia
+              <span data-i18n="exp.h4_3">Báo cáo &amp; Tham vấn Chuyên gia</span>
               <span class="timeline-card__duty-en"
                 >(Stakeholder Communication &amp; Technical Review)</span
               >
             </h4>
             <ul class="timeline-card__duties">
-              <li>
+              <li data-i18n="exp.li_3_1">
                 Duy trì kênh trao đổi thường kỳ với Mentor/Cố vấn chuyên môn để
                 định hình chiến lược và phương án kiến trúc triển khai tối ưu.
               </li>
-              <li>
+              <li data-i18n="exp.li_3_2">
                 Chủ động đề xuất giải pháp trong các buổi code review, nhanh
                 chóng nhận diện và xử lý dứt điểm các điểm nghẽn kỹ thuật
                 (technical bottlenecks) phát sinh trong quá trình vận hành.
@@ -283,25 +344,27 @@
               href="https://g1mart.netlify.app/"
               target="_blank"
               rel="noopener noreferrer"
+              data-i18n="exp.linkDemo"
             >
-              Live demo
-            </a>
+              Live demo</a
+            >
             <a
               class="link-arrow"
               href="https://gitlab.com/myproject31052003/G1Mart"
               target="_blank"
               rel="noopener noreferrer"
+              data-i18n="exp.linkRepo"
             >
-              Mã nguồn GitLab
-            </a>
+              Mã nguồn GitLab</a
+            >
           </div>
         </article>
       </section>
 
       <section id="projects" class="section">
         <div class="section__header">
-          <p class="label-caps">Dự án</p>
-          <h2>Sản phẩm &amp; mã nguồn</h2>
+          <p class="label-caps" data-i18n="projects.kicker">Dự án</p>
+          <h2 data-i18n="projects.title">Sản phẩm &amp; mã nguồn</h2>
         </div>
         <div class="bento">
           <!-- Dự án 1 — G1Mart -->
@@ -313,7 +376,7 @@
               <span class="project-card__role">Backend Team Lead</span>
             </div>
             <h3>G1Mart</h3>
-            <p>
+            <p data-i18n-html="projects.g1mart.desc">
               Nền tảng thương mại điện tử: <strong>storefront</strong> cho khách
               và <strong>admin/staff</strong> vận hành sản phẩm, kho, đơn,
               voucher, banner, shipper, hoàn trả, báo cáo. API
@@ -341,6 +404,7 @@
                 href="https://g1mart.netlify.app/"
                 target="_blank"
                 rel="noopener noreferrer"
+                data-i18n="projects.liveDemo"
                 >Live demo</a
               >
               <a
@@ -394,7 +458,7 @@
               <span class="project-card__role">Full-stack</span>
             </div>
             <h3>AccountMarket</h3>
-            <p>
+            <p data-i18n-html="projects.account.desc">
               Sàn mua bán tài khoản game: đăng nhập/đăng ký, cửa hàng, ví nội
               bộ, lịch sử mua, trang quản trị. Kiến trúc
               <strong>Web → Business → DataAccess → Models</strong>; Razor dùng
@@ -419,6 +483,7 @@
                 href="https://salegameaccount-aqlq.onrender.com/"
                 target="_blank"
                 rel="noopener noreferrer"
+                data-i18n="projects.liveDemo"
                 >Live demo</a
               >
               <a
@@ -472,7 +537,7 @@
               <span class="project-card__role">Backend Team Lead</span>
             </div>
             <h3>FUS</h3>
-            <p>
+            <p data-i18n-html="projects.fus.desc">
               Mạng xã hội học tập: bài viết, bình luận, nhóm, tài liệu, sự kiện,
               tìm thành viên dự án, phản hồi, báo cáo vi phạm. Backend
               <strong
@@ -509,27 +574,30 @@
       <section id="contact" class="section section--contact">
         <div class="contact-wrap glass">
           <div class="section__header section__header--inline">
-            <p class="label-caps">Liên hệ</p>
-            <h2>Liên hệ công việc</h2>
-            <p class="contact-wrap__lead">
+            <p class="label-caps" data-i18n="contact.kicker">Liên hệ</p>
+            <h2 data-i18n="contact.title">Liên hệ công việc</h2>
+            <p class="contact-wrap__lead" data-i18n="contact.lead">
               Sẵn sàng trao đổi về cơ hội thực tập, fresher hoặc dự án phần mềm.
             </p>
           </div>
           <ul class="contact-list">
             <li class="contact-list__item">
-              <span class="label-caps">Email</span>
+              <span class="label-caps" data-i18n="contact.emailLabel">Email</span>
               <a href="mailto:huynhnguyenbao3105@gmail.com"
                 >huynhnguyenbao3105@gmail.com</a
               >
             </li>
             <li class="contact-list__item">
-              <span class="label-caps">Điện thoại</span>
+              <span class="label-caps" data-i18n="contact.phoneLabel"
+                >Điện thoại</span
+              >
               <a href="tel:+84939082419">0939 082 419</a>
             </li>
           </ul>
           <a
             class="btn btn--primary btn--block"
             href="mailto:huynhnguyenbao3105@gmail.com"
+            data-i18n="contact.cta"
             >Gửi email</a
           >
         </div>
@@ -537,7 +605,9 @@
     </main>
 
     <footer class="site-footer">
-      <p>&copy; <span id="year"></span> Huỳnh Nguyên Bảo. Portfolio cá nhân.</p>
+      <p data-i18n-html="footer.copy">
+        &copy; <span id="year"></span> Huỳnh Nguyên Bảo. Portfolio cá nhân.
+      </p>
     </footer>
 
     <script src="js/main.js"></script>
