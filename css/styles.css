@@ -167,6 +167,50 @@ button:focus-visible {
   border-radius: var(--radius-xl);
 }
 
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px;
+  border-radius: 999px;
+  border: 1px solid rgba(24, 86, 255, 0.22);
+  background: rgba(24, 86, 255, 0.06);
+  box-shadow:
+    0 10px 28px rgba(24, 86, 255, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.lang-switch__btn {
+  min-height: 36px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 0;
+  background: transparent;
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.lang-switch__btn:hover {
+  color: var(--color-primary);
+}
+
+.lang-switch__btn.is-active,
+.lang-switch__btn[aria-pressed="true"] {
+  background: var(--color-primary);
+  color: #ffffff;
+  box-shadow: 0 10px 22px rgba(24, 86, 255, 0.28);
+}
+
+.lang-switch__btn:active {
+  transform: translateY(1px);
+}
+
 .logo {
   display: inline-flex;
   align-items: center;
@@ -190,6 +234,10 @@ button:focus-visible {
 .site-nav {
   display: flex;
   gap: var(--space-lg);
+}
+
+.site-nav .lang-switch {
+  margin-left: 6px;
 }
 
 .site-nav a {
