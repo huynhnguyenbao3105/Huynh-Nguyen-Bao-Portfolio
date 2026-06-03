@@ -8,7 +8,7 @@
  * 4. Header khi scroll + thanh tiến độ (.scroll-progress__bar)
  * 5. Parallax nhẹ blob theo chuột (--pointer-x/y) — desktop
  * 6. Animation reveal / stagger khi section vào viewport
- * 7. Highlight link menu đang xem (section đang hiển thị)
+ * 7. Highlight link menu (theo vị trí cuộn, đã gộp vào khối 4)
  *
  * Tắt animation: user bật "reduce motion" trong OS → chỉ hiện nội dung, không observer.
  */
@@ -49,8 +49,7 @@
       "landing.scrollAria": "Cuộn xuống giới thiệu",
       "landing.scrollLabel": "Giới thiệu",
 
-      "about.kicker": "Giới thiệu",
-      "about.title": "Về tôi",
+      "about.title": "Giới thiệu",
       "about.langTitle": "Ngoại Ngữ",
       "about.langBody": "<strong>Tiếng Anh</strong> — TOEIC 500+;",
       "about.softTitle": "Kỹ năng mềm",
@@ -61,8 +60,7 @@
       "about.goalP2":
         "Hướng tới vị trí <strong>Backend / Full-stack Developer</strong> sau tốt nghiệp: chuyên sâu REST API, kiến trúc nhiều lớp, JWT và thiết kế cơ sở dữ liệu (Code First &amp; Database First). Luôn học thêm qua nghiên cứu, làm việc nhóm và tận dụng AI để tăng năng suất, đồng thời nâng dần tiếng Anh để làm việc với tài liệu và đội ngũ quốc tế.",
 
-      "exp.kicker": "Kinh nghiệm",
-      "exp.title": "Thực tập",
+      "exp.title": "Kinh nghiệm",
       "exp.meta1": "INTERN FPT Software",
       "exp.meta2": "Thực tập 2024",
       "exp.projectTitle": "Dự án G1Mart",
@@ -87,8 +85,7 @@
       "exp.linkDemo": "Live demo",
       "exp.linkRepo": "Mã nguồn GitLab",
 
-      "projects.kicker": "Dự án",
-      "projects.title": "Sản phẩm &amp; mã nguồn",
+      "projects.title": "Dự án",
       "projects.g1mart.desc":
         "Nền tảng thương mại điện tử: <strong>storefront</strong> cho khách và <strong>admin/staff</strong> vận hành sản phẩm, kho, đơn, voucher, banner, shipper, hoàn trả, báo cáo. API <strong>Controller → Service → Repository → PostgreSQL</strong>, Spring Security + JWT, COD/VNPay, Cloudinary, dashboard thống kê. Monorepo: React 18 + Vite + MUI, Spring Boot 3.3 + Spring Data JPA, PostgreSQL, Swagger.",
       "projects.account.desc":
@@ -97,8 +94,7 @@
         "Mạng xã hội học tập: bài viết, bình luận, nhóm, tài liệu, sự kiện, tìm thành viên dự án, phản hồi, báo cáo vi phạm. Backend <strong>ClientService → APIService → Services → Repository → SQL Server</strong>; JWT Bearer, Cookie Auth, Google OAuth, Azure Blob, chat/thông báo <strong>SignalR</strong>; admin &amp; dashboard theo vai trò. .NET 8, EF Core Database First, MVC client + REST API.",
       "projects.liveDemo": "Live demo",
 
-      "contact.kicker": "Liên hệ",
-      "contact.title": "Liên hệ công việc",
+      "contact.title": "Liên hệ",
       "contact.lead":
         "Sẵn sàng trao đổi về cơ hội thực tập, fresher hoặc dự án phần mềm.",
       "contact.emailLabel": "Email",
@@ -139,8 +135,7 @@
       "landing.scrollAria": "Scroll to about section",
       "landing.scrollLabel": "About",
 
-      "about.kicker": "About",
-      "about.title": "About me",
+      "about.title": "About",
       "about.langTitle": "Languages",
       "about.langBody": "<strong>English</strong> — TOEIC 500+;",
       "about.softTitle": "Soft skills",
@@ -151,8 +146,7 @@
       "about.goalP2":
         "Aiming for a <strong>Backend / Full-stack Developer</strong> role after graduation: deepening REST API design, layered architecture, JWT, and database design (Code First &amp; Database First). I keep learning through research, teamwork, and using AI to boost productivity, while improving English for international documentation and teams.",
 
-      "exp.kicker": "Experience",
-      "exp.title": "Internship",
+      "exp.title": "Experience",
       "exp.meta1": "INTERN FPT Software",
       "exp.meta2": "Internship 2024",
       "exp.projectTitle": "G1Mart Project",
@@ -177,8 +171,7 @@
       "exp.linkDemo": "Live demo",
       "exp.linkRepo": "GitLab repo",
 
-      "projects.kicker": "Projects",
-      "projects.title": "Work & code",
+      "projects.title": "Projects",
       "projects.g1mart.desc":
         "E-commerce platform with <strong>storefront</strong> and <strong>admin/staff</strong> ops for products, inventory, orders, vouchers, banners, shippers, returns, and reporting. API architecture: <strong>Controller → Service → Repository → PostgreSQL</strong>, Spring Security + JWT, COD/VNPay, Cloudinary, analytics dashboard. Monorepo: React 18 + Vite + MUI; Spring Boot 3.3 + Spring Data JPA; PostgreSQL; Swagger.",
       "projects.account.desc":
@@ -187,8 +180,7 @@
         "Learning social platform: posts, comments, groups, documents, events, project matching, feedback, and reports. Backend: <strong>ClientService → APIService → Services → Repository → SQL Server</strong>; JWT Bearer, Cookie Auth, Google OAuth, Azure Blob, real-time chat/notifications via <strong>SignalR</strong>; role-based admin dashboard. .NET 8, EF Core Database First, MVC client + REST API.",
       "projects.liveDemo": "Live demo",
 
-      "contact.kicker": "Contact",
-      "contact.title": "Let’s talk",
+      "contact.title": "Contact",
       "contact.lead":
         "Open to internship, fresher roles, or freelance software projects.",
       "contact.emailLabel": "Email",
@@ -302,24 +294,99 @@
     });
   }
 
-  /* ——— 3. Smooth scroll: mọi link href="#..." ——— */
+  /* ——— 3. Cuộn tới anchor: bù header cố định ——— */
+  const prefersReduced = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+  const SCROLL_EXTRA_GAP = 16;
+  const NAV_TOP_CLEAR = 120;
+
+  function getScrollOffset() {
+    const headerEl = document.querySelector(".site-header");
+    if (!headerEl) return 96;
+    const top = parseFloat(window.getComputedStyle(headerEl).top) || 0;
+    return headerEl.getBoundingClientRect().height + top + SCROLL_EXTRA_GAP;
+  }
+
+  function getScrollAnchor(sectionEl) {
+    if (!sectionEl) return null;
+    if (sectionEl.id === "landing") return sectionEl;
+    return sectionEl.querySelector(".section__header") || sectionEl;
+  }
+
+  function scrollToHash(hash, behavior) {
+    if (!hash || hash === "#") return;
+    const section = document.querySelector(hash);
+    const anchor = getScrollAnchor(section);
+    if (!anchor) return;
+    const top =
+      anchor.getBoundingClientRect().top +
+      window.scrollY -
+      getScrollOffset();
+    window.scrollTo({
+      top: Math.max(0, top),
+      behavior: behavior || (prefersReduced ? "auto" : "smooth"),
+    });
+  }
+
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
     anchor.addEventListener("click", function (e) {
       const id = anchor.getAttribute("href");
       if (!id || id === "#") return;
-      const target = document.querySelector(id);
-      if (!target) return;
+      if (!document.querySelector(id)) return;
       e.preventDefault();
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      scrollToHash(id);
+      history.replaceState(null, "", id);
     });
   });
 
-  /* ——— 4. Header + thanh progress khi cuộn trang ——— */
+  if (window.location.hash && document.querySelector(window.location.hash)) {
+    requestAnimationFrame(function () {
+      scrollToHash(window.location.hash, "auto");
+    });
+  }
+
+  /* ——— 4. Header + thanh progress + nav active khi cuộn ——— */
   const header = document.querySelector(".site-header");
   const progressBar = document.querySelector(".scroll-progress__bar");
-  const prefersReduced = window.matchMedia(
-    "(prefers-reduced-motion: reduce)"
-  ).matches;
+  const sectionIds = ["about", "experience", "projects", "contact"];
+  const navLinks = document.querySelectorAll(".site-nav a[href^='#']");
+
+  function updateNavActive() {
+    if (!navLinks.length) return;
+
+    if (window.scrollY < NAV_TOP_CLEAR) {
+      navLinks.forEach(function (link) {
+        link.classList.remove("is-active");
+      });
+      return;
+    }
+
+    const activationLine = getScrollOffset() + 8;
+    let currentId = sectionIds[0];
+
+    sectionIds.forEach(function (id) {
+      const section = document.getElementById(id);
+      if (!section) return;
+      if (section.getBoundingClientRect().top <= activationLine) {
+        currentId = id;
+      }
+    });
+
+    const doc = document.documentElement;
+    const atBottom =
+      window.scrollY + window.innerHeight >= doc.scrollHeight - 2;
+    if (atBottom) {
+      currentId = sectionIds[sectionIds.length - 1];
+    }
+
+    navLinks.forEach(function (link) {
+      link.classList.toggle(
+        "is-active",
+        link.getAttribute("href") === "#" + currentId
+      );
+    });
+  }
 
   if (header) {
     const onScroll = function () {
@@ -332,9 +399,12 @@
         const pct = height > 0 ? (scrollTop / height) * 100 : 0;
         progressBar.style.width = pct + "%";
       }
+
+      updateNavActive();
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll, { passive: true });
   }
 
   /* ——— 5. Blob nền theo con trỏ (chỉ desktop, có chuột) ——— */
@@ -455,28 +525,4 @@
     if (progressBar) progressBar.style.width = "0%";
   }
 
-  /* ——— 7. Menu: class .is-active trên link trùng section đang nhìn ——— */
-  var sectionIds = ["about", "experience", "projects", "contact"];
-  var navLinks = document.querySelectorAll(".site-nav a[href^='#']");
-
-  if (navLinks.length && !prefersReduced) {
-    var sectionObserver = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (!entry.isIntersecting) return;
-          var id = entry.target.id;
-          navLinks.forEach(function (link) {
-            var href = link.getAttribute("href");
-            link.classList.toggle("is-active", href === "#" + id);
-          });
-        });
-      },
-      { threshold: 0.35, rootMargin: "-40% 0px -50% 0px" }
-    );
-
-    sectionIds.forEach(function (id) {
-      var section = document.getElementById(id);
-      if (section) sectionObserver.observe(section);
-    });
-  }
 })();

@@ -87,8 +87,7 @@
             <div class="landing__copy">
               <div class="landing__badge glass">
                 <span class="landing__badge-dot" aria-hidden="true"></span>
-                <span class="landing__badge-text"
-                  data-i18n="landing.badge"
+                <span class="landing__badge-text" data-i18n="landing.badge"
                   >Backend / Full-stack · Cần Thơ</span
                 >
               </div>
@@ -161,7 +160,8 @@
               <div class="landing__frame glass">
                 <div class="landing__frame-bar">
                   <span class="landing__frame-dots" aria-hidden="true"></span>
-                  <span class="landing__frame-label label-caps"
+                  <span
+                    class="landing__frame-label label-caps"
                     data-i18n="landing.frameLabel"
                     >Huỳnh Nguyên Bảo</span
                   >
@@ -196,10 +196,10 @@
       </section>
 
       <section id="about" class="section">
-        <div class="section__header">
-          <p class="label-caps" data-i18n="about.kicker">Giới thiệu</p>
-          <h2 data-i18n="about.title">Về tôi</h2>
-        </div>
+        <header class="section__header">
+          <p class="section__eyebrow">#about</p>
+          <h2 class="section__title" data-i18n="about.title">Giới thiệu</h2>
+        </header>
         <div class="about-grid">
           <article class="glass about-card">
             <h3 data-i18n="about.langTitle">Ngoại Ngữ</h3>
@@ -244,8 +244,8 @@
             <p data-i18n-html="about.goalP2">
               Hướng tới vị trí <strong>Backend / Full-stack Developer</strong>
               sau tốt nghiệp: chuyên sâu REST API, kiến trúc nhiều lớp, JWT và
-              thiết kế cơ sở dữ liệu (Code First &amp; Database First). Luôn
-              học thêm qua nghiên cứu, làm việc nhóm và tận dụng AI để tăng năng
+              thiết kế cơ sở dữ liệu (Code First &amp; Database First). Luôn học
+              thêm qua nghiên cứu, làm việc nhóm và tận dụng AI để tăng năng
               suất, đồng thời nâng dần tiếng Anh để làm việc với tài liệu và đội
               ngũ quốc tế.
             </p>
@@ -254,13 +254,15 @@
       </section>
 
       <section id="experience" class="section">
-        <div class="section__header">
-          <p class="label-caps" data-i18n="exp.kicker">Kinh nghiệm</p>
-          <h2 data-i18n="exp.title">Thực tập</h2>
-        </div>
+        <header class="section__header">
+          <p class="section__eyebrow">#experience</p>
+          <h2 class="section__title" data-i18n="exp.title">Kinh nghiệm</h2>
+        </header>
         <article class="timeline-card glass">
           <div class="timeline-card__meta">
-            <span class="label-caps" data-i18n="exp.meta1">INTERN FPT Software</span>
+            <span class="label-caps" data-i18n="exp.meta1"
+              >INTERN FPT Software</span
+            >
             <time datetime="2024" data-i18n="exp.meta2">Thực tập 2024</time>
           </div>
           <h3 data-i18n="exp.projectTitle">Dự án G1Mart</h3>
@@ -301,7 +303,9 @@
             </ul>
 
             <h4 class="timeline-card__duty-heading">
-              <span data-i18n="exp.h4_2">Kiểm soát Nghiệp vụ &amp; Đồng bộ Dữ liệu</span>
+              <span data-i18n="exp.h4_2"
+                >Kiểm soát Nghiệp vụ &amp; Đồng bộ Dữ liệu</span
+              >
               <span class="timeline-card__duty-en"
                 >(Business Logic &amp; Data Consistency)</span
               >
@@ -321,7 +325,9 @@
             </ul>
 
             <h4 class="timeline-card__duty-heading">
-              <span data-i18n="exp.h4_3">Báo cáo &amp; Tham vấn Chuyên gia</span>
+              <span data-i18n="exp.h4_3"
+                >Báo cáo &amp; Tham vấn Chuyên gia</span
+              >
               <span class="timeline-card__duty-en"
                 >(Stakeholder Communication &amp; Technical Review)</span
               >
@@ -362,10 +368,10 @@
       </section>
 
       <section id="projects" class="section">
-        <div class="section__header">
-          <p class="label-caps" data-i18n="projects.kicker">Dự án</p>
-          <h2 data-i18n="projects.title">Sản phẩm &amp; mã nguồn</h2>
-        </div>
+        <header class="section__header">
+          <p class="section__eyebrow">#projects</p>
+          <h2 class="section__title" data-i18n="projects.title">Dự án</h2>
+        </header>
         <div class="bento">
           <!-- Dự án 1 — G1Mart -->
           <article class="project-card glass project-card--featured">
@@ -573,16 +579,19 @@
 
       <section id="contact" class="section section--contact">
         <div class="contact-wrap glass">
-          <div class="section__header section__header--inline">
-            <p class="label-caps" data-i18n="contact.kicker">Liên hệ</p>
-            <h2 data-i18n="contact.title">Liên hệ công việc</h2>
+          <header class="section__header section__header--inline">
+            <p class="section__eyebrow">#contact</p>
+            <h2 class="section__title" data-i18n="contact.title">Liên hệ</h2>
             <p class="contact-wrap__lead" data-i18n="contact.lead">
-              Sẵn sàng trao đổi về cơ hội thực tập, fresher hoặc dự án phần mềm.
+              Sẵn sàng trao đổi về cơ hội thực tập, fresher hoặc dự án phần
+              mềm.
             </p>
-          </div>
+          </header>
           <ul class="contact-list">
             <li class="contact-list__item">
-              <span class="label-caps" data-i18n="contact.emailLabel">Email</span>
+              <span class="label-caps" data-i18n="contact.emailLabel"
+                >Email</span
+              >
               <a href="mailto:huynhnguyenbao3105@gmail.com"
                 >huynhnguyenbao3105@gmail.com</a
               >

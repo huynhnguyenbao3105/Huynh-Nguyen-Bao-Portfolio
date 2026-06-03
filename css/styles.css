@@ -42,7 +42,14 @@
   --glass-border: rgba(255, 255, 255, 0.75);
   --glass-shadow: 0 8px 32px rgba(24, 86, 255, 0.08);
   --header-h: 72px;
+  /* Khoảng trống khi nhảy anchor — header fixed + top + đệm */
+  --scroll-offset: calc(var(--header-h) + var(--space-md) + var(--space-sm));
   --max-width: 1120px;
+}
+
+#landing,
+.section[id] {
+  scroll-margin-top: var(--scroll-offset);
 }
 
 *,
@@ -629,26 +636,49 @@ main {
   margin: 0 auto var(--space-2xl);
 }
 
+/* .section__header — cùng nhịp typography với .landing__title */
 .section__header {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--space-sm);
+  gap: 6px;
   margin-bottom: var(--space-xl);
 }
 
-.section__header .label-caps {
-  display: block;
+.section__eyebrow {
   margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--color-primary);
 }
 
-.section__header h2 {
-  display: block;
+.section__title {
   margin: 0;
-  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-family: var(--font-sans);
+  font-size: clamp(2rem, 5vw, 2.5rem);
   font-weight: 800;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.04em;
   line-height: 1.15;
+  color: var(--color-text);
+}
+
+.section__header--inline {
+  gap: var(--space-sm);
+  margin-bottom: 0;
+}
+
+.section__header--inline .section__title {
+  font-size: clamp(1.75rem, 4vw, 2.125rem);
+}
+
+.section__header--inline .contact-wrap__lead {
+  margin: 0;
+  max-width: 42ch;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--color-text-muted);
 }
 
 /* .btn — nút: .btn--primary (xanh), .btn--ghost (viền), .btn--sm (nhỏ trong thẻ dự án) */
@@ -1523,30 +1553,28 @@ main {
     opacity: 1;
   }
 
-  html.js-enabled .section__header .label-caps {
-    display: block;
+  html.js-enabled .section__header .section__eyebrow {
     opacity: 0;
-    transform: translateX(20px);
+    transform: translateY(6px);
     transition:
-      opacity 0.55s ease,
-      transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
-    transition-delay: calc(var(--reveal-delay, 0ms) + 40ms);
+      opacity 0.45s ease,
+      transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: calc(var(--reveal-delay, 0ms) + 30ms);
   }
 
-  html.js-enabled .section__header h2 {
-    display: block;
+  html.js-enabled .section__header .section__title {
     opacity: 0;
-    transform: translateX(-24px);
+    transform: translateY(12px);
     transition:
-      opacity 0.6s ease,
-      transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-    transition-delay: calc(var(--reveal-delay, 0ms) + 120ms);
+      opacity 0.5s ease,
+      transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: calc(var(--reveal-delay, 0ms) + 90ms);
   }
 
-  html.js-enabled .section__header.is-visible .label-caps,
-  html.js-enabled .section__header.is-visible h2 {
+  html.js-enabled .section__header.is-visible .section__eyebrow,
+  html.js-enabled .section__header.is-visible .section__title {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
   }
 
   html.js-enabled .stagger-group:not(.is-visible) .stagger-item {
