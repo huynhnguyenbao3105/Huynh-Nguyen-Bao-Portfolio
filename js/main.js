@@ -24,7 +24,7 @@
       "doc.description":
         "Portfolio Huỳnh Nguyên Bảo — Backend / Full-stack Developer, ASP.NET Core, Spring Boot, thực tập FPT Software.",
 
-      "header.logo": "My Portfolio",
+      "header.logo": "Huỳnh.",
       "header.langGroupAria": "Ngôn ngữ",
       "header.menuAria": "Mở menu",
 
@@ -34,17 +34,16 @@
       "nav.contact": "Liên hệ",
 
       "landing.aria": "Trang chào mừng",
-      "landing.badge": "Backend / Full-stack · Cần Thơ",
-      "landing.eyebrow": "Xin chào, tôi là",
-      "landing.name": "Huỳnh Nguyên Bảo",
-      "landing.lead":
-        'Học <strong>Kỹ thuật phần mềm</strong> tại <strong>FPT University</strong> (<strong>2021–2025</strong>). Tập trung <strong>backend / full-stack</strong> với <strong>ASP.NET Core</strong>, <strong>Spring Boot</strong> và kiến trúc nhiều lớp.',
-      "landing.stackAria": "Công nghệ chính",
-      "landing.stack1": "+3 Project",
-      "landing.ctaExplore": "Khám phá portfolio",
+      "landing.helloLeft": "Hey,",
+      "landing.helloRight": "there",
+      "landing.badge": "Sẵn sàng cho cơ hội mới",
+      "landing.spec":
+        "Chuyên ASP.NET Core, Spring Boot, REST API và kiến trúc nhiều lớp.",
+      "landing.iam": "TÔI LÀ",
+      "landing.name": "HUỲNH NGUYÊN BẢO",
+      "landing.role": "BACKEND /<br />FULL-STACK<br />DEVELOPER",
       "landing.ctaContact": "Liên hệ",
       "landing.ctaDownloadCV": "Tải CV",
-      "landing.frameLabel": "Huỳnh Nguyên Bảo",
       "landing.avatarAlt": "Ảnh chân dung Huỳnh Nguyên Bảo",
       "landing.scrollAria": "Cuộn xuống giới thiệu",
       "landing.scrollLabel": "Giới thiệu",
@@ -110,7 +109,7 @@
       "doc.description":
         "Huynh Nguyen Bao — Backend / Full-stack Developer. ASP.NET Core, Spring Boot. Former FPT Software intern.",
 
-      "header.logo": "My Portfolio",
+      "header.logo": "Huynh.",
       "header.langGroupAria": "Language",
       "header.menuAria": "Open menu",
 
@@ -120,17 +119,16 @@
       "nav.contact": "Contact",
 
       "landing.aria": "Landing",
-      "landing.badge": "Backend / Full-stack · Can Tho",
-      "landing.eyebrow": "Hi, I'm",
-      "landing.name": "Huynh Nguyen Bao",
-      "landing.lead":
-        "Studying <strong>Software Engineering</strong> at <strong>FPT University</strong> (<strong>2021–2025</strong>). Focused on <strong>backend / full-stack</strong> with <strong>ASP.NET Core</strong>, <strong>Spring Boot</strong>, and layered architecture.",
-      "landing.stackAria": "Core stack",
-      "landing.stack1": "3+ Projects",
-      "landing.ctaExplore": "Explore portfolio",
+      "landing.helloLeft": "Hey,",
+      "landing.helloRight": "there",
+      "landing.badge": "Available for new opportunities",
+      "landing.spec":
+        "Specialized in ASP.NET Core, Spring Boot, REST APIs, and layered architecture.",
+      "landing.iam": "I AM",
+      "landing.name": "HUYNH NGUYEN BAO",
+      "landing.role": "BACKEND /<br />FULL-STACK<br />DEVELOPER",
       "landing.ctaContact": "Contact",
       "landing.ctaDownloadCV": "Download CV",
-      "landing.frameLabel": "Huynh Nguyen Bao",
       "landing.avatarAlt": "Portrait of Huynh Nguyen Bao",
       "landing.scrollAria": "Scroll to about section",
       "landing.scrollLabel": "About",
