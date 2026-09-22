@@ -27,49 +27,44 @@
     <div class="bg-blob bg-blob--1" aria-hidden="true"></div>
     <div class="bg-blob bg-blob--2" aria-hidden="true"></div>
 
-    <header class="site-header glass">
-      <a class="logo" href="#landing" aria-label="Portfolio — về đầu trang">
-        <span class="logo__text" data-i18n="header.logo">Portfolio</span>
-      </a>
-      <button
-        class="nav-toggle"
-        type="button"
-        aria-expanded="false"
-        aria-controls="site-nav"
-        aria-label="Mở menu"
-        data-i18n-aria="header.menuAria"
-      >
-        <span></span><span></span><span></span>
-      </button>
-      <nav id="site-nav" class="site-nav">
-        <a href="#about" data-i18n="nav.about">Giới thiệu</a>
-        <a href="#experience" data-i18n="nav.experience">Kinh nghiệm</a>
-        <a href="#projects" data-i18n="nav.projects">Dự án</a>
-        <a href="#contact" data-i18n="nav.contact">Liên hệ</a>
-        <div
-          class="lang-switch"
-          role="group"
-          aria-label="Ngôn ngữ"
-          data-i18n-aria="header.langGroupAria"
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="logo" href="#landing" aria-label="Portfolio — về đầu trang">
+          <span class="logo__text" data-i18n="header.logo">Portfolio</span>
+        </a>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          aria-label="Mở menu"
+          data-i18n-aria="header.menuAria"
         >
-          <button
-            class="lang-switch__btn"
-            type="button"
-            data-lang-set="vi"
-            aria-pressed="true"
+          <span></span><span></span><span></span>
+        </button>
+        <nav id="site-nav" class="site-nav">
+          <a href="#about" data-i18n="nav.about">Giới thiệu</a>
+          <a href="#experience" data-i18n="nav.experience">Kinh nghiệm</a>
+          <a href="#projects" data-i18n="nav.projects">Dự án</a>
+          <a href="#contact" data-i18n="nav.contact">Liên hệ</a>
+          <label
+            class="switch"
+            aria-label="Chuyển ngôn ngữ"
+            title="Chuyển ngôn ngữ"
+            data-tooltip="Chuyển ngôn ngữ"
+            data-i18n-aria="header.langTooltip"
+            data-i18n-title="header.langTooltip"
+            data-i18n-tooltip="header.langTooltip"
           >
-            VI
-          </button>
-          <button
-            class="lang-switch__btn"
-            type="button"
-            data-lang-set="en"
-            aria-pressed="false"
-          >
-            EN
-          </button>
-        </div>
-      </nav>
+            <input
+              type="checkbox"
+              data-lang-toggle
+              aria-label="Chuyển ngôn ngữ"
+            />
+            <span class="slider"></span>
+          </label>
+        </nav>
+      </div>
     </header>
 
     <main>
@@ -81,13 +76,6 @@
       >
         <div class="landing__shell">
           <div class="landing__copy">
-            <div class="landing__badge">
-              <span class="landing__badge-dot" aria-hidden="true"></span>
-              <span class="landing__badge-text" data-i18n="landing.badge"
-                >Backend / Full-stack · Cần Thơ</span
-              >
-            </div>
-
             <p class="landing__hello" data-i18n="landing.eyebrow">
               Xin chào, tôi là
             </p>
@@ -100,21 +88,27 @@
               BACKEND / FULL-STACK DEVELOPER
             </p>
 
-            <p class="landing__lead" data-i18n-html="landing.lead">
-              Học <strong>Kỹ thuật phần mềm</strong> tại
-              <strong>FPT University</strong> (<strong>2021–2025</strong>). Tập
-              trung <strong>backend / full-stack</strong> với
-              <strong>ASP.NET Core</strong>, <strong>Spring Boot</strong> và
-              kiến trúc nhiều lớp.
-            </p>
-
             <div class="landing__actions">
               <a
-                class="btn btn--dark"
-                href="#contact"
-                data-i18n="landing.ctaContact"
-                >Liên hệ</a
+                class="github-btn"
+                href="https://github.com/huynhnguyenbao3105"
+                target="_blank"
+                rel="noopener noreferrer"
               >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  height="18"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M12.001 2C6.47598 2 2.00098 6.475 2.00098 12C2.00098 16.425 4.86348 20.1625 8.83848 21.4875C9.33848 21.575 9.52598 21.275 9.52598 21.0125C9.52598 20.775 9.51348 19.9875 9.51348 19.15C7.00098 19.6125 6.35098 18.5375 6.15098 17.975C6.03848 17.6875 5.55098 16.8 5.12598 16.5625C4.77598 16.375 4.27598 15.9125 5.11348 15.9C5.90098 15.8875 6.46348 16.625 6.65098 16.925C7.55098 18.4375 8.98848 18.0125 9.56348 17.75C9.65098 17.1 9.91348 16.6625 10.201 16.4125C7.97598 16.1625 5.65098 15.3 5.65098 11.475C5.65098 10.3875 6.03848 9.4875 6.67598 8.7875C6.57598 8.5375 6.22598 7.5125 6.77598 6.1375C6.77598 6.1375 7.61348 5.875 9.52598 7.1625C10.326 6.9375 11.176 6.825 12.026 6.825C12.876 6.825 13.726 6.9375 14.526 7.1625C16.4385 5.8625 17.276 6.1375 17.276 6.1375C17.826 7.5125 17.476 8.5375 17.376 8.7875C18.0135 9.4875 18.401 10.375 18.401 11.475C18.401 15.3125 16.0635 16.1625 13.8385 16.4125C14.201 16.725 14.5135 17.325 14.5135 18.2625C14.5135 19.6 14.501 20.675 14.501 21.0125C14.501 21.275 14.6885 21.5875 15.1885 21.4875C19.259 20.1133 21.9999 16.2963 22.001 12C22.001 6.475 17.526 2 12.001 2Z"
+                  ></path>
+                </svg>
+                <span>GitHub</span>
+              </a>
               <a
                 class="btn btn--ghost"
                 href="assets/Huynh-Nguyen-Bao-VN.pdf"
@@ -127,6 +121,29 @@
           </div>
 
           <div class="landing__visual">
+            <svg class="landing__outline" aria-hidden="true" focusable="false">
+              <filter
+                id="avatar-outline"
+                x="-15%"
+                y="-10%"
+                width="130%"
+                height="120%"
+                color-interpolation-filters="sRGB"
+              >
+                <feMorphology
+                  in="SourceAlpha"
+                  operator="dilate"
+                  radius="6"
+                  result="dilated"
+                />
+                <feFlood flood-color="#ffffff" result="flood" />
+                <feComposite in="flood" in2="dilated" operator="in" result="outline" />
+                <feMerge>
+                  <feMergeNode in="outline" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </svg>
             <div class="landing__glow" aria-hidden="true"></div>
             <img
               class="landing__avatar"

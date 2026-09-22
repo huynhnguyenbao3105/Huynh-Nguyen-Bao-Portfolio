@@ -26,6 +26,7 @@
 
       "header.logo": "Portfolio",
       "header.langGroupAria": "Ngôn ngữ",
+      "header.langTooltip": "Chuyển ngôn ngữ",
       "header.menuAria": "Mở menu",
 
       "nav.about": "Giới thiệu",
@@ -34,13 +35,9 @@
       "nav.contact": "Liên hệ",
 
       "landing.aria": "Trang chào mừng",
-      "landing.badge": "Backend / Full-stack · Cần Thơ",
       "landing.eyebrow": "Xin chào, tôi là",
       "landing.name": "HUỲNH NGUYÊN BẢO",
       "landing.role": "BACKEND / FULL-STACK DEVELOPER",
-      "landing.lead":
-        'Học <strong>Kỹ thuật phần mềm</strong> tại <strong>FPT University</strong> (<strong>2021–2025</strong>). Tập trung <strong>backend / full-stack</strong> với <strong>ASP.NET Core</strong>, <strong>Spring Boot</strong> và kiến trúc nhiều lớp.',
-      "landing.ctaContact": "Liên hệ",
       "landing.ctaDownloadCV": "Tải CV",
       "landing.avatarAlt": "Ảnh chân dung Huỳnh Nguyên Bảo",
       "landing.scrollAria": "Cuộn xuống giới thiệu",
@@ -109,6 +106,7 @@
 
       "header.logo": "Portfolio",
       "header.langGroupAria": "Language",
+      "header.langTooltip": "Switch language",
       "header.menuAria": "Open menu",
 
       "nav.about": "About",
@@ -117,13 +115,9 @@
       "nav.contact": "Contact",
 
       "landing.aria": "Landing",
-      "landing.badge": "Backend / Full-stack · Can Tho",
       "landing.eyebrow": "Hi, I'm",
       "landing.name": "HUYNH NGUYEN BAO",
       "landing.role": "BACKEND / FULL-STACK DEVELOPER",
-      "landing.lead":
-        "Studying <strong>Software Engineering</strong> at <strong>FPT University</strong> (<strong>2021–2025</strong>). Focused on <strong>backend / full-stack</strong> with <strong>ASP.NET Core</strong>, <strong>Spring Boot</strong>, and layered architecture.",
-      "landing.ctaContact": "Contact",
       "landing.ctaDownloadCV": "Download CV",
       "landing.avatarAlt": "Portrait of Huynh Nguyen Bao",
       "landing.scrollAria": "Scroll to about section",
@@ -215,6 +209,18 @@
       el.setAttribute("aria-label", dict[key]);
     });
 
+    document.querySelectorAll("[data-i18n-title]").forEach(function (el) {
+      var key = el.getAttribute("data-i18n-title");
+      if (!key || dict[key] == null) return;
+      el.setAttribute("title", dict[key]);
+    });
+
+    document.querySelectorAll("[data-i18n-tooltip]").forEach(function (el) {
+      var key = el.getAttribute("data-i18n-tooltip");
+      if (!key || dict[key] == null) return;
+      el.setAttribute("data-tooltip", dict[key]);
+    });
+
     document.querySelectorAll("[data-i18n-alt]").forEach(function (el) {
       var key = el.getAttribute("data-i18n-alt");
       if (!key || dict[key] == null) return;
@@ -232,11 +238,8 @@
       }
     }
 
-    document.querySelectorAll("[data-lang-set]").forEach(function (btn) {
-      var btnLang = btn.getAttribute("data-lang-set");
-      var active = btnLang === lang;
-      btn.classList.toggle("is-active", active);
-      btn.setAttribute("aria-pressed", active ? "true" : "false");
+    document.querySelectorAll("[data-lang-toggle]").forEach(function (input) {
+      input.checked = lang === "en";
     });
   }
 
@@ -249,10 +252,9 @@
     var initial = stored === "en" || stored === "vi" ? stored : "vi";
     applyLanguage(initial);
 
-    document.querySelectorAll("[data-lang-set]").forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        var next = btn.getAttribute("data-lang-set");
-        if (next !== "vi" && next !== "en") return;
+    document.querySelectorAll("[data-lang-toggle]").forEach(function (input) {
+      input.addEventListener("change", function () {
+        var next = input.checked ? "en" : "vi";
         try {
           localStorage.setItem(LANG_STORAGE_KEY, next);
         } catch (e) {}
@@ -383,8 +385,31 @@
   }
 
   if (header) {
+    var lastScrollY = window.scrollY;
+    var navToggle = document.querySelector(".nav-toggle");
+    var siteNav = document.getElementById("site-nav");
+
     const onScroll = function () {
-      header.classList.toggle("is-scrolled", window.scrollY > 12);
+      var y = window.scrollY || window.pageYOffset || 0;
+      var goingDown = y > lastScrollY;
+      header.classList.toggle("is-scrolled", y > 12);
+
+      if (y <= 24) {
+        header.classList.remove("is-hidden");
+      } else if (goingDown) {
+        header.classList.add("is-hidden");
+        if (
+          navToggle &&
+          siteNav &&
+          navToggle.getAttribute("aria-expanded") === "true"
+        ) {
+          navToggle.setAttribute("aria-expanded", "false");
+          siteNav.classList.remove("is-open");
+        }
+      } else {
+        header.classList.remove("is-hidden");
+      }
+      lastScrollY = y;
 
       if (progressBar) {
         const doc = document.documentElement;
