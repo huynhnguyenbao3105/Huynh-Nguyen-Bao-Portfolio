@@ -38,7 +38,6 @@
       "landing.eyebrow": "Xin chào, tôi là",
       "landing.name": "HUỲNH NGUYÊN BẢO",
       "landing.role": "BACKEND / FULL-STACK DEVELOPER",
-      "landing.ctaDownloadCV": "Tải CV",
       "landing.avatarAlt": "Ảnh chân dung Huỳnh Nguyên Bảo",
       "landing.scrollAria": "Cuộn xuống giới thiệu",
       "landing.scrollLabel": "Giới thiệu",
@@ -118,7 +117,6 @@
       "landing.eyebrow": "Hi, I'm",
       "landing.name": "HUYNH NGUYEN BAO",
       "landing.role": "BACKEND / FULL-STACK DEVELOPER",
-      "landing.ctaDownloadCV": "Download CV",
       "landing.avatarAlt": "Portrait of Huynh Nguyen Bao",
       "landing.scrollAria": "Scroll to about section",
       "landing.scrollLabel": "About",
@@ -226,17 +224,6 @@
       if (!key || dict[key] == null) return;
       el.setAttribute("alt", dict[key]);
     });
-
-    var cvLink = document.querySelector("[data-cv-download]");
-    if (cvLink) {
-      if (lang === "en") {
-        cvLink.setAttribute("href", "assets/Huynh-Nguyen-Bao-EN.pdf");
-        cvLink.setAttribute("download", "Huynh-Nguyen-Bao-CV-EN.pdf");
-      } else {
-        cvLink.setAttribute("href", "assets/Huynh-Nguyen-Bao-VN.pdf");
-        cvLink.setAttribute("download", "Huynh-Nguyen-Bao-CV-VI.pdf");
-      }
-    }
 
     document.querySelectorAll("[data-lang-toggle]").forEach(function (input) {
       input.checked = lang === "en";
@@ -391,12 +378,11 @@
 
     const onScroll = function () {
       var y = window.scrollY || window.pageYOffset || 0;
-      var goingDown = y > lastScrollY;
       header.classList.toggle("is-scrolled", y > 12);
 
-      if (y <= 24) {
+      if (y <= 8) {
         header.classList.remove("is-hidden");
-      } else if (goingDown) {
+      } else {
         header.classList.add("is-hidden");
         if (
           navToggle &&
@@ -406,8 +392,6 @@
           navToggle.setAttribute("aria-expanded", "false");
           siteNav.classList.remove("is-open");
         }
-      } else {
-        header.classList.remove("is-hidden");
       }
       lastScrollY = y;
 
