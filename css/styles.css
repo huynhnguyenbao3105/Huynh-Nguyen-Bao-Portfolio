@@ -490,6 +490,18 @@ main {
   padding-bottom: 6vh;
 }
 
+.landing__intro {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem 1rem;
+  flex-wrap: wrap;
+}
+
+.landing__mascot {
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
 .landing__hello {
   margin: 0;
   font-family: var(--font-serif);
