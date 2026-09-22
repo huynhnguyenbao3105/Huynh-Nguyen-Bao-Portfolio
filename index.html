@@ -18,6 +18,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/widgets.css" />
   </head>
   <body>
     <div class="scroll-progress" aria-hidden="true">
@@ -96,8 +97,8 @@
                 <svg
                   viewBox="0 0 24 24"
                   fill="currentColor"
-                  height="18"
-                  width="18"
+                  height="26"
+                  width="26"
                   xmlns="http://www.w3.org/2000/svg"
                   aria-hidden="true"
                 >
@@ -119,16 +120,16 @@
                     class="zalo-btn__icon-light"
                     src="assets/zalo-icon-light.png"
                     alt=""
-                    width="18"
-                    height="18"
+                    width="26"
+                    height="26"
                     decoding="async"
                   />
                   <img
                     class="zalo-btn__icon-dark"
                     src="assets/zalo-icon-dark.png"
                     alt=""
-                    width="18"
-                    height="18"
+                    width="26"
+                    height="26"
                     decoding="async"
                   />
                 </span>
@@ -154,7 +155,12 @@
                   result="dilated"
                 />
                 <feFlood flood-color="#ffffff" result="flood" />
-                <feComposite in="flood" in2="dilated" operator="in" result="outline" />
+                <feComposite
+                  in="flood"
+                  in2="dilated"
+                  operator="in"
+                  result="outline"
+                />
                 <feMerge>
                   <feMergeNode in="outline" />
                   <feMergeNode in="SourceGraphic" />
@@ -563,8 +569,7 @@
             <p class="section__eyebrow">#contact</p>
             <h2 class="section__title" data-i18n="contact.title">Liên hệ</h2>
             <p class="contact-wrap__lead" data-i18n="contact.lead">
-              Sẵn sàng trao đổi về cơ hội thực tập, fresher hoặc dự án phần
-              mềm.
+              Sẵn sàng trao đổi về cơ hội thực tập, fresher hoặc dự án phần mềm.
             </p>
           </header>
           <ul class="contact-list">
@@ -599,6 +604,259 @@
       </p>
     </footer>
 
+    <!-- OVCAR-style floating widget: scroll-top + AI bot + chat -->
+    <div class="fab-widget" id="fab-widget" aria-live="polite">
+      <div class="fab-widget__anchor">
+        <div class="fab-widget__tooltip" id="fab-tooltip" hidden>
+          <span data-i18n="fab.tooltip">Thao tác nhanh</span>
+        </div>
+
+        <div class="fab-widget__menu" id="fab-menu" aria-hidden="true">
+          <button
+            type="button"
+            class="fab-widget__action"
+            id="fab-scroll-top"
+            data-fab-action="scroll"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="m5 12 7-7 7 7" />
+              <path d="M12 19V5" />
+            </svg>
+            <span class="fab-widget__action-tip" data-i18n="fab.scrollTop"
+              >Lên đầu trang</span
+            >
+          </button>
+          <button
+            type="button"
+            class="fab-widget__action"
+            id="fab-open-bot"
+            data-fab-action="bot"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              width="22"
+              height="22"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M12 8V4H8" />
+              <rect width="16" height="12" x="4" y="8" rx="2" />
+              <path d="M2 14h2" />
+              <path d="M20 14h2" />
+              <path d="M15 13v2" />
+              <path d="M9 13v2" />
+            </svg>
+            <span class="fab-widget__action-tip" data-i18n="fab.ai"
+              >Trợ lý AI</span
+            >
+          </button>
+          <button
+            type="button"
+            class="fab-widget__action"
+            id="fab-open-chat"
+            data-fab-action="chat"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              width="22"
+              height="22"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path
+                d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+              />
+            </svg>
+            <span class="fab-widget__action-tip" data-i18n="fab.chat"
+              >Nhắn tin</span
+            >
+          </button>
+        </div>
+
+        <div class="fab-widget__panel" id="fab-panel" aria-hidden="true">
+          <div class="fab-panel fab-panel--bot" id="fab-bot-panel" hidden>
+            <header class="fab-panel__header">
+              <div class="fab-panel__avatar" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 8V4H8" />
+                  <rect width="16" height="12" x="4" y="8" rx="2" />
+                  <path d="M2 14h2" />
+                  <path d="M20 14h2" />
+                  <path d="M15 13v2" />
+                  <path d="M9 13v2" />
+                </svg>
+                <span class="fab-panel__online"></span>
+              </div>
+              <div class="fab-panel__titles">
+                <strong data-i18n="fab.botTitle">Trợ lý portfolio</strong>
+              </div>
+              <div class="fab-panel__actions">
+                <button
+                  type="button"
+                  class="fab-panel__icon-btn"
+                  id="fab-bot-reset"
+                  title="Reset"
+                  aria-label="Reset chat"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="16"
+                    height="16"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"
+                    />
+                    <path d="M3 3v5h5" />
+                  </svg>
+                </button>
+                <button
+                  type="button"
+                  class="fab-panel__icon-btn"
+                  data-fab-close
+                  aria-label="Close"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="18"
+                    height="18"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M18 6 6 18" />
+                    <path d="m6 6 12 12" />
+                  </svg>
+                </button>
+              </div>
+            </header>
+            <div class="fab-panel__messages" id="fab-bot-messages"></div>
+            <div class="fab-panel__options" id="fab-bot-options"></div>
+            <form
+              class="fab-panel__compose"
+              id="fab-bot-form"
+              autocomplete="off"
+            >
+              <div class="fab-panel__compose-shell">
+                <input
+                  type="text"
+                  id="fab-bot-input"
+                  data-i18n-placeholder="fab.botPlaceholder"
+                  placeholder="Hỏi về kỹ năng, dự án…"
+                />
+                <button type="submit" class="fab-panel__send" aria-label="Send">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="17"
+                    height="17"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="m22 2-7 20-4-9-9-4Z" />
+                    <path d="M22 2 11 13" />
+                  </svg>
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <div class="fab-panel fab-panel--chat" id="fab-chat-panel" hidden>
+            <header class="fab-panel__header fab-panel__header--grab">
+              <div class="fab-panel__titles">
+                <strong data-i18n="fab.chatTitle">Messages</strong>
+              </div>
+              <button
+                type="button"
+                class="fab-panel__icon-btn"
+                data-fab-close
+                aria-label="Close"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  width="18"
+                  height="18"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M18 6 6 18" />
+                  <path d="m6 6 12 12" />
+                </svg>
+              </button>
+            </header>
+            <div class="fab-panel__list" id="fab-chat-list">
+              <div class="fab-panel__empty">
+                <p data-i18n="fab.chatEmpty">Chưa có tin nhắn</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button
+          type="button"
+          class="fab-widget__fab"
+          id="fab-toggle"
+          aria-label="Toggle widget"
+          aria-expanded="false"
+        >
+          <svg
+            class="fab-widget__fab-icon"
+            viewBox="0 0 24 24"
+            width="28"
+            height="28"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.75"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M5 12h14" />
+            <path d="M12 5v14" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
     <script src="js/main.js"></script>
+    <script src="js/widgets.js"></script>
   </body>
 </html>

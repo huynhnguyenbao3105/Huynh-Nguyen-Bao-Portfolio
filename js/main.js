@@ -94,8 +94,33 @@
       "contact.phoneLabel": "Điện thoại",
       "contact.cta": "Gửi email",
 
+      "fab.tooltip": "Thao tác nhanh",
+      "fab.scrollTop": "Lên đầu trang",
+      "fab.ai": "Trợ lý AI",
+      "fab.chat": "Nhắn tin",
+      "fab.botTitle": "Trợ lý portfolio",
+      "fab.botPlaceholder": "Hỏi về kỹ năng, dự án…",
+      "fab.chatTitle": "Messages",
+      "fab.chatEmpty": "Chưa có tin nhắn",
+      "fab.botWelcome":
+        "Xin chào! Mình có thể giúp bạn tìm hiểu về kỹ năng, kinh nghiệm và dự án của Bảo.",
+      "fab.optSkills": "Kỹ năng",
+      "fab.optExp": "Kinh nghiệm",
+      "fab.optProjects": "Dự án",
+      "fab.optContact": "Liên hệ",
+      "fab.replySkills":
+        "Bảo làm Backend / Full-stack với ASP.NET Core, Spring Boot, SQL và các stack web hiện đại.",
+      "fab.replyExp":
+        "Có kinh nghiệm thực tập tại FPT Software và các dự án cá nhân / học thuật.",
+      "fab.replyProjects":
+        "Xem phần Projects phía dưới để xem các sản phẩm nổi bật, hoặc hỏi mình chi tiết hơn.",
+      "fab.replyContact":
+        "Bạn có thể gửi email huynhnguyenbao3105@gmail.com hoặc nhắn Zalo 0939 082 419.",
+      "fab.botFallback":
+        "Cảm ơn câu hỏi! Đây là bản demo UI — hãy dùng các gợi ý bên dưới hoặc cuộn xem portfolio.",
+
       "footer.copy":
-        "&copy; <span id=\"year\"></span> Huỳnh Nguyên Bảo. Portfolio cá nhân.",
+        '&copy; <span id="year"></span> Huỳnh Nguyên Bảo. Portfolio cá nhân.',
     },
 
     en: {
@@ -173,10 +198,37 @@
       "contact.phoneLabel": "Phone",
       "contact.cta": "Send email",
 
+      "fab.tooltip": "Quick actions",
+      "fab.scrollTop": "Scroll to top",
+      "fab.ai": "AI Assistant",
+      "fab.chat": "Chat",
+      "fab.botTitle": "Portfolio assistant",
+      "fab.botPlaceholder": "Ask about skills, projects…",
+      "fab.chatTitle": "Messages",
+      "fab.chatEmpty": "No messages yet",
+      "fab.botWelcome":
+        "Hi! I can help you learn about Bao's skills, experience, and projects.",
+      "fab.optSkills": "Skills",
+      "fab.optExp": "Experience",
+      "fab.optProjects": "Projects",
+      "fab.optContact": "Contact",
+      "fab.replySkills":
+        "Bao works as a Backend / Full-stack developer with ASP.NET Core, Spring Boot, SQL, and modern web stacks.",
+      "fab.replyExp":
+        "Internship experience at FPT Software plus personal and academic projects.",
+      "fab.replyProjects":
+        "Scroll to Projects below for featured work, or ask me for more detail.",
+      "fab.replyContact":
+        "Email huynhnguyenbao3105@gmail.com or message on Zalo 0939 082 419.",
+      "fab.botFallback":
+        "Thanks for asking! This is a UI demo — try the suggestion chips or browse the portfolio.",
+
       "footer.copy":
-        "&copy; <span id=\"year\"></span> Huynh Nguyen Bao. Personal portfolio.",
+        '&copy; <span id="year"></span> Huynh Nguyen Bao. Personal portfolio.',
     },
   };
+
+  window.__PORTFOLIO_I18N = I18N;
 
   function applyLanguage(lang) {
     var dict = I18N[lang] || I18N.vi;
@@ -225,9 +277,21 @@
       el.setAttribute("alt", dict[key]);
     });
 
+    document.querySelectorAll("[data-i18n-placeholder]").forEach(function (el) {
+      var key = el.getAttribute("data-i18n-placeholder");
+      if (!key || dict[key] == null) return;
+      el.setAttribute("placeholder", dict[key]);
+    });
+
     document.querySelectorAll("[data-lang-toggle]").forEach(function (input) {
       input.checked = lang === "en";
     });
+
+    try {
+      window.dispatchEvent(
+        new CustomEvent("portfolio:lang", { detail: { lang: lang } }),
+      );
+    } catch (e) {}
   }
 
   function initLanguage() {
@@ -279,7 +343,7 @@
 
   /* ——— 3. Cuộn tới anchor: bù header cố định ——— */
   const prefersReduced = window.matchMedia(
-    "(prefers-reduced-motion: reduce)"
+    "(prefers-reduced-motion: reduce)",
   ).matches;
   const SCROLL_EXTRA_GAP = 16;
   const NAV_TOP_CLEAR = 120;
@@ -303,9 +367,7 @@
     const anchor = getScrollAnchor(section);
     if (!anchor) return;
     const top =
-      anchor.getBoundingClientRect().top +
-      window.scrollY -
-      getScrollOffset();
+      anchor.getBoundingClientRect().top + window.scrollY - getScrollOffset();
     window.scrollTo({
       top: Math.max(0, top),
       behavior: behavior || (prefersReduced ? "auto" : "smooth"),
@@ -366,7 +428,7 @@
     navLinks.forEach(function (link) {
       link.classList.toggle(
         "is-active",
-        link.getAttribute("href") === "#" + currentId
+        link.getAttribute("href") === "#" + currentId,
       );
     });
   }
@@ -420,7 +482,7 @@
         document.documentElement.style.setProperty("--pointer-x", String(x));
         document.documentElement.style.setProperty("--pointer-y", String(y));
       },
-      { passive: true }
+      { passive: true },
     );
   }
 
@@ -454,9 +516,11 @@
       var demoGrid = card.querySelector(".demo-credentials-grid");
       if (demoGrid) {
         demoGrid.classList.add("stagger-group");
-        demoGrid.querySelectorAll(".demo-credentials").forEach(function (box, i) {
-          box.style.setProperty("--stagger-delay", String(i * 90) + "ms");
-        });
+        demoGrid
+          .querySelectorAll(".demo-credentials")
+          .forEach(function (box, i) {
+            box.style.setProperty("--stagger-delay", String(i * 90) + "ms");
+          });
       }
     });
 
@@ -464,19 +528,23 @@
     if (timeline) {
       timeline.classList.add("reveal", "reveal--left");
       setupStaggerGroup(timeline, ".timeline-card__duties li", 50);
-      timeline.querySelectorAll(".timeline-card__duty-heading").forEach(function (
-        heading,
-        i
-      ) {
-        heading.style.setProperty("--duty-delay", String(220 + i * 80) + "ms");
-      });
+      timeline
+        .querySelectorAll(".timeline-card__duty-heading")
+        .forEach(function (heading, i) {
+          heading.style.setProperty(
+            "--duty-delay",
+            String(220 + i * 80) + "ms",
+          );
+        });
       setupStaggerGroup(timeline, ".timeline-card__links .link-arrow", 80);
     }
 
-    document.querySelectorAll(".section__header").forEach(function (headerEl, i) {
-      headerEl.classList.add("reveal");
-      headerEl.style.setProperty("--reveal-delay", String(i * 40) + "ms");
-    });
+    document
+      .querySelectorAll(".section__header")
+      .forEach(function (headerEl, i) {
+        headerEl.classList.add("reveal");
+        headerEl.style.setProperty("--reveal-delay", String(i * 40) + "ms");
+      });
 
     document.querySelectorAll(".about-card").forEach(function (card, i) {
       card.classList.add("reveal");
@@ -495,7 +563,7 @@
     }
 
     var revealEls = document.querySelectorAll(
-      ".reveal, .site-footer, .demo-credentials-grid"
+      ".reveal, .site-footer, .demo-credentials-grid",
     );
 
     var observer = new IntersectionObserver(
@@ -510,7 +578,7 @@
           observer.unobserve(entry.target);
         });
       },
-      { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
+      { threshold: 0.1, rootMargin: "0px 0px -40px 0px" },
     );
 
     revealEls.forEach(function (el) {
@@ -518,7 +586,9 @@
     });
   } else {
     document
-      .querySelectorAll(".reveal, .stagger-group, .site-footer, .section__header")
+      .querySelectorAll(
+        ".reveal, .stagger-group, .site-footer, .section__header",
+      )
       .forEach(function (el) {
         el.classList.add("is-visible");
       });
@@ -527,5 +597,4 @@
     });
     if (progressBar) progressBar.style.width = "0%";
   }
-
 })();
