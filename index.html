@@ -192,11 +192,6 @@
       </section>
 
       <section id="about" class="section">
-        <header class="section__header">
-          <p class="section__eyebrow">#about</p>
-          <h2 class="section__title" data-i18n="about.title">Giới thiệu</h2>
-        </header>
-
         <!-- Showcase: Hero Statement & Floating Badges -->
         <div class="about-showcase">
           <p class="about-showcase__greeting" data-i18n="about.greeting">Hallo!</p>
@@ -318,118 +313,195 @@
         </div>
       </section>
 
-      <section id="experience" class="section">
-        <header class="section__header">
-          <p class="section__eyebrow">#experience</p>
-          <h2 class="section__title" data-i18n="exp.title">Kinh nghiệm</h2>
-        </header>
-        <article class="timeline-card glass">
-          <div class="timeline-card__meta">
-            <span class="label-caps" data-i18n="exp.meta1"
-              >INTERN FPT Software</span
-            >
-            <time datetime="2024" data-i18n="exp.meta2">Thực tập 2024</time>
+      <section id="experience" class="section who-section">
+        <div class="who-header">
+          <p class="who-eyebrow" data-i18n="who.eyebrow">/ Who Am I</p>
+          <h2 class="who-title" data-i18n-html="who.title">
+            Chinh phục công nghệ <span class="who-title__muted">từ 2021</span>
+          </h2>
+        </div>
+
+        <div class="who-grid">
+          <!-- Left Column: Photo Card & Footer -->
+          <div class="who-col-left">
+            <div class="who-photo-card">
+              <div class="who-photo-card__glow" aria-hidden="true"></div>
+              <img
+                src="assets/profile.png"
+                alt="Huỳnh Nguyên Bảo"
+                width="640"
+                height="800"
+                loading="lazy"
+              />
+            </div>
+            <div class="who-photo-footer">
+              <div class="who-socials">
+                <a
+                  class="who-social-btn"
+                  href="https://gitlab.com/myproject31052003"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitLab"
+                  title="GitLab"
+                >
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                    <path d="M22.65 14.39L20 6.22a.96.96 0 0 0-.36-.48.98.98 0 0 0-.57-.14.99.99 0 0 0-.55.22.97.97 0 0 0-.31.52L16.4 12H7.6l-1.81-5.66a.97.97 0 0 0-.31-.52.99.99 0 0 0-.55-.22.98.98 0 0 0-.57.14.96.96 0 0 0-.36.48L1.35 14.39a.84.84 0 0 0 .29.93l10.36 7.54 10.36-7.54a.84.84 0 0 0 .29-.93z"/>
+                  </svg>
+                </a>
+                <a
+                  class="who-social-btn"
+                  href="mailto:huynhnguyenbao3105@gmail.com"
+                  aria-label="Email"
+                  title="Email"
+                >
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect width="20" height="16" x="2" y="4" rx="2"/>
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                  </svg>
+                </a>
+                <a
+                  class="who-social-btn"
+                  href="tel:+84939082419"
+                  aria-label="Phone"
+                  title="0939 082 419"
+                >
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                  </svg>
+                </a>
+              </div>
+              <div class="who-author">
+                <strong class="who-author__name">Huỳnh Nguyên Bảo</strong>
+                <span class="who-author__role" data-i18n="who.authorRole">Backend Developer</span>
+              </div>
+            </div>
           </div>
-          <h3 data-i18n="exp.projectTitle">Dự án G1Mart</h3>
-          <p class="timeline-card__role label-caps" data-i18n="exp.role">
-            Backend Team Lead
-          </p>
-          <p data-i18n-html="exp.summary">
-            Điều phối nhóm backend, theo dõi milestone và review kỹ thuật cho hệ
-            thống thương mại điện tử <strong>G1Mart</strong>. Xây dựng REST API
-            <strong>Spring Boot 3.3</strong>, Java 17, PostgreSQL, Spring
-            Security, JWT — sản phẩm, biến thể, giỏ hàng, đơn hàng, voucher,
-            kho, nhân viên và phân quyền; tích hợp <strong>VNPay</strong>,
-            <strong>Cloudinary</strong>, Swagger. Rà soát logic pricing,
-            promotion và order processing.
-          </p>
-          <div class="timeline-card__leadership">
-            <p class="label-caps timeline-card__leadership-title">
-              Leadership &amp; Project Management
+
+          <!-- Right Column: Bio & Experience List -->
+          <div class="who-col-right">
+            <p class="who-bio" data-i18n-html="who.bio">
+              Kỹ sư Backend / Full-stack với niềm đam mê xây dựng các hệ thống web có khả năng mở rộng cao, bảo mật và trải nghiệm mượt mà. Tốt nghiệp Kỹ thuật Phần mềm tại Đại học FPT Cần Thơ, tôi đã tích lũy kinh nghiệm thực tế qua vai trò Team Lead tại FPT Software và các dự án thương mại điện tử, mạng xã hội quy mô lớn.
             </p>
 
-            <h4 class="timeline-card__duty-heading">
-              <span data-i18n="exp.h4_1">Quản lý &amp; Giám sát Tiến độ</span>
-              <span class="timeline-card__duty-en"
-                >(Project Tracking &amp; Team Coordination)</span
+            <div class="who-table">
+              <!-- Row 1: FPT Software (Expandable) -->
+              <div
+                class="who-row"
+                tabindex="0"
+                role="button"
+                aria-expanded="false"
+                id="who-row-fpt"
+                title="Nhấn để xem chi tiết nhiệm vụ"
               >
-            </h4>
-            <ul class="timeline-card__duties">
-              <li data-i18n="exp.li_1_1">
-                Chủ trì điều phối và phân chia hạng mục công việc cho nhóm
-                Backend; thiết lập quy trình theo dõi tiến độ chặt chẽ qua các
-                công cụ quản lý nhằm đảm bảo dự án vận hành đúng lộ trình
-                (milestones).
-              </li>
-              <li data-i18n="exp.li_1_2">
-                Thúc đẩy sự kết nối và giải quyết xung đột thông tin giữa các
-                thành viên, duy trì hiệu suất làm việc tối ưu của toàn đội ngũ.
-              </li>
-            </ul>
+                <div class="who-col who-col--role">
+                  <strong data-i18n="who.role1">Backend Team Lead</strong>
+                </div>
+                <div class="who-col who-col--org">
+                  <span data-i18n="who.org1">FPT Software — Dự án G1Mart</span>
+                </div>
+                <div class="who-col who-col--time">
+                  <time data-i18n-html="who.time1">04/2024 &rarr; 08/2024</time>
+                  <span class="who-row__indicator" aria-hidden="true">&darr;</span>
+                </div>
+              </div>
+              <!-- Expandable details for FPT Software -->
+              <div class="who-details" id="who-fpt-details" hidden>
+                <div class="who-details__inner">
+                  <p class="who-details__summary" data-i18n-html="exp.summary">
+                    Điều phối nhóm backend, theo dõi milestone và review kỹ thuật cho hệ
+                    thống thương mại điện tử <strong>G1Mart</strong>. Xây dựng REST API
+                    <strong>Spring Boot 3.3</strong>, Java 17, PostgreSQL, Spring
+                    Security, JWT — sản phẩm, biến thể, giỏ hàng, đơn hàng, voucher,
+                    kho, nhân viên và phân quyền; tích hợp <strong>VNPay</strong>,
+                    <strong>Cloudinary</strong>, Swagger.
+                  </p>
+                  <div class="who-details__duties">
+                    <div>
+                      <h5 data-i18n="exp.h4_1">Quản lý &amp; Giám sát Tiến độ</h5>
+                      <ul>
+                        <li data-i18n="exp.li_1_1">
+                          Chủ trì điều phối và phân chia hạng mục công việc cho nhóm
+                          Backend; thiết lập quy trình theo dõi tiến độ qua các công cụ quản lý.
+                        </li>
+                        <li data-i18n="exp.li_1_2">
+                          Thúc đẩy sự kết nối và giải quyết xung đột thông tin giữa các thành viên.
+                        </li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h5 data-i18n="exp.h4_2">Kiểm soát Nghiệp vụ &amp; Đồng bộ Dữ liệu</h5>
+                      <ul>
+                        <li data-i18n="exp.li_2_1">
+                          Trực tiếp rà soát, chuẩn hóa hệ thống logic phức tạp về pricing, promotions, và order processing.
+                        </li>
+                        <li data-i18n="exp.li_2_2">
+                          Đảm bảo tính toàn vẹn dữ liệu (data integrity), ngăn chặn triệt để tình trạng sai lệch thông tin hệ thống.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="who-details__links">
+                    <a
+                      class="link-arrow"
+                      href="https://g1mart.netlify.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      data-i18n="exp.linkDemo"
+                      >Live demo</a
+                    >
+                    <a
+                      class="link-arrow"
+                      href="https://gitlab.com/myproject31052003/G1Mart"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      data-i18n="exp.linkRepo"
+                      >Mã nguồn GitLab</a
+                    >
+                  </div>
+                </div>
+              </div>
 
-            <h4 class="timeline-card__duty-heading">
-              <span data-i18n="exp.h4_2"
-                >Kiểm soát Nghiệp vụ &amp; Đồng bộ Dữ liệu</span
-              >
-              <span class="timeline-card__duty-en"
-                >(Business Logic &amp; Data Consistency)</span
-              >
-            </h4>
-            <ul class="timeline-card__duties">
-              <li data-i18n="exp.li_2_1">
-                Trực tiếp rà soát, chuẩn hóa hệ thống logic phức tạp liên quan
-                đến giá sản phẩm (pricing), các chiến dịch khuyến mãi
-                (promotions), và toàn bộ luồng nghiệp vụ đơn hàng (order
-                processing).
-              </li>
-              <li data-i18n="exp.li_2_2">
-                Đảm bảo tính toàn vẹn dữ liệu (data integrity), ngăn chặn triệt
-                để tình trạng sai lệch thông tin hệ thống, tối ưu hóa trải
-                nghiệm người dùng cuối.
-              </li>
-            </ul>
+              <!-- Row 2: AccountMarket -->
+              <div class="who-row">
+                <div class="who-col who-col--role">
+                  <strong data-i18n="who.role2">Backend Developer</strong>
+                </div>
+                <div class="who-col who-col--org">
+                  <span data-i18n="who.org2">AccountMarket (Sàn giao dịch)</span>
+                </div>
+                <div class="who-col who-col--time">
+                  <time data-i18n-html="who.time2">03/2026 &rarr; 04/2026</time>
+                </div>
+              </div>
 
-            <h4 class="timeline-card__duty-heading">
-              <span data-i18n="exp.h4_3"
-                >Báo cáo &amp; Tham vấn Chuyên gia</span
-              >
-              <span class="timeline-card__duty-en"
-                >(Stakeholder Communication &amp; Technical Review)</span
-              >
-            </h4>
-            <ul class="timeline-card__duties">
-              <li data-i18n="exp.li_3_1">
-                Duy trì kênh trao đổi thường kỳ với Mentor/Cố vấn chuyên môn để
-                định hình chiến lược và phương án kiến trúc triển khai tối ưu.
-              </li>
-              <li data-i18n="exp.li_3_2">
-                Chủ động đề xuất giải pháp trong các buổi code review, nhanh
-                chóng nhận diện và xử lý dứt điểm các điểm nghẽn kỹ thuật
-                (technical bottlenecks) phát sinh trong quá trình vận hành.
-              </li>
-            </ul>
+              <!-- Row 3: FUS -->
+              <div class="who-row">
+                <div class="who-col who-col--role">
+                  <strong data-i18n="who.role3">Full-stack Developer</strong>
+                </div>
+                <div class="who-col who-col--org">
+                  <span data-i18n="who.org3">FUS — Mạng xã hội học tập</span>
+                </div>
+                <div class="who-col who-col--time">
+                  <time data-i18n-html="who.time3">05/2025 &rarr; 08/2025</time>
+                </div>
+              </div>
+
+              <!-- Row 4: Education -->
+              <div class="who-row who-row--edu">
+                <div class="who-col who-col--role">
+                  <strong data-i18n="who.role4">Cử nhân Kỹ thuật PM</strong>
+                </div>
+                <div class="who-col who-col--org">
+                  <span data-i18n="who.org4">Đại học FPT Cần Thơ</span>
+                </div>
+                <div class="who-col who-col--time">
+                  <time data-i18n-html="who.time4">2021 &rarr; 2025</time>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="timeline-card__links">
-            <a
-              class="link-arrow"
-              href="https://g1mart.netlify.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              data-i18n="exp.linkDemo"
-            >
-              Live demo</a
-            >
-            <a
-              class="link-arrow"
-              href="https://gitlab.com/myproject31052003/G1Mart"
-              target="_blank"
-              rel="noopener noreferrer"
-              data-i18n="exp.linkRepo"
-            >
-              Mã nguồn GitLab</a
-            >
-          </div>
-        </article>
+        </div>
       </section>
 
       <section id="projects" class="section">

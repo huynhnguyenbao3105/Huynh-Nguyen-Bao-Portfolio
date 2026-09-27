@@ -1125,38 +1125,317 @@ main {
   border-radius: 999px;
 }
 
-/* #experience â€” tháº» .timeline-card thá»±c táº­p G1Mart */
-.timeline-card {
-  padding: var(--space-xl);
+/* ==========================================================================
+   #experience — Who Am I / Education & Experience (Editorial Split Layout)
+   ========================================================================== */
+
+.who-section {
+  padding-top: var(--space-2xl);
+  padding-bottom: var(--space-2xl);
 }
 
-.timeline-card__meta {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-sm);
-  margin-bottom: var(--space-md);
+.who-header {
+  margin-bottom: var(--space-2xl);
 }
 
-.timeline-card__meta time {
-  font-family: var(--font-sans);
-  font-size: 0.75rem;
-  color: var(--color-text-muted);
-}
-
-.timeline-card h3 {
-  margin: 0 0 var(--space-sm);
+.who-eyebrow {
   font-family: var(--font-serif);
   font-style: italic;
-  font-weight: 500;
   font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--color-text);
+  margin: 0 0 var(--space-xs);
+  letter-spacing: -0.01em;
+  opacity: 0.9;
+}
+
+.who-title {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: clamp(2rem, 3.8vw, 3.25rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
   color: var(--color-text);
 }
 
-.timeline-card p {
-  margin: 0 0 var(--space-md);
+.who-title__muted {
+  color: #9ca3af;
+  font-weight: 400;
+}
+
+.who-grid {
+  display: grid;
+  grid-template-columns: minmax(300px, 440px) 1fr;
+  gap: clamp(32px, 5vw, 64px);
+  align-items: start;
+}
+
+/* Left Column: Photo Card & Footer */
+.who-col-left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.who-photo-card {
+  position: relative;
+  background: #141416;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow:
+    0 20px 40px -10px rgba(0, 0, 0, 0.18),
+    0 2px 6px rgba(0, 0, 0, 0.08);
+  aspect-ratio: 16 / 11;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  transform: rotate(-1.8deg);
+  transition:
+    transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.4s ease;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.who-photo-card:hover {
+  transform: translateY(-6px) rotate(0deg) scale(1.02);
+  box-shadow: 0 28px 50px -12px rgba(0, 0, 0, 0.24);
+}
+
+.who-photo-card__glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.08), transparent 70%);
+  pointer-events: none;
+}
+
+.who-photo-card img {
+  width: 82%;
+  height: 94%;
+  object-fit: contain;
+  object-position: bottom center;
+  display: block;
+  z-index: 1;
+  filter: contrast(1.04) brightness(0.98);
+}
+
+.who-photo-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-xs);
+}
+
+.who-socials {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.who-social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: var(--color-text);
+  background: rgba(10, 10, 10, 0.06);
+  transition: background 0.2s, transform 0.2s, color 0.2s;
+  text-decoration: none;
+}
+
+.who-social-btn:hover {
+  background: var(--color-text);
+  color: #ffffff;
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.who-author {
+  text-align: right;
+}
+
+.who-author__name {
+  display: block;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.9375rem;
+  color: var(--color-text);
+  line-height: 1.25;
+}
+
+.who-author__role {
+  display: block;
+  font-size: 0.8125rem;
   color: var(--color-text-muted);
+}
+
+/* Right Column: Bio & Experience List */
+.who-col-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.who-bio {
+  margin: 0 0 var(--space-2xl);
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 1.2vw, 1.0625rem);
+  line-height: 1.7;
+  color: var(--color-text);
+  max-width: 680px;
+}
+
+.who-table {
+  border-top: 1px solid rgba(15, 23, 42, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.who-row {
+  display: grid;
+  grid-template-columns: 1.4fr 1.6fr 1fr;
+  align-items: center;
+  padding: 18px 8px;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  font-family: var(--font-sans);
+  transition: background 0.2s ease, padding 0.2s ease;
+  border-radius: 6px;
+  position: relative;
+}
+
+.who-row[role="button"] {
+  cursor: pointer;
+  user-select: none;
+}
+
+.who-row:hover {
+  background: rgba(10, 10, 10, 0.03);
+  padding-left: 12px;
+}
+
+.who-col--role {
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: var(--color-text);
+}
+
+.who-col--org {
+  color: var(--color-text-muted);
+  font-size: 0.9375rem;
+}
+
+.who-col--time {
+  text-align: right;
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.who-row__indicator {
+  font-size: 0.875rem;
+  transition: transform 0.3s ease;
+  display: inline-block;
+  opacity: 0.6;
+}
+
+.who-row.is-open .who-row__indicator {
+  transform: rotate(180deg);
+  opacity: 1;
+}
+
+/* Expandable detail drawer for FPT Software duties */
+.who-details {
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  border-radius: 0 0 12px 12px;
+  overflow: hidden;
+  margin-top: -1px;
+}
+
+.who-details__inner {
+  padding: var(--space-md) var(--space-md) var(--space-lg);
+}
+
+.who-details__summary {
+  margin: 0 0 var(--space-md);
+  font-size: 0.9375rem;
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+.who-details__duties {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.who-details__duties h5 {
+  margin: 0 0 var(--space-xs);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.who-details__duties ul {
+  margin: 0;
+  padding-left: 1.15rem;
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.who-details__duties li + li {
+  margin-top: 6px;
+}
+
+.who-details__links {
+  display: flex;
+  gap: var(--space-md);
+  padding-top: var(--space-xs);
+  border-top: 1px dashed rgba(10, 10, 10, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .who-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .who-col-left {
+    max-width: 480px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .who-row {
+    grid-template-columns: 1fr 1.2fr auto;
+    gap: 8px;
+    font-size: 0.875rem;
+  }
+
+  .who-details__duties {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .who-row {
+    grid-template-columns: 1fr;
+    gap: 4px;
+    padding: 14px 6px;
+  }
+
+  .who-col--time {
+    justify-content: flex-start;
+  }
 }
 
 .link-arrow {

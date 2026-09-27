@@ -60,6 +60,25 @@
       "about.goalP2":
         "Hướng tới vị trí <strong>Backend / Full-stack Developer</strong> sau tốt nghiệp: chuyên sâu REST API, kiến trúc nhiều lớp, JWT và thiết kế cơ sở dữ liệu (Code First &amp; Database First). Luôn học thêm qua nghiên cứu, làm việc nhóm và tận dụng AI để tăng năng suất, đồng thời nâng dần tiếng Anh để làm việc với tài liệu và đội ngũ quốc tế.",
 
+      "who.eyebrow": "/ Về bản thân tôi",
+      "who.title":
+        "Chinh phục công nghệ <span class=\"who-title__muted\">từ 2021</span>",
+      "who.bio":
+        "Kỹ sư Backend / Full-stack với niềm đam mê xây dựng các hệ thống web có khả năng mở rộng cao, bảo mật và trải nghiệm mượt mà. Tốt nghiệp Kỹ thuật Phần mềm tại Đại học FPT Cần Thơ, tôi đã tích lũy kinh nghiệm thực tế qua vai trò Team Lead tại FPT Software và các dự án thương mại điện tử, mạng xã hội quy mô lớn.",
+      "who.authorRole": "Backend Developer",
+      "who.role1": "Backend Team Lead",
+      "who.org1": "FPT Software — Dự án G1Mart",
+      "who.time1": "04/2024 &rarr; 08/2024",
+      "who.role2": "Backend Developer",
+      "who.org2": "AccountMarket (Sàn giao dịch)",
+      "who.time2": "03/2026 &rarr; 04/2026",
+      "who.role3": "Full-stack Developer",
+      "who.org3": "FUS — Mạng xã hội học tập",
+      "who.time3": "05/2025 &rarr; 08/2025",
+      "who.role4": "Cử nhân Kỹ thuật PM",
+      "who.org4": "Đại học FPT Cần Thơ",
+      "who.time4": "2021 &rarr; 2025",
+
       "exp.title": "Kinh nghiệm",
       "exp.meta1": "INTERN FPT Software",
       "exp.meta2": "Thực tập 2024",
@@ -170,6 +189,25 @@
         "I build clear, secure APIs with strong data consistency and maintainable code — from marketplaces and e-commerce to learning social platforms.",
       "about.goalP2":
         "Aiming for a <strong>Backend / Full-stack Developer</strong> role after graduation: deepening REST API design, layered architecture, JWT, and database design (Code First &amp; Database First). I keep learning through research, teamwork, and using AI to boost productivity, while improving English for international documentation and teams.",
+
+      "who.eyebrow": "/ Who Am I",
+      "who.title":
+        "Pushing Boundaries <span class=\"who-title__muted\">since 2021</span>",
+      "who.bio":
+        "A backend / full-stack developer passionate about engineering secure, scalable web architectures and intuitive digital experiences. Graduated in Software Engineering from FPT University Can Tho, I have gained solid hands-on experience through leading backend teams at FPT Software and building robust e-commerce &amp; learning platforms.",
+      "who.authorRole": "Backend Developer",
+      "who.role1": "Backend Team Lead",
+      "who.org1": "FPT Software — G1Mart Project",
+      "who.time1": "04/2024 &rarr; 08/2024",
+      "who.role2": "Backend Developer",
+      "who.org2": "AccountMarket (Marketplace)",
+      "who.time2": "03/2026 &rarr; 04/2026",
+      "who.role3": "Full-stack Developer",
+      "who.org3": "FUS — Social Learning Platform",
+      "who.time3": "05/2025 &rarr; 08/2025",
+      "who.role4": "B.S. Software Engineering",
+      "who.org4": "FPT University Can Tho",
+      "who.time4": "2021 &rarr; 2025",
 
       "exp.title": "Experience",
       "exp.meta1": "INTERN FPT Software",
@@ -537,6 +575,32 @@
           });
       }
     });
+
+    var fptRow = document.getElementById("who-row-fpt");
+    var fptDetails = document.getElementById("who-fpt-details");
+    if (fptRow && fptDetails) {
+      fptRow.addEventListener("click", function () {
+        var isOpen = fptRow.classList.toggle("is-open");
+        fptRow.setAttribute("aria-expanded", String(isOpen));
+        fptDetails.hidden = !isOpen;
+      });
+      fptRow.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          fptRow.click();
+        }
+      });
+    }
+
+    var whoSection = document.querySelector(".who-section");
+    if (whoSection) {
+      var whoHeader = whoSection.querySelector(".who-header");
+      var whoColLeft = whoSection.querySelector(".who-col-left");
+      var whoColRight = whoSection.querySelector(".who-col-right");
+      if (whoHeader) whoHeader.classList.add("reveal");
+      if (whoColLeft) whoColLeft.classList.add("reveal", "reveal--left");
+      if (whoColRight) whoColRight.classList.add("reveal");
+    }
 
     var timeline = document.querySelector(".timeline-card");
     if (timeline) {
