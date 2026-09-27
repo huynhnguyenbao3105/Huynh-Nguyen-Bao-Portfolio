@@ -43,8 +43,6 @@
       "landing.scrollLabel": "Giới thiệu",
 
       "about.title": "Giới thiệu",
-      "about.langTitle": "Ngoại Ngữ",
-      "about.langBody": "<strong>Tiếng Anh</strong> — TOEIC 500+;",
       "about.softTitle": "Kỹ năng mềm",
       "about.techTitle": "Kỹ năng kỹ thuật",
       "about.goalTitle": "Định hướng",
@@ -147,8 +145,6 @@
       "landing.scrollLabel": "About",
 
       "about.title": "About",
-      "about.langTitle": "Languages",
-      "about.langBody": "<strong>English</strong> — TOEIC 500+;",
       "about.softTitle": "Soft skills",
       "about.techTitle": "Technical skills",
       "about.goalTitle": "Focus",
