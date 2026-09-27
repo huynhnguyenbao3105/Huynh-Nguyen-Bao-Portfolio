@@ -1127,44 +1127,45 @@ main {
    ========================================================================== */
 
 .who-section {
-  padding-top: var(--space-2xl);
+  padding-top: clamp(48px, 6vw, 72px);
   padding-bottom: var(--space-2xl);
 }
 
 .who-header {
-  margin-bottom: var(--space-2xl);
+  text-align: center;
+  margin-bottom: clamp(48px, 6vw, 68px);
 }
 
 .who-eyebrow {
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: var(--color-text);
-  margin: 0 0 var(--space-xs);
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #18181b;
+  margin: 0 0 10px;
   letter-spacing: -0.01em;
-  opacity: 0.9;
+  opacity: 0.95;
 }
 
 .who-title {
   margin: 0;
-  font-family: var(--font-sans);
-  font-size: clamp(2rem, 3.8vw, 3.25rem);
-  font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.03em;
-  color: var(--color-text);
+  font-family: "Outfit", var(--font-sans);
+  font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #18181b;
 }
 
 .who-title__muted {
-  color: #9ca3af;
-  font-weight: 400;
+  color: #a1a1aa;
+  font-weight: 300;
 }
 
 .who-grid {
   display: grid;
-  grid-template-columns: minmax(300px, 440px) 1fr;
-  gap: clamp(32px, 5vw, 64px);
+  grid-template-columns: minmax(320px, 440px) 1fr;
+  gap: clamp(40px, 5vw, 68px);
   align-items: start;
 }
 
@@ -1172,22 +1173,22 @@ main {
 .who-col-left {
   display: flex;
   flex-direction: column;
-  gap: var(--space-md);
+  gap: 16px;
 }
 
 .who-photo-card {
   position: relative;
   background: #141416;
-  border-radius: 24px;
+  border-radius: 20px;
   overflow: hidden;
   box-shadow:
-    0 20px 40px -10px rgba(0, 0, 0, 0.18),
-    0 2px 6px rgba(0, 0, 0, 0.08);
+    0 20px 40px -10px rgba(0, 0, 0, 0.16),
+    0 2px 6px rgba(0, 0, 0, 0.06);
   aspect-ratio: 16 / 11;
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  transform: rotate(-1.8deg);
+  transform: rotate(-1.5deg);
   transition:
     transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
     box-shadow 0.4s ease;
@@ -1207,8 +1208,8 @@ main {
 }
 
 .who-photo-card img {
-  width: 82%;
-  height: 94%;
+  width: 88%;
+  height: 98%;
   object-fit: contain;
   object-position: bottom center;
   display: block;
@@ -1220,31 +1221,34 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 var(--space-xs);
+  padding: 8px 4px 0;
 }
 
 .who-socials {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 18px;
 }
 
 .who-social-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  color: var(--color-text);
-  background: rgba(10, 10, 10, 0.06);
-  transition: background 0.2s, transform 0.2s, color 0.2s;
+  color: #18181b;
+  background: transparent;
+  padding: 0;
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  opacity: 0.85;
+  transition: opacity 0.2s, transform 0.2s, color 0.2s;
   text-decoration: none;
 }
 
 .who-social-btn:hover {
-  background: var(--color-text);
-  color: #ffffff;
+  opacity: 1;
+  background: transparent;
+  color: #000000;
   transform: translateY(-2px);
   text-decoration: none;
 }
@@ -1255,17 +1259,19 @@ main {
 
 .who-author__name {
   display: block;
-  font-family: var(--font-sans);
-  font-weight: 700;
-  font-size: 0.9375rem;
-  color: var(--color-text);
+  font-family: "Outfit", var(--font-sans);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #18181b;
   line-height: 1.25;
 }
 
 .who-author__role {
   display: block;
-  font-size: 0.8125rem;
-  color: var(--color-text-muted);
+  font-family: "Outfit", var(--font-sans);
+  font-size: 0.825rem;
+  font-weight: 400;
+  color: #71717a;
 }
 
 /* Right Column: Bio & Experience List */
@@ -1275,62 +1281,62 @@ main {
 }
 
 .who-bio {
-  margin: 0 0 var(--space-2xl);
-  font-family: var(--font-sans);
-  font-size: clamp(1rem, 1.2vw, 1.0625rem);
-  line-height: 1.7;
-  color: var(--color-text);
+  margin: 0 0 clamp(36px, 4vw, 48px);
+  font-family: "Outfit", var(--font-sans);
+  font-size: 1.025rem;
+  font-weight: 400;
+  line-height: 1.68;
+  color: #262626;
   max-width: 680px;
 }
 
 .who-table {
-  border-top: 1px solid rgba(15, 23, 42, 0.1);
+  border-left: 1px solid rgba(15, 23, 42, 0.12);
+  padding-left: 28px;
   display: flex;
   flex-direction: column;
 }
 
 .who-row {
   display: grid;
-  grid-template-columns: 1.4fr 1.6fr 1fr;
+  grid-template-columns: minmax(180px, 1.4fr) minmax(200px, 1.8fr) auto;
   align-items: center;
-  padding: 18px 8px;
+  gap: 16px;
+  padding: 20px 0;
   border-bottom: 1px solid rgba(15, 23, 42, 0.08);
-  font-family: var(--font-sans);
-  transition: background 0.2s ease, padding 0.2s ease;
-  border-radius: 6px;
-  position: relative;
-}
-
-.who-row[role="button"] {
-  cursor: pointer;
-  user-select: none;
+  font-family: "Outfit", var(--font-sans);
+  transition: padding-left 0.2s ease, background 0.2s ease;
 }
 
 .who-row:hover {
-  background: rgba(10, 10, 10, 0.03);
-  padding-left: 12px;
+  background: rgba(10, 10, 10, 0.02);
+  padding-left: 6px;
 }
 
 .who-col--role {
-  font-weight: 600;
-  font-size: 0.9375rem;
-  color: var(--color-text);
+  font-family: "Outfit", var(--font-sans);
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #18181b;
+  white-space: nowrap;
 }
 
 .who-col--org {
-  color: var(--color-text-muted);
-  font-size: 0.9375rem;
+  font-family: "Outfit", var(--font-sans);
+  font-weight: 400;
+  font-size: 0.925rem;
+  color: #71717a;
+  white-space: nowrap;
 }
 
 .who-col--time {
+  font-family: "Outfit", var(--font-sans);
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: #18181b;
   text-align: right;
-  color: var(--color-text-muted);
-  font-size: 0.875rem;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 8px;
+  justify-self: end;
+  white-space: nowrap;
 }
 
 .who-row__indicator {
