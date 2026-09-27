@@ -1139,10 +1139,10 @@ main {
 .who-eyebrow {
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: 1.25rem;
+  font-size: clamp(1.45rem, 2.2vw, 1.85rem);
   font-weight: 400;
   color: #18181b;
-  margin: 0 0 10px;
+  margin: 0 0 12px;
   letter-spacing: -0.01em;
   opacity: 0.95;
 }
@@ -1299,10 +1299,10 @@ main {
 
 .who-row {
   display: grid;
-  grid-template-columns: minmax(180px, 1.4fr) minmax(200px, 1.8fr) auto;
+  grid-template-columns: minmax(170px, 1.25fr) minmax(220px, 1.75fr) minmax(140px, 1fr);
   align-items: center;
-  gap: 16px;
-  padding: 20px 0;
+  gap: 20px;
+  padding: 18px 0;
   border-bottom: 1px solid rgba(15, 23, 42, 0.08);
   font-family: "Outfit", var(--font-sans);
   transition: padding-left 0.2s ease, background 0.2s ease;
@@ -1319,6 +1319,7 @@ main {
   font-size: 0.95rem;
   color: #18181b;
   white-space: nowrap;
+  text-align: left;
 }
 
 .who-col--org {
@@ -1327,6 +1328,7 @@ main {
   font-size: 0.925rem;
   color: #71717a;
   white-space: nowrap;
+  text-align: left;
 }
 
 .who-col--time {
@@ -1334,8 +1336,8 @@ main {
   font-weight: 400;
   font-size: 0.9rem;
   color: #18181b;
-  text-align: right;
-  justify-self: end;
+  text-align: left;
+  justify-self: start;
   white-space: nowrap;
 }
 
