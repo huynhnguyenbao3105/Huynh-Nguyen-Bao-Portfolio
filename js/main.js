@@ -79,6 +79,14 @@
       "who.org4": "Đại học FPT Cần Thơ",
       "who.time4": "2021 &rarr; 2025",
 
+      "process.title": "Quy trình làm việc",
+      "process.step1Title": "Discover",
+      "process.step1Desc": "Thấu hiểu mục tiêu, yêu cầu người dùng và thách thức kỹ thuật thông qua nghiên cứu và chiến lược rõ ràng.",
+      "process.step2Title": "Design",
+      "process.step2Desc": "Chuyển hóa giải pháp thành kiến trúc hệ thống trực quan, tinh gọn, bảo mật và trải nghiệm người dùng tối ưu.",
+      "process.step3Title": "Deliver",
+      "process.step3Desc": "Kiểm thử toàn diện, tối ưu hóa hiệu năng và triển khai sản phẩm hoàn thiện với độ chính xác cao.",
+
       "exp.title": "Kinh nghiệm",
       "exp.meta1": "INTERN FPT Software",
       "exp.meta2": "Thực tập 2024",
@@ -208,6 +216,14 @@
       "who.role4": "B.S. Software Engineering",
       "who.org4": "FPT University Can Tho",
       "who.time4": "2021 &rarr; 2025",
+
+      "process.title": "Here's how it works",
+      "process.step1Title": "Discover",
+      "process.step1Desc": "Understanding your goals, users, and challenges through research and strategy.",
+      "process.step2Title": "Design",
+      "process.step2Desc": "Transforming insights into intuitive, beautiful, and functional product experiences.",
+      "process.step3Title": "Deliver",
+      "process.step3Desc": "Testing, refining, and launching the final product with clarity and precision.",
 
       "exp.title": "Experience",
       "exp.meta1": "INTERN FPT Software",
