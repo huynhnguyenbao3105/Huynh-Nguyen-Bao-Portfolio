@@ -800,7 +800,7 @@ main {
 
 .about-showcase {
   margin-bottom: var(--space-2xl);
-  padding: var(--space-md) 0 var(--space-xl);
+  padding: clamp(64px, 8vw, 100px) 0 var(--space-xl);
   text-align: center;
   position: relative;
 }

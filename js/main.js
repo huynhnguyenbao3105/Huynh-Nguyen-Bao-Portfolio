@@ -45,7 +45,7 @@
       "about.title": "Giới thiệu",
       "about.greeting": "Hallo!",
       "about.heroStatement":
-        "tập trung vào kiến trúc hệ thống,<br>bảo mật API và tối ưu<br>dữ liệu <span class=\"about-showcase__muted\">để xây dựng giải pháp<br>giải quyết bài toán thực tế</span>",
+        "tập trung vào kiến trúc hệ thống,<br>bảo mật API và tối ưu dữ liệu<br><span class=\"about-showcase__muted\">để xây dựng những giải pháp<br>giải quyết bài toán thực tế</span>",
       "about.pill1": ".NET & ASP.NET Core",
       "about.pill2": "Spring Boot & Java",
       "about.pill3": "PostgreSQL & Database",
@@ -175,7 +175,7 @@
       "about.title": "About",
       "about.greeting": "Hallo!",
       "about.heroStatement":
-        "focus is on blending clean architecture,<br>secure APIs, and data<br>integrity <span class=\"about-showcase__muted\">to craft systems<br>that solve real problems</span>",
+        "focus is on clean architecture,<br>secure APIs, and data integrity<br><span class=\"about-showcase__muted\">to craft systems<br>that solve real problems</span>",
       "about.pill1": ".NET & ASP.NET Core",
       "about.pill2": "Spring Boot & Java",
       "about.pill3": "PostgreSQL & Database",
