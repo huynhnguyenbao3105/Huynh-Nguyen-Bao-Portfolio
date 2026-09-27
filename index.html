@@ -196,20 +196,83 @@
           <p class="section__eyebrow">#about</p>
           <h2 class="section__title" data-i18n="about.title">Giới thiệu</h2>
         </header>
+
+        <!-- Showcase: Hero Statement & Floating Badges -->
+        <div class="about-showcase">
+          <p class="about-showcase__greeting" data-i18n="about.greeting">Hallo!</p>
+
+          <div class="about-showcase__stage">
+            <!-- Left Badges -->
+            <div class="about-showcase__col about-showcase__col--left">
+              <div class="about-pill about-pill--orange about-pill--l1">
+                <span class="about-pill__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                  </svg>
+                </span>
+                <span class="about-pill__text" data-i18n-html="about.pill1">.NET &amp; ASP.NET Core</span>
+              </div>
+
+              <div class="about-pill about-pill--blue about-pill--l2">
+                <span class="about-pill__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                  </svg>
+                </span>
+                <span class="about-pill__text" data-i18n-html="about.pill2">Spring Boot &amp; Java</span>
+              </div>
+
+              <div class="about-pill about-pill--dark about-pill--l3">
+                <span class="about-pill__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                  </svg>
+                </span>
+                <span class="about-pill__text" data-i18n-html="about.pill3">PostgreSQL &amp; Database</span>
+              </div>
+            </div>
+
+            <!-- Center Statement -->
+            <div class="about-showcase__center">
+              <p class="about-showcase__statement" data-i18n-html="about.heroStatement">
+                tập trung vào kiến trúc hệ thống vững chắc, API bảo mật và tối ưu dữ liệu <span class="about-showcase__muted">để xây dựng giải pháp giải quyết bài toán thực tế</span>
+              </p>
+            </div>
+
+            <!-- Right Badges -->
+            <div class="about-showcase__col about-showcase__col--right">
+              <div class="about-pill about-pill--yellow about-pill--r1">
+                <span class="about-pill__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                  </svg>
+                </span>
+                <span class="about-pill__text" data-i18n-html="about.pill4">REST API &amp; Security</span>
+              </div>
+
+              <div class="about-pill about-pill--pink about-pill--r2">
+                <span class="about-pill__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                  </svg>
+                </span>
+                <span class="about-pill__text" data-i18n-html="about.pill5">React &amp; Full-stack</span>
+              </div>
+
+              <div class="about-pill about-pill--green about-pill--r3">
+                <span class="about-pill__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                  </svg>
+                </span>
+                <span class="about-pill__text" data-i18n-html="about.pill6">Docker &amp; DevOps</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="about-grid">
-          <article class="glass about-card about-card--wide">
-            <h3 data-i18n="about.softTitle">Kỹ năng mềm</h3>
-            <ul class="tag-list">
-              <li>Teamwork</li>
-              <li>Communication</li>
-              <li>Critical Thinking</li>
-              <li>Problem Solving</li>
-              <li>Research</li>
-              <li>Office 365</li>
-              <li>AI Tools</li>
-            </ul>
-          </article>
-          <article class="glass about-card about-card--wide">
+          <article class="glass about-card">
             <h3 data-i18n="about.techTitle">Kỹ năng kỹ thuật</h3>
             <ul class="tag-list">
               <li>C# / Java / JavaScript</li>
@@ -222,6 +285,18 @@
               <li>VNPay · SePay · Cloudinary · SignalR</li>
               <li>MailKit · Azure Blob · Swagger</li>
               <li>Git / GitLab · Docker</li>
+            </ul>
+          </article>
+          <article class="glass about-card">
+            <h3 data-i18n="about.softTitle">Kỹ năng mềm</h3>
+            <ul class="tag-list">
+              <li>Teamwork</li>
+              <li>Communication</li>
+              <li>Critical Thinking</li>
+              <li>Problem Solving</li>
+              <li>Research</li>
+              <li>Office 365</li>
+              <li>AI Tools</li>
             </ul>
           </article>
           <article class="glass about-card about-card--wide">

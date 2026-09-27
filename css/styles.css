@@ -1,4 +1,4 @@
-﻿/*
+/*
  * styles.css — Portfolio Huỳnh Nguyên Bảo
  *
  * Theme chính lấy từ #landing: nền xám nhạt, chữ đen, Playfair / Anton / Plus Jakarta.
@@ -794,7 +794,291 @@ main {
   width: 100%;
 }
 
-/* #about â€” lÆ°á»›i .about-card / .tag-list ká»¹ nÄƒng */
+/* ==========================================================================
+   #about — Showcase (Hallo! + Floating Badges + Hero Statement)
+   ========================================================================== */
+
+.about-showcase {
+  margin-bottom: var(--space-2xl);
+  padding: var(--space-md) 0 var(--space-xl);
+  text-align: center;
+  position: relative;
+}
+
+.about-showcase__greeting {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(2rem, 3.5vw, 2.5rem);
+  font-weight: 500;
+  color: var(--color-text);
+  margin: 0 0 var(--space-xl);
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  opacity: 0.95;
+}
+
+.about-showcase__stage {
+  display: grid;
+  grid-template-columns: 1fr minmax(280px, 680px) 1fr;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-lg);
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-showcase__center {
+  padding: 0 var(--space-md);
+  z-index: 2;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.about-showcase__statement {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: clamp(1.625rem, 2.4vw, 2.25rem);
+  font-weight: 600;
+  line-height: 1.36;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  text-align: center;
+}
+
+.about-showcase__muted {
+  color: #9ca3af;
+  font-weight: 400;
+  display: inline;
+}
+
+.about-showcase__col {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  z-index: 3;
+}
+
+.about-showcase__col--left {
+  align-items: flex-end;
+}
+
+.about-showcase__col--right {
+  align-items: flex-start;
+}
+
+/* Floating Badges (Pills) */
+.about-pill {
+  --base-rot: 0deg;
+  --base-shift: 0px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 20px 8px 8px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 9999px;
+  box-shadow:
+    0 12px 28px -4px rgba(0, 0, 0, 0.08),
+    0 4px 10px -2px rgba(0, 0, 0, 0.03);
+  cursor: default;
+  user-select: none;
+  transform: rotate(var(--base-rot)) translateX(var(--base-shift));
+  transition:
+    transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.35s ease,
+    background 0.25s ease;
+  will-change: transform;
+}
+
+.about-pill:hover {
+  transform: translateY(-8px) scale(1.05) rotate(0deg) !important;
+  box-shadow:
+    0 22px 38px -6px rgba(0, 0, 0, 0.15),
+    0 8px 18px -2px rgba(0, 0, 0, 0.06);
+  background: #ffffff;
+  animation-play-state: paused;
+}
+
+.about-pill__icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #ffffff;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.18);
+}
+
+.about-pill__icon svg {
+  display: block;
+}
+
+.about-pill__text {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #1e293b;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+/* Badge colors matching screenshot */
+.about-pill--orange .about-pill__icon {
+  background: linear-gradient(135deg, #ff7a18, #f05000);
+}
+
+.about-pill--blue .about-pill__icon {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+}
+
+.about-pill--dark .about-pill__icon {
+  background: linear-gradient(135deg, #374151, #111827);
+}
+
+.about-pill--yellow .about-pill__icon {
+  background: linear-gradient(135deg, #fcd34d, #f59e0b);
+}
+
+.about-pill--pink .about-pill__icon {
+  background: linear-gradient(135deg, #f472b6, #db2777);
+}
+
+.about-pill--green .about-pill__icon {
+  background: linear-gradient(135deg, #4ade80, #16a34a);
+}
+
+/* Offsets, rotations & smooth floating keyframe animations */
+.about-pill--l1 {
+  --base-rot: -2.5deg;
+  --base-shift: 10px;
+  animation: pillFloatA 6s ease-in-out infinite;
+}
+
+.about-pill--l2 {
+  --base-rot: 1.5deg;
+  --base-shift: -6px;
+  animation: pillFloatB 5.4s ease-in-out 0.8s infinite;
+}
+
+.about-pill--l3 {
+  --base-rot: -2.5deg;
+  --base-shift: -14px;
+  animation: pillFloatA 6.6s ease-in-out 1.5s infinite;
+}
+
+.about-pill--r1 {
+  --base-rot: 2deg;
+  --base-shift: 10px;
+  animation: pillFloatB 5.8s ease-in-out 0.4s infinite;
+}
+
+.about-pill--r2 {
+  --base-rot: -1.5deg;
+  --base-shift: -6px;
+  animation: pillFloatA 6.2s ease-in-out 1.2s infinite;
+}
+
+.about-pill--r3 {
+  --base-rot: 2.5deg;
+  --base-shift: 12px;
+  animation: pillFloatB 5.2s ease-in-out 1.8s infinite;
+}
+
+@keyframes pillFloatA {
+  0%, 100% {
+    transform: rotate(var(--base-rot)) translateX(var(--base-shift)) translateY(0px);
+  }
+  50% {
+    transform: rotate(calc(var(--base-rot) + 1.2deg)) translateX(var(--base-shift)) translateY(-7px);
+  }
+}
+
+@keyframes pillFloatB {
+  0%, 100% {
+    transform: rotate(var(--base-rot)) translateX(var(--base-shift)) translateY(0px);
+  }
+  50% {
+    transform: rotate(calc(var(--base-rot) - 1.2deg)) translateX(var(--base-shift)) translateY(7px);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1080px) {
+  .about-showcase__stage {
+    gap: var(--space-md);
+  }
+
+  .about-showcase__statement {
+    font-size: 1.5rem;
+  }
+
+  .about-pill {
+    padding: 7px 16px 7px 7px;
+  }
+
+  .about-pill__text {
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .about-showcase__stage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xl);
+  }
+
+  .about-showcase__center {
+    order: 1;
+    max-width: 580px;
+    padding: 0;
+  }
+
+  .about-showcase__col {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+
+  .about-showcase__col--left {
+    order: 2;
+  }
+
+  .about-showcase__col--right {
+    order: 3;
+  }
+
+  .about-pill {
+    --base-shift: 0px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-pill--l1,
+  .about-pill--l2,
+  .about-pill--l3,
+  .about-pill--r1,
+  .about-pill--r2,
+  .about-pill--r3 {
+    animation: none !important;
+  }
+}
+
+/* #about — lưới .about-card / .tag-list kỹ năng */
 .about-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

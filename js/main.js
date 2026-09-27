@@ -43,6 +43,15 @@
       "landing.scrollLabel": "Giới thiệu",
 
       "about.title": "Giới thiệu",
+      "about.greeting": "Hallo!",
+      "about.heroStatement":
+        "tập trung vào kiến trúc hệ thống vững chắc, API bảo mật và tối ưu dữ liệu <span class=\"about-showcase__muted\">để xây dựng giải pháp giải quyết bài toán thực tế</span>",
+      "about.pill1": ".NET & ASP.NET Core",
+      "about.pill2": "Spring Boot & Java",
+      "about.pill3": "PostgreSQL & Database",
+      "about.pill4": "REST API & Security",
+      "about.pill5": "React & Full-stack",
+      "about.pill6": "Docker & DevOps",
       "about.softTitle": "Kỹ năng mềm",
       "about.techTitle": "Kỹ năng kỹ thuật",
       "about.goalTitle": "Định hướng",
@@ -145,6 +154,15 @@
       "landing.scrollLabel": "About",
 
       "about.title": "About",
+      "about.greeting": "Hallo!",
+      "about.heroStatement":
+        "focus is on <strong>clean architecture</strong>, <strong>secure APIs</strong>, and data integrity <span class=\"about-showcase__muted\">to engineer systems that solve real problems</span>",
+      "about.pill1": ".NET & ASP.NET Core",
+      "about.pill2": "Spring Boot & Java",
+      "about.pill3": "PostgreSQL & Database",
+      "about.pill4": "REST API & Security",
+      "about.pill5": "React & Full-stack",
+      "about.pill6": "Docker & DevOps",
       "about.softTitle": "Soft skills",
       "about.techTitle": "Technical skills",
       "about.goalTitle": "Focus",
@@ -541,6 +559,11 @@
         headerEl.classList.add("reveal");
         headerEl.style.setProperty("--reveal-delay", String(i * 40) + "ms");
       });
+
+    var aboutShowcase = document.querySelector(".about-showcase");
+    if (aboutShowcase) {
+      aboutShowcase.classList.add("reveal");
+    }
 
     document.querySelectorAll(".about-card").forEach(function (card, i) {
       card.classList.add("reveal");
