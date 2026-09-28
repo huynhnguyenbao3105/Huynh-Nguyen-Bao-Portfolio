@@ -1208,13 +1208,13 @@ main {
 }
 
 .who-photo-card img {
-  width: 88%;
-  height: 98%;
+  width: 90%;
+  height: 100%;
   object-fit: contain;
   object-position: bottom center;
   display: block;
   z-index: 1;
-  filter: contrast(1.04) brightness(0.98);
+  filter: url("#avatar-outline") contrast(1.04) brightness(0.98);
 }
 
 .who-photo-footer {
