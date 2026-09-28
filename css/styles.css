@@ -836,17 +836,17 @@ main {
 
 .about-showcase__statement {
   margin: 0;
-  font-family: var(--font-serif);
-  font-size: clamp(1.8rem, 2.7vw, 2.45rem);
+  font-family: var(--font-sans);
+  font-size: clamp(1.75rem, 2.5vw, 2.35rem);
   font-weight: 500;
-  line-height: 1.45;
-  letter-spacing: -0.015em;
+  line-height: 1.42;
+  letter-spacing: -0.02em;
   color: #18181b;
   text-align: center;
 }
 
 .about-showcase__muted {
-  color: #8e8e93;
+  color: #a1a1aa;
   font-weight: 400;
 }
 
