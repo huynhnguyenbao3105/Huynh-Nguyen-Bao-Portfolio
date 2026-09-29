@@ -71,6 +71,36 @@
       "techSlider.dockerDesc":
         "Đóng gói ứng dụng containerized, thiết lập môi trường phát triển đồng nhất qua Docker Compose, cấu hình tự động hóa CI/CD GitHub Actions và tối ưu hóa triển khai.",
 
+      "techSlider.phpCategory": "WEB & BACKEND ECOSYSTEM",
+      "techSlider.phpFocus": "LARAVEL & RESTFUL SERVICES",
+      "techSlider.phpTitle": "PHP & Laravel Framework",
+      "techSlider.phpDesc":
+        "Xây dựng ứng dụng web hướng đối tượng, kiến trúc MVC với Laravel, tối ưu hóa truy vấn Eloquent ORM và phát triển hệ thống quản lý dữ liệu tin cậy.",
+
+      "techSlider.nestCategory": "NODE.JS ECOSYSTEM",
+      "techSlider.nestFocus": "TYPESCRIPT & ENTERPRISE ARCHITECTURE",
+      "techSlider.nestTitle": "NestJS & TypeScript",
+      "techSlider.nestDesc":
+        "Phát triển hệ thống backend module hóa chuẩn doanh nghiệp với NestJS, tận dụng Dependency Injection, TypeScript nghiêm ngặt và kiến trúc vi dịch vụ (Microservices).",
+
+      "techSlider.figmaCategory": "UI/UX & PROTOTYPING",
+      "techSlider.figmaFocus": "DESIGN SYSTEMS & WIREFRAMING",
+      "techSlider.figmaTitle": "Figma UI/UX Design",
+      "techSlider.figmaDesc":
+        "Thiết kế giao diện người dùng trực quan, xây dựng hệ thống Design System chuẩn mực, wireframe và prototype tương tác cao phục vụ phát triển sản phẩm thực tế.",
+
+      "techSlider.githubCategory": "VERSION CONTROL & CI/CD",
+      "techSlider.githubFocus": "CODE COLLABORATION & GITHUB ACTIONS",
+      "techSlider.githubTitle": "GitHub & CI/CD Pipelines",
+      "techSlider.githubDesc":
+        "Quản lý mã nguồn tập trung, triển khai quy trình Gitflow chuẩn chỉ, tự động hóa quy trình kiểm thử và phát hành liên tục qua GitHub Actions.",
+
+      "techSlider.gitlabCategory": "DEVOPS LIFECYCLE",
+      "techSlider.gitlabFocus": "GITLAB CI/CD & PIPELINE AUTOMATION",
+      "techSlider.gitlabTitle": "GitLab & DevOps Automation",
+      "techSlider.gitlabDesc":
+        "Tích hợp toàn diện vòng đời DevOps, thiết lập cấu hình .gitlab-ci.yml tự động, quản trị repository doanh nghiệp và giám sát triển khai dịch vụ.",
+
       "about.softTitle": "Kỹ năng mềm",
       "about.techTitle": "Kỹ năng kỹ thuật",
       "about.goalTitle": "Định hướng",
@@ -227,6 +257,36 @@
       "techSlider.dockerTitle": "Docker & DevOps",
       "techSlider.dockerDesc":
         "Containerizing cross-platform applications, orchestrating consistent development environments via Docker Compose, and automating CI/CD with GitHub Actions.",
+
+      "techSlider.phpCategory": "WEB & BACKEND ECOSYSTEM",
+      "techSlider.phpFocus": "LARAVEL & RESTFUL SERVICES",
+      "techSlider.phpTitle": "PHP & Laravel Framework",
+      "techSlider.phpDesc":
+        "Building object-oriented web applications, MVC architecture with Laravel, Eloquent ORM query optimization, and robust backend data services.",
+
+      "techSlider.nestCategory": "NODE.JS ECOSYSTEM",
+      "techSlider.nestFocus": "TYPESCRIPT & ENTERPRISE ARCHITECTURE",
+      "techSlider.nestTitle": "NestJS & TypeScript",
+      "techSlider.nestDesc":
+        "Enterprise-grade modular backend development with NestJS, leveraging Dependency Injection, strict TypeScript typing, and scalable microservices architecture.",
+
+      "techSlider.figmaCategory": "UI/UX & PROTOTYPING",
+      "techSlider.figmaFocus": "DESIGN SYSTEMS & WIREFRAMING",
+      "techSlider.figmaTitle": "Figma UI/UX Design",
+      "techSlider.figmaDesc":
+        "Designing intuitive user interfaces, constructing comprehensive Design Systems, wireframes, and interactive prototypes for seamless product engineering.",
+
+      "techSlider.githubCategory": "VERSION CONTROL & CI/CD",
+      "techSlider.githubFocus": "CODE COLLABORATION & GITHUB ACTIONS",
+      "techSlider.githubTitle": "GitHub & CI/CD Pipelines",
+      "techSlider.githubDesc":
+        "Centralized source code management, robust Gitflow collaboration workflows, and automated testing & release pipelines via GitHub Actions.",
+
+      "techSlider.gitlabCategory": "DEVOPS LIFECYCLE",
+      "techSlider.gitlabFocus": "GITLAB CI/CD & PIPELINE AUTOMATION",
+      "techSlider.gitlabTitle": "GitLab & DevOps Automation",
+      "techSlider.gitlabDesc":
+        "Full DevOps lifecycle integration, configuring robust .gitlab-ci.yml pipelines, enterprise repository management, and safe deployment monitoring.",
 
       "about.softTitle": "Soft skills",
       "about.techTitle": "Technical skills",
@@ -746,21 +806,48 @@
         bgText: ".NET",
         categoryKey: "techSlider.dotnetCategory",
         focusKey: "techSlider.dotnetFocus",
-        thumbPos: "0%",
       },
       {
         themeClass: "tech-slider--java",
         bgText: "JAVA",
         categoryKey: "techSlider.javaCategory",
         focusKey: "techSlider.javaFocus",
-        thumbPos: "50%",
       },
       {
         themeClass: "tech-slider--docker",
         bgText: "DOCKER",
         categoryKey: "techSlider.dockerCategory",
         focusKey: "techSlider.dockerFocus",
-        thumbPos: "100%",
+      },
+      {
+        themeClass: "tech-slider--php",
+        bgText: "PHP",
+        categoryKey: "techSlider.phpCategory",
+        focusKey: "techSlider.phpFocus",
+      },
+      {
+        themeClass: "tech-slider--nest",
+        bgText: "NEST",
+        categoryKey: "techSlider.nestCategory",
+        focusKey: "techSlider.nestFocus",
+      },
+      {
+        themeClass: "tech-slider--figma",
+        bgText: "FIGMA",
+        categoryKey: "techSlider.figmaCategory",
+        focusKey: "techSlider.figmaFocus",
+      },
+      {
+        themeClass: "tech-slider--github",
+        bgText: "GITHUB",
+        categoryKey: "techSlider.githubCategory",
+        focusKey: "techSlider.githubFocus",
+      },
+      {
+        themeClass: "tech-slider--gitlab",
+        bgText: "GITLAB",
+        categoryKey: "techSlider.gitlabCategory",
+        focusKey: "techSlider.gitlabFocus",
       },
     ];
 
@@ -820,7 +907,8 @@
 
       // Update timeline indicator & dots
       if (thumbEl) {
-        thumbEl.style.left = data.thumbPos;
+        var pct = total > 1 ? (index / (total - 1)) * 100 : 0;
+        thumbEl.style.left = pct + "%";
       }
       dots.forEach(function (dot, i) {
         dot.classList.toggle("tech-slider__timeline-dot--active", i === index);

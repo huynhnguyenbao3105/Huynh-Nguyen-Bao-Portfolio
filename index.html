@@ -17,7 +17,7 @@
       href="https://fonts.googleapis.com/css2?family=Anton&family=Outfit:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/styles.css?v=20260929-v19" />
+    <link rel="stylesheet" href="css/styles.css?v=20260929-v20" />
     <link rel="stylesheet" href="css/widgets.css" />
   </head>
   <body>
@@ -200,7 +200,7 @@
             <div class="tech-slider__counter">
               <span class="tech-slider__counter-curr" id="techSliderCurrent">01</span>
               <span class="tech-slider__counter-sep">/</span>
-              <span class="tech-slider__counter-total">03</span>
+              <span class="tech-slider__counter-total">08</span>
             </div>
           </div>
 
@@ -212,7 +212,7 @@
             <!-- Tech Logos Track / Slides -->
             <div class="tech-slider__track" id="techSliderTrack">
               <!-- Slide 0: .NET -->
-              <div class="tech-slide tech-slide--active" data-index="0" role="group" aria-label="1 / 3: .NET">
+              <div class="tech-slide tech-slide--active" data-index="0" role="group" aria-label="1 / 8: .NET">
                 <div class="tech-slide__car-wrap">
                   <img src="assets/tech-logos/dotnet_3d.png" alt=".NET &amp; ASP.NET Core" class="tech-slide__car-img" loading="eager" draggable="false" />
                   <div class="tech-slide__shadow" aria-hidden="true"></div>
@@ -220,7 +220,7 @@
               </div>
 
               <!-- Slide 1: Java -->
-              <div class="tech-slide tech-slide--next" data-index="1" role="group" aria-label="2 / 3: Java">
+              <div class="tech-slide tech-slide--next" data-index="1" role="group" aria-label="2 / 8: Java">
                 <div class="tech-slide__car-wrap">
                   <img src="assets/tech-logos/java_3d.png" alt="Spring Boot &amp; Java" class="tech-slide__car-img" loading="lazy" draggable="false" />
                   <div class="tech-slide__shadow" aria-hidden="true"></div>
@@ -228,9 +228,49 @@
               </div>
 
               <!-- Slide 2: Docker -->
-              <div class="tech-slide tech-slide--prev" data-index="2" role="group" aria-label="3 / 3: Docker">
+              <div class="tech-slide tech-slide--hidden" data-index="2" role="group" aria-label="3 / 8: Docker">
                 <div class="tech-slide__car-wrap">
                   <img src="assets/tech-logos/docker_3d.png" alt="Docker &amp; DevOps" class="tech-slide__car-img" loading="lazy" draggable="false" />
+                  <div class="tech-slide__shadow" aria-hidden="true"></div>
+                </div>
+              </div>
+
+              <!-- Slide 3: PHP -->
+              <div class="tech-slide tech-slide--hidden" data-index="3" role="group" aria-label="4 / 8: PHP">
+                <div class="tech-slide__car-wrap">
+                  <img src="assets/tech-logos/php_3d.png" alt="PHP &amp; Laravel" class="tech-slide__car-img" loading="lazy" draggable="false" />
+                  <div class="tech-slide__shadow" aria-hidden="true"></div>
+                </div>
+              </div>
+
+              <!-- Slide 4: NestJS -->
+              <div class="tech-slide tech-slide--hidden" data-index="4" role="group" aria-label="5 / 8: NestJS">
+                <div class="tech-slide__car-wrap">
+                  <img src="assets/tech-logos/nest_3d.png" alt="NestJS &amp; TypeScript" class="tech-slide__car-img" loading="lazy" draggable="false" />
+                  <div class="tech-slide__shadow" aria-hidden="true"></div>
+                </div>
+              </div>
+
+              <!-- Slide 5: Figma -->
+              <div class="tech-slide tech-slide--hidden" data-index="5" role="group" aria-label="6 / 8: Figma">
+                <div class="tech-slide__car-wrap">
+                  <img src="assets/tech-logos/figma_3d.png" alt="Figma UI/UX" class="tech-slide__car-img" loading="lazy" draggable="false" />
+                  <div class="tech-slide__shadow" aria-hidden="true"></div>
+                </div>
+              </div>
+
+              <!-- Slide 6: GitHub -->
+              <div class="tech-slide tech-slide--hidden" data-index="6" role="group" aria-label="7 / 8: GitHub">
+                <div class="tech-slide__car-wrap">
+                  <img src="assets/tech-logos/github_3d.png" alt="GitHub &amp; CI/CD" class="tech-slide__car-img" loading="lazy" draggable="false" />
+                  <div class="tech-slide__shadow" aria-hidden="true"></div>
+                </div>
+              </div>
+
+              <!-- Slide 7: GitLab -->
+              <div class="tech-slide tech-slide--prev" data-index="7" role="group" aria-label="8 / 8: GitLab">
+                <div class="tech-slide__car-wrap">
+                  <img src="assets/tech-logos/gitlab_3d.png" alt="GitLab &amp; DevOps" class="tech-slide__car-img" loading="lazy" draggable="false" />
                   <div class="tech-slide__shadow" aria-hidden="true"></div>
                 </div>
               </div>
@@ -246,8 +286,13 @@
               <button type="button" class="tech-slider__timeline-dot tech-slider__timeline-dot--active" data-slide="0" aria-label="Slide 1: .NET"></button>
               <button type="button" class="tech-slider__timeline-dot" data-slide="1" aria-label="Slide 2: Java"></button>
               <button type="button" class="tech-slider__timeline-dot" data-slide="2" aria-label="Slide 3: Docker"></button>
+              <button type="button" class="tech-slider__timeline-dot" data-slide="3" aria-label="Slide 4: PHP"></button>
+              <button type="button" class="tech-slider__timeline-dot" data-slide="4" aria-label="Slide 5: NestJS"></button>
+              <button type="button" class="tech-slider__timeline-dot" data-slide="5" aria-label="Slide 6: Figma"></button>
+              <button type="button" class="tech-slider__timeline-dot" data-slide="6" aria-label="Slide 7: GitHub"></button>
+              <button type="button" class="tech-slider__timeline-dot" data-slide="7" aria-label="Slide 8: GitLab"></button>
             </div>
-            <span class="tech-slider__timeline-label">03</span>
+            <span class="tech-slider__timeline-label">08</span>
           </div>
 
           <!-- Bottom Tech Details Card -->
@@ -297,6 +342,86 @@
                 <span class="tech-tag">Containerization</span>
                 <span class="tech-tag">Nginx</span>
                 <span class="tech-tag">Linux</span>
+              </div>
+            </div>
+
+            <!-- Info Slide 3: PHP -->
+            <div class="tech-info-card" data-info-index="3">
+              <h3 class="tech-info-card__title" data-i18n="techSlider.phpTitle">PHP &amp; Laravel Framework</h3>
+              <p class="tech-info-card__desc" data-i18n="techSlider.phpDesc">
+                Xây dựng ứng dụng web hướng đối tượng, kiến trúc MVC với Laravel, tối ưu hóa truy vấn Eloquent ORM và phát triển hệ thống quản lý dữ liệu tin cậy.
+              </p>
+              <div class="tech-info-card__tags">
+                <span class="tech-tag">PHP 8.x</span>
+                <span class="tech-tag">Laravel</span>
+                <span class="tech-tag">MySQL</span>
+                <span class="tech-tag">MVC Architecture</span>
+                <span class="tech-tag">RESTful API</span>
+                <span class="tech-tag">Composer</span>
+              </div>
+            </div>
+
+            <!-- Info Slide 4: NestJS -->
+            <div class="tech-info-card" data-info-index="4">
+              <h3 class="tech-info-card__title" data-i18n="techSlider.nestTitle">NestJS &amp; TypeScript</h3>
+              <p class="tech-info-card__desc" data-i18n="techSlider.nestDesc">
+                Phát triển hệ thống backend module hóa chuẩn doanh nghiệp với NestJS, tận dụng Dependency Injection, TypeScript nghiêm ngặt và kiến trúc vi dịch vụ (Microservices).
+              </p>
+              <div class="tech-info-card__tags">
+                <span class="tech-tag">NestJS</span>
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">TypeORM</span>
+                <span class="tech-tag">Swagger API</span>
+                <span class="tech-tag">Microservices</span>
+              </div>
+            </div>
+
+            <!-- Info Slide 5: Figma -->
+            <div class="tech-info-card" data-info-index="5">
+              <h3 class="tech-info-card__title" data-i18n="techSlider.figmaTitle">Figma UI/UX Design</h3>
+              <p class="tech-info-card__desc" data-i18n="techSlider.figmaDesc">
+                Thiết kế giao diện người dùng trực quan, xây dựng hệ thống Design System chuẩn mực, wireframe và prototype tương tác cao phục vụ phát triển sản phẩm thực tế.
+              </p>
+              <div class="tech-info-card__tags">
+                <span class="tech-tag">Figma</span>
+                <span class="tech-tag">UI/UX Design</span>
+                <span class="tech-tag">Design System</span>
+                <span class="tech-tag">Wireframing</span>
+                <span class="tech-tag">Interactive Prototyping</span>
+                <span class="tech-tag">Responsive Layout</span>
+              </div>
+            </div>
+
+            <!-- Info Slide 6: GitHub -->
+            <div class="tech-info-card" data-info-index="6">
+              <h3 class="tech-info-card__title" data-i18n="techSlider.githubTitle">GitHub &amp; CI/CD Pipelines</h3>
+              <p class="tech-info-card__desc" data-i18n="techSlider.githubDesc">
+                Quản lý mã nguồn tập trung, triển khai quy trình Gitflow chuẩn chỉ, tự động hóa quy trình kiểm thử và phát hành liên tục qua GitHub Actions.
+              </p>
+              <div class="tech-info-card__tags">
+                <span class="tech-tag">Git</span>
+                <span class="tech-tag">GitHub Actions</span>
+                <span class="tech-tag">Gitflow</span>
+                <span class="tech-tag">Pull Request Workflow</span>
+                <span class="tech-tag">Version Control</span>
+                <span class="tech-tag">Code Review</span>
+              </div>
+            </div>
+
+            <!-- Info Slide 7: GitLab -->
+            <div class="tech-info-card" data-info-index="7">
+              <h3 class="tech-info-card__title" data-i18n="techSlider.gitlabTitle">GitLab &amp; DevOps Automation</h3>
+              <p class="tech-info-card__desc" data-i18n="techSlider.gitlabDesc">
+                Tích hợp toàn diện vòng đời DevOps, thiết lập cấu hình .gitlab-ci.yml tự động, quản trị repository doanh nghiệp và giám sát triển khai dịch vụ.
+              </p>
+              <div class="tech-info-card__tags">
+                <span class="tech-tag">GitLab CI/CD</span>
+                <span class="tech-tag">.gitlab-ci.yml</span>
+                <span class="tech-tag">Pipeline Optimization</span>
+                <span class="tech-tag">Git</span>
+                <span class="tech-tag">Agile Management</span>
+                <span class="tech-tag">Webhooks</span>
               </div>
             </div>
           </div>
@@ -993,7 +1118,7 @@
       </div>
     </div>
 
-    <script src="js/main.js?v=20260929-v9"></script>
+    <script src="js/main.js?v=20260929-v10"></script>
     <script src="js/widgets.js"></script>
     <script src="js/mascot.js"></script>
   </body>

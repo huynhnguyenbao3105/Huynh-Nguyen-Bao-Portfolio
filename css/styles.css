@@ -864,6 +864,46 @@ main {
   --theme-glow: rgba(2, 132, 199, 0.32);
 }
 
+.tech-slider--php {
+  --theme-text: #18181b;
+  --theme-muted: #52525b;
+  --theme-bg-text: rgba(99, 102, 241, 0.14);
+  --theme-thumb: #6366f1;
+  --theme-glow: rgba(99, 102, 241, 0.32);
+}
+
+.tech-slider--nest {
+  --theme-text: #18181b;
+  --theme-muted: #52525b;
+  --theme-bg-text: rgba(224, 35, 78, 0.14);
+  --theme-thumb: #e0234e;
+  --theme-glow: rgba(224, 35, 78, 0.32);
+}
+
+.tech-slider--figma {
+  --theme-text: #18181b;
+  --theme-muted: #52525b;
+  --theme-bg-text: rgba(168, 85, 247, 0.14);
+  --theme-thumb: #a855f7;
+  --theme-glow: rgba(168, 85, 247, 0.32);
+}
+
+.tech-slider--github {
+  --theme-text: #18181b;
+  --theme-muted: #52525b;
+  --theme-bg-text: rgba(51, 65, 85, 0.14);
+  --theme-thumb: #334155;
+  --theme-glow: rgba(51, 65, 85, 0.28);
+}
+
+.tech-slider--gitlab {
+  --theme-text: #18181b;
+  --theme-muted: #52525b;
+  --theme-bg-text: rgba(226, 67, 41, 0.14);
+  --theme-thumb: #e24329;
+  --theme-glow: rgba(226, 67, 41, 0.32);
+}
+
 /* Top bar */
 .tech-slider__topbar {
   position: relative;
@@ -961,6 +1001,26 @@ main {
 
 .tech-slider--docker .tech-slider__bg-text {
   letter-spacing: 0.02em;
+}
+
+.tech-slider--php .tech-slider__bg-text {
+  letter-spacing: 0.04em;
+}
+
+.tech-slider--nest .tech-slider__bg-text {
+  letter-spacing: 0.04em;
+}
+
+.tech-slider--figma .tech-slider__bg-text {
+  letter-spacing: 0.03em;
+}
+
+.tech-slider--github .tech-slider__bg-text {
+  letter-spacing: 0.02em;
+}
+
+.tech-slider--gitlab .tech-slider__bg-text {
+  letter-spacing: 0.03em;
 }
 
 /* Logos track & slides */
