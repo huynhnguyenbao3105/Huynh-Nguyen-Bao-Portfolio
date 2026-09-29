@@ -52,6 +52,25 @@
       "about.pill4": "REST API & Security",
       "about.pill5": "React & Full-stack",
       "about.pill6": "Docker & DevOps",
+
+      "techSlider.badge": "CÔNG NGHỆ CỐT LÕI",
+      "techSlider.eyebrow": "Nền tảng kỹ thuật & kiến trúc",
+      "techSlider.dotnetCategory": "MICROSOFT ECOSYSTEM",
+      "techSlider.dotnetFocus": "CLEAN ARCHITECTURE & SECURE APIS",
+      "techSlider.dotnetTitle": ".NET & ASP.NET Core",
+      "techSlider.dotnetDesc":
+        "Chuyên sâu kiến trúc Clean Architecture, xây dựng RESTful Web API hiệu năng cao, xác thực JWT, Entity Framework Core và tích hợp cổng thanh toán (VnPay, PayOS).",
+      "techSlider.javaCategory": "ENTERPRISE PLATFORM",
+      "techSlider.javaFocus": "SPRING BOOT & SCALABLE SERVICES",
+      "techSlider.javaTitle": "Spring Boot & Java",
+      "techSlider.javaDesc":
+        "Phát triển dịch vụ backend phân tán, bảo mật với Spring Security, tối ưu hóa truy vấn Hibernate/JPA và xây dựng hệ thống quản lý giao dịch tin cậy.",
+      "techSlider.dockerCategory": "CONTAINER & DEVOPS",
+      "techSlider.dockerFocus": "DOCKER & CI/CD AUTOMATION",
+      "techSlider.dockerTitle": "Docker & DevOps",
+      "techSlider.dockerDesc":
+        "Đóng gói ứng dụng containerized, thiết lập môi trường phát triển đồng nhất qua Docker Compose, cấu hình tự động hóa CI/CD GitHub Actions và tối ưu hóa triển khai.",
+
       "about.softTitle": "Kỹ năng mềm",
       "about.techTitle": "Kỹ năng kỹ thuật",
       "about.goalTitle": "Định hướng",
@@ -190,6 +209,25 @@
       "about.pill4": "REST API & Security",
       "about.pill5": "React & Full-stack",
       "about.pill6": "Docker & DevOps",
+
+      "techSlider.badge": "CORE STACK",
+      "techSlider.eyebrow": "Core Technologies & Architecture",
+      "techSlider.dotnetCategory": "MICROSOFT ECOSYSTEM",
+      "techSlider.dotnetFocus": "CLEAN ARCHITECTURE & SECURE APIS",
+      "techSlider.dotnetTitle": ".NET & ASP.NET Core",
+      "techSlider.dotnetDesc":
+        "Specialized in Clean Architecture, building high-performance RESTful Web APIs, JWT authentication, Entity Framework Core, and payment gateway integrations (VnPay, PayOS).",
+      "techSlider.javaCategory": "ENTERPRISE PLATFORM",
+      "techSlider.javaFocus": "SPRING BOOT & SCALABLE SERVICES",
+      "techSlider.javaTitle": "Spring Boot & Java",
+      "techSlider.javaDesc":
+        "Developing enterprise backend services, robust security with Spring Security, Hibernate/JPA query optimization, and reliable transaction management.",
+      "techSlider.dockerCategory": "CONTAINER & DEVOPS",
+      "techSlider.dockerFocus": "DOCKER & CI/CD AUTOMATION",
+      "techSlider.dockerTitle": "Docker & DevOps",
+      "techSlider.dockerDesc":
+        "Containerizing cross-platform applications, orchestrating consistent development environments via Docker Compose, and automating CI/CD with GitHub Actions.",
+
       "about.softTitle": "Soft skills",
       "about.techTitle": "Technical skills",
       "about.goalTitle": "Focus",
@@ -640,9 +678,9 @@
         headerEl.style.setProperty("--reveal-delay", String(i * 40) + "ms");
       });
 
-    var aboutShowcase = document.querySelector(".about-showcase");
-    if (aboutShowcase) {
-      aboutShowcase.classList.add("reveal");
+    var techSlider = document.getElementById("techSlider");
+    if (techSlider) {
+      techSlider.classList.add("reveal");
     }
 
     document.querySelectorAll(".about-card").forEach(function (card, i) {
@@ -696,4 +734,190 @@
     });
     if (progressBar) progressBar.style.width = "0%";
   }
+
+  /* ——— 7. Tech Slider (Vintage Microcars 3D Horizontal Carousel) ——— */
+  function initTechSlider() {
+    var slider = document.getElementById("techSlider");
+    if (!slider) return;
+
+    var slidesData = [
+      {
+        themeClass: "tech-slider--dotnet",
+        bgText: ".NET",
+        categoryKey: "techSlider.dotnetCategory",
+        focusKey: "techSlider.dotnetFocus",
+        thumbPos: "0%",
+      },
+      {
+        themeClass: "tech-slider--java",
+        bgText: "JAVA",
+        categoryKey: "techSlider.javaCategory",
+        focusKey: "techSlider.javaFocus",
+        thumbPos: "50%",
+      },
+      {
+        themeClass: "tech-slider--docker",
+        bgText: "DOCKER",
+        categoryKey: "techSlider.dockerCategory",
+        focusKey: "techSlider.dockerFocus",
+        thumbPos: "100%",
+      },
+    ];
+
+    var slides = Array.from(slider.querySelectorAll(".tech-slide"));
+    var infoCards = Array.from(slider.querySelectorAll(".tech-info-card"));
+    var bgTextEl = document.getElementById("techSliderBgText");
+    var currentCounterEl = document.getElementById("techSliderCurrent");
+    var thumbEl = document.getElementById("techSliderThumb");
+    var dots = Array.from(slider.querySelectorAll(".tech-slider__timeline-dot"));
+    var stage = document.getElementById("techSliderStage");
+
+    var currentIndex = 0;
+    var total = slidesData.length;
+
+    function updateSlide(index) {
+      var data = slidesData[index];
+
+      // Update theme classes on root slider container
+      slidesData.forEach(function (d) {
+        slider.classList.remove(d.themeClass);
+      });
+      slider.classList.add(data.themeClass);
+      slider.setAttribute("data-active-index", String(index));
+
+      // Update Anton background text
+      if (bgTextEl) {
+        bgTextEl.textContent = data.bgText;
+      }
+
+      // Update counter
+      if (currentCounterEl) {
+        currentCounterEl.textContent = "0" + (index + 1);
+      }
+
+      // Update 3D car positioning
+      slides.forEach(function (slide, i) {
+        slide.classList.remove(
+          "tech-slide--active",
+          "tech-slide--prev",
+          "tech-slide--next",
+          "tech-slide--hidden"
+        );
+        if (i === index) {
+          slide.classList.add("tech-slide--active");
+          slide.setAttribute("aria-hidden", "false");
+        } else if (i === (index - 1 + total) % total) {
+          slide.classList.add("tech-slide--prev");
+          slide.setAttribute("aria-hidden", "true");
+        } else if (i === (index + 1) % total) {
+          slide.classList.add("tech-slide--next");
+          slide.setAttribute("aria-hidden", "true");
+        } else {
+          slide.classList.add("tech-slide--hidden");
+          slide.setAttribute("aria-hidden", "true");
+        }
+      });
+
+      // Update timeline indicator & dots
+      if (thumbEl) {
+        thumbEl.style.left = data.thumbPos;
+      }
+      dots.forEach(function (dot, i) {
+        dot.classList.toggle("tech-slider__timeline-dot--active", i === index);
+      });
+
+      // Update info cards
+      infoCards.forEach(function (card, i) {
+        card.classList.toggle("tech-info-card--active", i === index);
+      });
+    }
+
+    function goToSlide(newIndex) {
+      currentIndex = ((newIndex % total) + total) % total;
+      updateSlide(currentIndex);
+    }
+
+    dots.forEach(function (dot) {
+      dot.addEventListener("click", function (e) {
+        e.preventDefault();
+        var idx = parseInt(dot.getAttribute("data-slide"), 10);
+        if (!isNaN(idx)) {
+          goToSlide(idx);
+        }
+      });
+    });
+
+    // Clicking car slides:
+    // IMPORTANT: "không cần hiển thị xem chi khi ấn vào xe"
+    // Center car does NOT open any popup/modal.
+    // Flanking cars transition smoothly to that slide.
+    slides.forEach(function (slide) {
+      slide.addEventListener("click", function (e) {
+        var idx = parseInt(slide.getAttribute("data-index"), 10);
+        if (!isNaN(idx) && idx !== currentIndex) {
+          e.preventDefault();
+          goToSlide(idx);
+        }
+      });
+    });
+
+    // Drag / Touch gestures for sliding
+    if (stage) {
+      var startX = 0;
+      var currentX = 0;
+      var isDragging = false;
+
+      stage.addEventListener("pointerdown", function (e) {
+        if (e.target.closest(".tech-slider__timeline-dot")) {
+          return;
+        }
+        startX = e.clientX;
+        currentX = e.clientX;
+        isDragging = true;
+      });
+
+      window.addEventListener("pointermove", function (e) {
+        if (!isDragging) return;
+        currentX = e.clientX;
+      });
+
+      window.addEventListener("pointerup", function () {
+        if (!isDragging) return;
+        isDragging = false;
+        var diffX = currentX - startX;
+        if (diffX < -40) {
+          goToSlide(currentIndex + 1);
+        } else if (diffX > 40) {
+          goToSlide(currentIndex - 1);
+        }
+      });
+
+      window.addEventListener("pointercancel", function () {
+        isDragging = false;
+      });
+    }
+
+    // Keyboard navigation
+    slider.tabIndex = 0;
+    slider.style.outline = "none";
+    slider.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        goToSlide(currentIndex - 1);
+      } else if (e.key === "ArrowRight") {
+        e.preventDefault();
+        goToSlide(currentIndex + 1);
+      }
+    });
+
+    // Language change sync
+    window.addEventListener("portfolio:lang", function () {
+      updateSlide(currentIndex);
+    });
+
+    // Initial setup
+    updateSlide(0);
+  }
+
+  initTechSlider();
 })();

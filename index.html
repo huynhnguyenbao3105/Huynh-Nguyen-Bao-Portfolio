@@ -17,7 +17,7 @@
       href="https://fonts.googleapis.com/css2?family=Anton&family=Outfit:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/styles.css?v=20260927-v7" />
+    <link rel="stylesheet" href="css/styles.css?v=20260929-v19" />
     <link rel="stylesheet" href="css/widgets.css" />
   </head>
   <body>
@@ -192,78 +192,111 @@
       </section>
 
       <section id="about" class="section">
-        <!-- Showcase: Hero Statement & Floating Badges -->
-        <div class="about-showcase">
-          <p class="about-showcase__greeting" data-i18n="about.greeting">Hallo!</p>
+        <!-- Tech Slider: Retro 3D Showcase (Inspired by Vintage Microcars) -->
+        <div class="tech-slider tech-slider--dotnet reveal" id="techSlider" data-active-index="0">
+          <!-- Top Bar -->
+          <div class="tech-slider__topbar">
+            <p class="tech-slider__eyebrow" data-i18n="techSlider.eyebrow">Nền tảng kỹ thuật &amp; kiến trúc</p>
+            <div class="tech-slider__counter">
+              <span class="tech-slider__counter-curr" id="techSliderCurrent">01</span>
+              <span class="tech-slider__counter-sep">/</span>
+              <span class="tech-slider__counter-total">03</span>
+            </div>
+          </div>
 
-          <div class="about-showcase__stage">
-            <!-- Left Badges -->
-            <div class="about-showcase__col about-showcase__col--left">
-              <div class="about-pill about-pill--orange about-pill--l1">
-                <span class="about-pill__icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor">
-                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-                  </svg>
-                </span>
-                <span class="about-pill__text" data-i18n-html="about.pill1">.NET &amp; ASP.NET Core</span>
+          <!-- 3D Carousel Stage -->
+          <div class="tech-slider__stage" id="techSliderStage" aria-roledescription="carousel" aria-label="Core Technologies Carousel">
+            <!-- Giant Display Background Text -->
+            <div class="tech-slider__bg-text" id="techSliderBgText" aria-hidden="true">.NET</div>
+
+            <!-- Tech Logos Track / Slides -->
+            <div class="tech-slider__track" id="techSliderTrack">
+              <!-- Slide 0: .NET -->
+              <div class="tech-slide tech-slide--active" data-index="0" role="group" aria-label="1 / 3: .NET">
+                <div class="tech-slide__car-wrap">
+                  <img src="assets/tech-logos/dotnet_3d.png" alt=".NET &amp; ASP.NET Core" class="tech-slide__car-img" loading="eager" draggable="false" />
+                  <div class="tech-slide__shadow" aria-hidden="true"></div>
+                </div>
               </div>
 
-              <div class="about-pill about-pill--blue about-pill--l2">
-                <span class="about-pill__icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor">
-                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-                  </svg>
-                </span>
-                <span class="about-pill__text" data-i18n-html="about.pill2">Spring Boot &amp; Java</span>
+              <!-- Slide 1: Java -->
+              <div class="tech-slide tech-slide--next" data-index="1" role="group" aria-label="2 / 3: Java">
+                <div class="tech-slide__car-wrap">
+                  <img src="assets/tech-logos/java_3d.png" alt="Spring Boot &amp; Java" class="tech-slide__car-img" loading="lazy" draggable="false" />
+                  <div class="tech-slide__shadow" aria-hidden="true"></div>
+                </div>
               </div>
 
-              <div class="about-pill about-pill--dark about-pill--l3">
-                <span class="about-pill__icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor">
-                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-                  </svg>
-                </span>
-                <span class="about-pill__text" data-i18n-html="about.pill3">PostgreSQL &amp; Database</span>
+              <!-- Slide 2: Docker -->
+              <div class="tech-slide tech-slide--prev" data-index="2" role="group" aria-label="3 / 3: Docker">
+                <div class="tech-slide__car-wrap">
+                  <img src="assets/tech-logos/docker_3d.png" alt="Docker &amp; DevOps" class="tech-slide__car-img" loading="lazy" draggable="false" />
+                  <div class="tech-slide__shadow" aria-hidden="true"></div>
+                </div>
               </div>
             </div>
+          </div>
 
-            <!-- Center Statement -->
-            <div class="about-showcase__center">
-              <p class="about-showcase__statement" data-i18n-html="about.heroStatement">
-                focus is on clean architecture,<br />
-                secure APIs, and data integrity<br />
-                <span class="about-showcase__muted">to craft systems<br />
-                that solve real problems</span>
+          <!-- Timeline Track & Indicator -->
+          <div class="tech-slider__timeline" aria-hidden="true">
+            <span class="tech-slider__timeline-label">01</span>
+            <div class="tech-slider__timeline-track" id="techSliderTimelineTrack">
+              <div class="tech-slider__timeline-line"></div>
+              <div class="tech-slider__timeline-thumb" id="techSliderThumb"></div>
+              <button type="button" class="tech-slider__timeline-dot tech-slider__timeline-dot--active" data-slide="0" aria-label="Slide 1: .NET"></button>
+              <button type="button" class="tech-slider__timeline-dot" data-slide="1" aria-label="Slide 2: Java"></button>
+              <button type="button" class="tech-slider__timeline-dot" data-slide="2" aria-label="Slide 3: Docker"></button>
+            </div>
+            <span class="tech-slider__timeline-label">03</span>
+          </div>
+
+          <!-- Bottom Tech Details Card -->
+          <div class="tech-slider__info">
+            <!-- Info Slide 0: .NET -->
+            <div class="tech-info-card tech-info-card--active" data-info-index="0">
+              <h3 class="tech-info-card__title" data-i18n="techSlider.dotnetTitle">.NET &amp; ASP.NET Core</h3>
+              <p class="tech-info-card__desc" data-i18n="techSlider.dotnetDesc">
+                Chuyên sâu kiến trúc Clean Architecture, xây dựng RESTful Web API hiệu năng cao, xác thực JWT, Entity Framework Core và tích hợp cổng thanh toán (VnPay, PayOS).
               </p>
+              <div class="tech-info-card__tags">
+                <span class="tech-tag">C#</span>
+                <span class="tech-tag">ASP.NET Core 8</span>
+                <span class="tech-tag">Clean Architecture</span>
+                <span class="tech-tag">EF Core</span>
+                <span class="tech-tag">JWT Security</span>
+                <span class="tech-tag">SQL Server</span>
+              </div>
             </div>
 
-            <!-- Right Badges -->
-            <div class="about-showcase__col about-showcase__col--right">
-              <div class="about-pill about-pill--yellow about-pill--r1">
-                <span class="about-pill__icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor">
-                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-                  </svg>
-                </span>
-                <span class="about-pill__text" data-i18n-html="about.pill4">REST API &amp; Security</span>
+            <!-- Info Slide 1: Java -->
+            <div class="tech-info-card" data-info-index="1">
+              <h3 class="tech-info-card__title" data-i18n="techSlider.javaTitle">Spring Boot &amp; Java</h3>
+              <p class="tech-info-card__desc" data-i18n="techSlider.javaDesc">
+                Phát triển dịch vụ backend phân tán, bảo mật với Spring Security, tối ưu hóa truy vấn Hibernate/JPA và xây dựng hệ thống quản lý giao dịch tin cậy.
+              </p>
+              <div class="tech-info-card__tags">
+                <span class="tech-tag">Java 17/21</span>
+                <span class="tech-tag">Spring Boot 3</span>
+                <span class="tech-tag">Spring Security</span>
+                <span class="tech-tag">Hibernate / JPA</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">RESTful API</span>
               </div>
+            </div>
 
-              <div class="about-pill about-pill--pink about-pill--r2">
-                <span class="about-pill__icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor">
-                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-                  </svg>
-                </span>
-                <span class="about-pill__text" data-i18n-html="about.pill5">React &amp; Full-stack</span>
-              </div>
-
-              <div class="about-pill about-pill--green about-pill--r3">
-                <span class="about-pill__icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor">
-                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-                  </svg>
-                </span>
-                <span class="about-pill__text" data-i18n-html="about.pill6">Docker &amp; DevOps</span>
+            <!-- Info Slide 2: Docker -->
+            <div class="tech-info-card" data-info-index="2">
+              <h3 class="tech-info-card__title" data-i18n="techSlider.dockerTitle">Docker &amp; DevOps</h3>
+              <p class="tech-info-card__desc" data-i18n="techSlider.dockerDesc">
+                Đóng gói ứng dụng containerized, thiết lập môi trường phát triển đồng nhất qua Docker Compose, cấu hình tự động hóa CI/CD GitHub Actions và tối ưu hóa triển khai.
+              </p>
+              <div class="tech-info-card__tags">
+                <span class="tech-tag">Docker Engine</span>
+                <span class="tech-tag">Docker Compose</span>
+                <span class="tech-tag">GitHub Actions CI/CD</span>
+                <span class="tech-tag">Containerization</span>
+                <span class="tech-tag">Nginx</span>
+                <span class="tech-tag">Linux</span>
               </div>
             </div>
           </div>
@@ -960,7 +993,7 @@
       </div>
     </div>
 
-    <script src="js/main.js?v=20260927-v4"></script>
+    <script src="js/main.js?v=20260929-v9"></script>
     <script src="js/widgets.js"></script>
     <script src="js/mascot.js"></script>
   </body>

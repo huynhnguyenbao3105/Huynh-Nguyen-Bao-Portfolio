@@ -3,6 +3,7 @@
  *
  * Theme chính lấy từ #landing: nền xám nhạt, chữ đen, Playfair / Anton / Plus Jakarta.
  */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap");
 
 /* :root — màu & font theo #landing (nguồn design chính) */
 :root {
@@ -798,263 +799,529 @@ main {
    #about — Showcase (Hallo! + Floating Badges + Hero Statement)
    ========================================================================== */
 
-.about-showcase {
-  margin-bottom: var(--space-2xl);
-  padding: clamp(64px, 8vw, 100px) 0 var(--space-xl);
-  text-align: center;
+/* ==========================================================================
+   #about — Retro 3D Tech Slider (Vintage Microcars Showcase)
+   ========================================================================== */
+
+.tech-slider {
+  --theme-text: #18181b;
+  --theme-muted: #52525b;
+  --theme-bg-text: rgba(10, 10, 15, 0.055);
+  --theme-border: rgba(10, 10, 15, 0.12);
+  --theme-pill-bg: rgba(255, 255, 255, 0.88);
+  --theme-pill-border: rgba(255, 255, 255, 0.95);
+  --theme-thumb: #18181b;
+
   position: relative;
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto var(--space-2xl);
+  padding: clamp(16px, 3vw, 32px) clamp(12px, 2.5vw, 24px) clamp(24px, 4vw, 40px);
+  background: transparent;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  overflow: visible;
+  transition: color 0.4s ease;
+  user-select: none;
 }
 
-.about-showcase__greeting {
+.tech-slider:focus,
+.tech-slider:focus-visible,
+.tech-slider:focus-within {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.tech-slider__stage:focus,
+.tech-slider__stage:focus-visible {
+  outline: none !important;
+}
+
+/* Theme variations - clean accents without heavy tinted background */
+.tech-slider--dotnet {
+  --theme-text: #18181b;
+  --theme-muted: #52525b;
+  --theme-bg-text: rgba(81, 43, 212, 0.14);
+  --theme-thumb: #512bd4;
+  --theme-glow: rgba(81, 43, 212, 0.32);
+}
+
+.tech-slider--java {
+  --theme-text: #18181b;
+  --theme-muted: #52525b;
+  --theme-bg-text: rgba(234, 88, 12, 0.14);
+  --theme-thumb: #ea580c;
+  --theme-glow: rgba(234, 88, 12, 0.32);
+}
+
+.tech-slider--docker {
+  --theme-text: #18181b;
+  --theme-muted: #52525b;
+  --theme-bg-text: rgba(2, 132, 199, 0.14);
+  --theme-thumb: #0284c7;
+  --theme-glow: rgba(2, 132, 199, 0.32);
+}
+
+/* Top bar */
+.tech-slider__topbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 28px;
+  margin-bottom: clamp(14px, 2.2vw, 20px);
+  padding: 0 4px;
+}
+
+.tech-slider__eyebrow {
+  margin: 0;
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: clamp(2rem, 3.5vw, 2.35rem);
   font-weight: 500;
-  color: #18181b;
-  margin: 0 0 32px;
+  font-size: clamp(1.25rem, 2vw, 1.65rem);
+  line-height: 1.15;
   letter-spacing: -0.03em;
-  line-height: 1;
+  color: var(--color-secondary);
+  text-align: center;
+  text-transform: none;
 }
 
-.about-showcase__stage {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
+.tech-slider__counter {
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-sans);
+  font-size: clamp(0.85rem, 1.1vw, 0.95rem);
+  font-weight: 600;
+  color: var(--theme-muted);
+  letter-spacing: 0.08em;
+}
+
+.tech-slider__counter-curr {
+  font-weight: 800;
+  color: var(--theme-text);
+}
+
+.tech-slider__counter-sep {
+  margin: 0 2px;
+  opacity: 0.5;
+}
+
+/* 3D Carousel Stage */
+.tech-slider__stage {
+  position: relative;
+  height: clamp(260px, 34vw, 370px);
+  width: 100%;
+  display: flex;
   align-items: center;
   justify-content: center;
-  gap: clamp(16px, 3vw, 44px);
+  overflow: visible;
+  touch-action: pan-y;
+  cursor: grab;
+}
+
+.tech-slider__stage:active {
+  cursor: grabbing;
+}
+
+/* Giant display typography behind logos */
+.tech-slider__bg-text {
+  position: absolute;
+  top: 34%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-display);
+  font-size: clamp(6rem, 16.5vw, 12.8rem);
+  line-height: 0.85;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--theme-bg-text);
+  pointer-events: none;
+  z-index: 1;
+  white-space: nowrap;
+  user-select: none;
+  transition:
+    color 0.5s ease,
+    transform 0.4s ease,
+    opacity 0.4s ease,
+    letter-spacing 0.4s ease;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.tech-slider--dotnet .tech-slider__bg-text {
+  letter-spacing: 0.04em;
+}
+
+.tech-slider--java .tech-slider__bg-text {
+  letter-spacing: 0.03em;
+}
+
+.tech-slider--docker .tech-slider__bg-text {
+  letter-spacing: 0.02em;
+}
+
+/* Logos track & slides */
+.tech-slider__track {
   position: relative;
-  max-width: 1220px;
-  margin: 0 auto;
-}
-
-.about-showcase__center {
-  padding: 0 var(--space-xs);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 2;
-  max-width: 820px;
-  margin: 0 auto;
 }
 
-.about-showcase__statement {
-  margin: 0;
-  font-family: var(--font-sans);
-  font-size: clamp(1.75rem, 2.5vw, 2.35rem);
-  font-weight: 500;
-  line-height: 1.42;
-  letter-spacing: -0.02em;
-  color: #18181b;
-  text-align: center;
+.tech-slide {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    transform 0.65s cubic-bezier(0.34, 1.2, 0.64, 1),
+    opacity 0.65s cubic-bezier(0.4, 0, 0.2, 1),
+    filter 0.65s ease;
+  will-change: transform, opacity;
+  pointer-events: none;
 }
 
-.about-showcase__muted {
-  color: #a1a1aa;
-  font-weight: 400;
-}
-
-.about-showcase__col {
+.tech-slide__car-wrap {
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 52px;
-  z-index: 3;
-}
-
-.about-showcase__col--left {
-  align-items: flex-start;
-}
-
-.about-showcase__col--right {
-  align-items: flex-start;
-}
-
-/* Floating Badges (Pills) */
-.about-pill {
-  --base-rot: 0deg;
-  --base-shift: 0px;
-  display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 5px 18px 5px 5px;
-  background: rgba(255, 255, 255, 0.82);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  border-radius: 9999px;
-  box-shadow:
-    0 12px 28px -4px rgba(0, 0, 0, 0.08),
-    0 3px 8px -1px rgba(0, 0, 0, 0.03);
-  cursor: default;
+  justify-content: center;
+}
+
+.tech-slide__car-img {
+  width: clamp(160px, 22vw, 240px);
+  height: clamp(160px, 22vw, 240px);
+  aspect-ratio: 1 / 1;
+  max-width: 88vw;
+  object-fit: contain;
+  display: block;
+  pointer-events: none;
   user-select: none;
-  transform-origin: 20px center;
-  transform: translateX(var(--base-shift)) rotate(var(--base-rot));
-  transition:
-    transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
-    box-shadow 0.35s ease,
-    background 0.25s ease;
-  will-change: transform;
+  filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.16));
+  transition: filter 0.5s ease, transform 0.4s ease;
 }
 
-.about-pill:hover {
-  transform: translateX(var(--base-shift)) translateY(-6px) scale(1.04) rotate(0deg) !important;
-  box-shadow:
-    0 18px 32px -4px rgba(0, 0, 0, 0.12),
-    0 6px 14px -2px rgba(0, 0, 0, 0.05);
-  animation-play-state: paused;
+.tech-slide--active .tech-slide__car-img {
+  filter: drop-shadow(0 20px 36px var(--theme-glow, rgba(0, 0, 0, 0.22)));
+  animation: techLogoFloat 4.2s ease-in-out infinite;
 }
 
-.about-pill__icon {
-  width: 28px;
-  height: 28px;
+.tech-slide__shadow {
+  width: 66%;
+  height: 18px;
+  margin-top: 14px;
   border-radius: 50%;
+  background: radial-gradient(ellipse at 50% 50%, rgba(10, 10, 15, 0.32) 0%, rgba(10, 10, 15, 0.1) 50%, transparent 75%);
+  filter: blur(5px);
+  pointer-events: none;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.tech-slide--active .tech-slide__shadow {
+  animation: techShadowPulse 4.2s ease-in-out infinite;
+}
+
+@keyframes techLogoFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+@keyframes techShadowPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(0.9);
+    opacity: 0.65;
+  }
+}
+
+/* Active center logo */
+.tech-slide--active {
+  transform: translate(-50%, -28%) scale(1);
+  opacity: 1;
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.tech-slide--active .tech-slide__car-wrap {
+  cursor: default;
+}
+
+.tech-slide--active:active .tech-slide__car-wrap {
+  transform: scale(0.985);
+  transition: transform 0.15s ease;
+}
+
+/* Left flanking car */
+.tech-slide--prev {
+  transform: translate(calc(-50% - clamp(210px, 32vw, 360px)), -28%) scale(0.64);
+  opacity: 0.38;
+  z-index: 4;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.tech-slide--prev:hover {
+  opacity: 0.7;
+  transform: translate(calc(-50% - clamp(210px, 32vw, 360px)), -30%) scale(0.68);
+}
+
+/* Right flanking car */
+.tech-slide--next {
+  transform: translate(calc(-50% + clamp(210px, 32vw, 360px)), -28%) scale(0.64);
+  opacity: 0.38;
+  z-index: 4;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.tech-slide--next:hover {
+  opacity: 0.7;
+  transform: translate(calc(-50% + clamp(210px, 32vw, 360px)), -30%) scale(0.68);
+}
+
+/* Hidden car (if more than 3) */
+.tech-slide--hidden {
+  transform: translate(-50%, -50%) scale(0.4);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Timeline track */
+.tech-slider__timeline {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
-  color: #ffffff;
+  gap: 16px;
+  margin: clamp(14px, 2vw, 24px) auto 0;
+  max-width: 480px;
+  width: 100%;
 }
 
-.about-pill__icon svg {
-  display: block;
+.tech-slider__timeline-label {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--theme-muted);
+  letter-spacing: 0.06em;
 }
 
-.about-pill__text {
-  font-family: "Outfit", var(--font-sans);
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: #262626;
-  letter-spacing: -0.01em;
-  white-space: nowrap;
+.tech-slider__timeline-track {
+  position: relative;
+  flex: 1;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-/* Badge solid colors matching Image 2 */
-.about-pill--orange .about-pill__icon {
-  background: #ff5a1f;
+.tech-slider__timeline-line {
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  height: 2px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--theme-border) 0,
+    var(--theme-border) 6px,
+    transparent 6px,
+    transparent 12px
+  );
+  z-index: 1;
 }
 
-.about-pill--blue .about-pill__icon {
-  background: #0099ff;
+.tech-slider__timeline-thumb {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translate(-50%, -50%);
+  width: 28px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--theme-thumb);
+  z-index: 3;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  transition: left 0.55s cubic-bezier(0.34, 1.25, 0.64, 1);
+  pointer-events: none;
 }
 
-.about-pill--dark .about-pill__icon {
-  background: #252830;
+.tech-slider__timeline-dot {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--theme-pill-bg);
+  border: 2px solid var(--theme-muted);
+  cursor: pointer;
+  z-index: 2;
+  padding: 0;
+  outline: none;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
 }
 
-.about-pill--yellow .about-pill__icon {
-  background: #f5b300;
+.tech-slider__timeline-dot:hover {
+  transform: scale(1.3);
+  border-color: var(--theme-text);
 }
 
-.about-pill--pink .about-pill__icon {
-  background: #f43f8e;
+.tech-slider__timeline-dot--active {
+  background: var(--theme-thumb);
+  border-color: var(--theme-thumb);
+  transform: scale(1.25);
 }
 
-.about-pill--green .about-pill__icon {
-  background: #10c850;
+/* Bottom info card */
+.tech-slider__info {
+  position: relative;
+  margin-top: clamp(20px, 3vw, 32px);
+  min-height: 140px;
 }
 
-/* Offsets, rotations matching Image 2 */
-.about-pill--l1 {
-  --base-rot: 5deg;
-  --base-shift: 0px;
-  animation: pillFloatA 6s ease-in-out infinite;
+.tech-info-card {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s cubic-bezier(0.34, 1.2, 0.64, 1);
+  pointer-events: none;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
-.about-pill--l2 {
-  --base-rot: 0.5deg;
-  --base-shift: 32px;
-  animation: pillFloatB 5.4s ease-in-out 0.8s infinite;
+.tech-info-card--active {
+  position: relative;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
-.about-pill--l3 {
-  --base-rot: -5.5deg;
-  --base-shift: 0px;
-  animation: pillFloatA 6.6s ease-in-out 1.5s infinite;
+.tech-info-card__title {
+  font-family: var(--font-sans);
+  font-size: clamp(1.35rem, 2vw, 1.75rem);
+  font-weight: 700;
+  color: var(--theme-text);
+  margin: 0 0 10px;
+  letter-spacing: -0.02em;
 }
 
-.about-pill--r1 {
-  --base-rot: -4.5deg;
-  --base-shift: 0px;
-  animation: pillFloatB 5.8s ease-in-out 0.4s infinite;
+.tech-info-card__desc {
+  font-family: var(--font-sans);
+  font-size: clamp(0.92rem, 1.15vw, 1.05rem);
+  line-height: 1.6;
+  color: var(--theme-muted);
+  max-width: 720px;
+  margin: 0 auto 16px;
 }
 
-.about-pill--r2 {
-  --base-rot: 1.5deg;
-  --base-shift: 28px;
-  animation: pillFloatA 6.2s ease-in-out 1.2s infinite;
+.tech-info-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
-.about-pill--r3 {
-  --base-rot: 5.5deg;
-  --base-shift: 0px;
-  animation: pillFloatB 5.2s ease-in-out 1.8s infinite;
+.tech-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 14px;
+  border-radius: 999px;
+  background: var(--theme-pill-bg);
+  border: 1px solid var(--theme-pill-border);
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--theme-text);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-@keyframes pillFloatA {
-  0%, 100% {
-    transform: translateX(var(--base-shift)) rotate(var(--base-rot)) translateY(0px);
-  }
-  50% {
-    transform: translateX(var(--base-shift)) rotate(var(--base-rot)) translateY(-4px);
-  }
-}
-
-@keyframes pillFloatB {
-  0%, 100% {
-    transform: translateX(var(--base-shift)) rotate(var(--base-rot)) translateY(0px);
-  }
-  50% {
-    transform: translateX(var(--base-shift)) rotate(var(--base-rot)) translateY(4px);
-  }
+.tech-tag:hover {
+  transform: translateY(-2px);
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 /* Responsive adjustments */
-@media (max-width: 1080px) {
-  .about-showcase__stage {
-    gap: var(--space-md);
+@media (max-width: 768px) {
+  .tech-slider {
+    padding: 20px 14px 28px;
+    border-radius: 20px;
   }
 
-  .about-showcase__statement {
-    font-size: 1.5rem;
+  .tech-slider__topbar {
+    justify-content: space-between;
   }
 
-  .about-pill {
-    padding: 7px 16px 7px 7px;
+  .tech-slider__eyebrow {
+    font-size: 0.92rem;
   }
 
-  .about-pill__text {
+  .tech-slider__counter {
+    position: static;
+    transform: none;
+  }
+
+  .tech-slider__stage {
+    height: 240px;
+  }
+
+  .tech-slide--prev {
+    transform: translate(calc(-50% - clamp(140px, 38vw, 200px)), -28%) scale(0.55);
+    opacity: 0.25;
+  }
+
+  .tech-slide--next {
+    transform: translate(calc(-50% + clamp(140px, 38vw, 200px)), -28%) scale(0.55);
+    opacity: 0.25;
+  }
+
+  .tech-slider__nav-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .tech-slider__timeline {
+    max-width: 300px;
+  }
+
+  .tech-info-card__desc {
     font-size: 0.875rem;
   }
-}
 
-@media (max-width: 900px) {
-  .about-showcase__stage {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-xl);
-  }
-
-  .about-showcase__center {
-    order: 1;
-    max-width: 580px;
-    padding: 0;
-  }
-
-  .about-showcase__col {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: var(--space-sm);
-  }
-
-  .about-showcase__col--left {
-    order: 2;
-  }
-
-  .about-showcase__col--right {
-    order: 3;
-  }
-
-  .about-pill {
-    --base-shift: 0px !important;
+  .tech-tag {
+    font-size: 0.75rem;
+    padding: 4px 10px;
   }
 }
 
