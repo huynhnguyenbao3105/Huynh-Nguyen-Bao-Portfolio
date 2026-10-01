@@ -59,47 +59,47 @@
       "techSlider.dotnetFocus": "CLEAN ARCHITECTURE & SECURE APIS",
       "techSlider.dotnetTitle": ".NET & ASP.NET Core",
       "techSlider.dotnetDesc":
-        "Chuyên sâu kiến trúc Clean Architecture, xây dựng RESTful Web API hiệu năng cao, xác thực JWT, Entity Framework Core và tích hợp cổng thanh toán (VnPay, PayOS).",
+        "Chuyên sâu kiến trúc Clean Architecture, xây dựng RESTful Web API hiệu năng cao, bảo mật với JWT, tối ưu truy vấn Entity Framework Core và tích hợp cổng thanh toán trực tuyến (VnPay, PayOS).",
       "techSlider.javaCategory": "ENTERPRISE PLATFORM",
       "techSlider.javaFocus": "SPRING BOOT & SCALABLE SERVICES",
       "techSlider.javaTitle": "Spring Boot & Java",
       "techSlider.javaDesc":
-        "Phát triển dịch vụ backend phân tán, bảo mật với Spring Security, tối ưu hóa truy vấn Hibernate/JPA và xây dựng hệ thống quản lý giao dịch tin cậy.",
+        "Phát triển dịch vụ backend doanh nghiệp với Spring Boot, bảo mật phân quyền qua Spring Security, tối ưu hóa truy vấn Hibernate/JPA và xử lý giao dịch dữ liệu an toàn, tin cậy.",
       "techSlider.dockerCategory": "CONTAINER & DEVOPS",
       "techSlider.dockerFocus": "DOCKER & CI/CD AUTOMATION",
       "techSlider.dockerTitle": "Docker & DevOps",
       "techSlider.dockerDesc":
-        "Đóng gói ứng dụng containerized, thiết lập môi trường phát triển đồng nhất qua Docker Compose, cấu hình tự động hóa CI/CD GitHub Actions và tối ưu hóa triển khai.",
+        "Đóng gói ứng dụng đa nền tảng với Docker, chuẩn hóa môi trường phát triển đồng nhất qua Docker Compose, tự động hóa quy trình CI/CD và tối ưu hóa triển khai dịch vụ.",
 
       "techSlider.phpCategory": "WEB & BACKEND ECOSYSTEM",
       "techSlider.phpFocus": "LARAVEL & RESTFUL SERVICES",
       "techSlider.phpTitle": "PHP & Laravel Framework",
       "techSlider.phpDesc":
-        "Xây dựng ứng dụng web hướng đối tượng, kiến trúc MVC với Laravel, tối ưu hóa truy vấn Eloquent ORM và phát triển hệ thống quản lý dữ liệu tin cậy.",
+        "Xây dựng ứng dụng web hướng đối tượng chuẩn kiến trúc MVC với Laravel, tối ưu hóa quan hệ Eloquent ORM, thiết kế RESTful API linh hoạt và quản trị cơ sở dữ liệu MySQL hiệu quả.",
 
       "techSlider.nestCategory": "NODE.JS ECOSYSTEM",
       "techSlider.nestFocus": "TYPESCRIPT & ENTERPRISE ARCHITECTURE",
       "techSlider.nestTitle": "NestJS & TypeScript",
       "techSlider.nestDesc":
-        "Phát triển hệ thống backend module hóa chuẩn doanh nghiệp với NestJS, tận dụng Dependency Injection, TypeScript nghiêm ngặt và kiến trúc vi dịch vụ (Microservices).",
+        "Phát triển hệ thống backend module hóa chuẩn doanh nghiệp với NestJS, tận dụng cơ chế Dependency Injection, kiểm soát kiểu dữ liệu chặt chẽ với TypeScript và sẵn sàng mở rộng kiến trúc vi dịch vụ (Microservices).",
 
       "techSlider.figmaCategory": "UI/UX & PROTOTYPING",
       "techSlider.figmaFocus": "DESIGN SYSTEMS & WIREFRAMING",
       "techSlider.figmaTitle": "Figma UI/UX Design",
       "techSlider.figmaDesc":
-        "Thiết kế giao diện người dùng trực quan, xây dựng hệ thống Design System chuẩn mực, wireframe và prototype tương tác cao phục vụ phát triển sản phẩm thực tế.",
+        "Thiết kế giao diện người dùng hiện đại, xây dựng Design System nhất quán, phác thảo wireframe và tạo prototype tương tác cao giúp tối ưu trải nghiệm người dùng trước khi triển khai code.",
 
       "techSlider.githubCategory": "VERSION CONTROL & CI/CD",
       "techSlider.githubFocus": "CODE COLLABORATION & GITHUB ACTIONS",
       "techSlider.githubTitle": "GitHub & CI/CD Pipelines",
       "techSlider.githubDesc":
-        "Quản lý mã nguồn tập trung, triển khai quy trình Gitflow chuẩn chỉ, tự động hóa quy trình kiểm thử và phát hành liên tục qua GitHub Actions.",
+        "Quản lý mã nguồn tập trung, áp dụng mô hình phân nhánh Gitflow chặt chẽ, tối ưu quy trình Code Review và tự động hóa kiểm thử, triển khai liên tục qua GitHub Actions.",
 
       "techSlider.gitlabCategory": "DEVOPS LIFECYCLE",
       "techSlider.gitlabFocus": "GITLAB CI/CD & PIPELINE AUTOMATION",
       "techSlider.gitlabTitle": "GitLab & DevOps Automation",
       "techSlider.gitlabDesc":
-        "Tích hợp toàn diện vòng đời DevOps, thiết lập cấu hình .gitlab-ci.yml tự động, quản trị repository doanh nghiệp và giám sát triển khai dịch vụ.",
+        "Quản trị toàn diện vòng đời DevOps trên GitLab, cấu hình pipeline tự động hóa với .gitlab-ci.yml, quản lý repository phân quyền doanh nghiệp và giám sát triển khai dịch vụ liên tục.",
 
       "about.softTitle": "Kỹ năng mềm",
       "about.techTitle": "Kỹ năng kỹ thuật",
@@ -249,23 +249,23 @@
       "techSlider.dotnetFocus": "CLEAN ARCHITECTURE & SECURE APIS",
       "techSlider.dotnetTitle": ".NET & ASP.NET Core",
       "techSlider.dotnetDesc":
-        "Specialized in Clean Architecture, building high-performance RESTful Web APIs, JWT authentication, Entity Framework Core, and payment gateway integrations (VnPay, PayOS).",
+        "Specialized in Clean Architecture, building high-performance RESTful Web APIs, JWT security, Entity Framework Core query optimization, and online payment integrations (VnPay, PayOS).",
       "techSlider.javaCategory": "ENTERPRISE PLATFORM",
       "techSlider.javaFocus": "SPRING BOOT & SCALABLE SERVICES",
       "techSlider.javaTitle": "Spring Boot & Java",
       "techSlider.javaDesc":
-        "Developing enterprise backend services, robust security with Spring Security, Hibernate/JPA query optimization, and reliable transaction management.",
+        "Developing enterprise backend services with Spring Boot, robust role-based security via Spring Security, Hibernate/JPA query optimization, and reliable transaction processing.",
       "techSlider.dockerCategory": "CONTAINER & DEVOPS",
       "techSlider.dockerFocus": "DOCKER & CI/CD AUTOMATION",
       "techSlider.dockerTitle": "Docker & DevOps",
       "techSlider.dockerDesc":
-        "Containerizing cross-platform applications, orchestrating consistent development environments via Docker Compose, and automating CI/CD with GitHub Actions.",
+        "Containerizing cross-platform applications with Docker, orchestrating consistent development environments via Docker Compose, and automating CI/CD pipelines for seamless deployment.",
 
       "techSlider.phpCategory": "WEB & BACKEND ECOSYSTEM",
       "techSlider.phpFocus": "LARAVEL & RESTFUL SERVICES",
       "techSlider.phpTitle": "PHP & Laravel Framework",
       "techSlider.phpDesc":
-        "Building object-oriented web applications, MVC architecture with Laravel, Eloquent ORM query optimization, and robust backend data services.",
+        "Building object-oriented web applications with Laravel MVC architecture, optimizing Eloquent ORM relationships, designing RESTful APIs, and managing MySQL databases efficiently.",
 
       "techSlider.nestCategory": "NODE.JS ECOSYSTEM",
       "techSlider.nestFocus": "TYPESCRIPT & ENTERPRISE ARCHITECTURE",
@@ -277,19 +277,19 @@
       "techSlider.figmaFocus": "DESIGN SYSTEMS & WIREFRAMING",
       "techSlider.figmaTitle": "Figma UI/UX Design",
       "techSlider.figmaDesc":
-        "Designing intuitive user interfaces, constructing comprehensive Design Systems, wireframes, and interactive prototypes for seamless product engineering.",
+        "Designing modern user interfaces, constructing consistent Design Systems, wireframing, and building interactive prototypes to optimize user experience prior to engineering.",
 
       "techSlider.githubCategory": "VERSION CONTROL & CI/CD",
       "techSlider.githubFocus": "CODE COLLABORATION & GITHUB ACTIONS",
       "techSlider.githubTitle": "GitHub & CI/CD Pipelines",
       "techSlider.githubDesc":
-        "Centralized source code management, robust Gitflow collaboration workflows, and automated testing & release pipelines via GitHub Actions.",
+        "Centralized source code management, robust Gitflow branching, collaborative code reviews, and automated CI/CD pipelines via GitHub Actions.",
 
       "techSlider.gitlabCategory": "DEVOPS LIFECYCLE",
       "techSlider.gitlabFocus": "GITLAB CI/CD & PIPELINE AUTOMATION",
       "techSlider.gitlabTitle": "GitLab & DevOps Automation",
       "techSlider.gitlabDesc":
-        "Full DevOps lifecycle integration, configuring robust .gitlab-ci.yml pipelines, enterprise repository management, and safe deployment monitoring.",
+        "Comprehensive DevOps lifecycle management, automated pipeline configuration via .gitlab-ci.yml, enterprise repository governance, and continuous deployment monitoring.",
 
       "about.softTitle": "Soft skills",
       "about.techTitle": "Technical skills",
