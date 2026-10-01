@@ -31,6 +31,7 @@
   --space-lg: 24px;
   --space-xl: 40px;
   --space-2xl: 64px;
+  --section-spacing: clamp(80px, 8.5vw, 128px);
   --glass-bg: rgba(255, 255, 255, 0.78);
   --glass-border: rgba(10, 10, 10, 0.08);
   --glass-shadow: 0 10px 32px rgba(10, 10, 10, 0.06);
@@ -404,7 +405,7 @@ main {
   width: 100%;
   min-height: 100vh;
   min-height: 100dvh;
-  margin-bottom: var(--space-xl);
+  margin-bottom: var(--section-spacing);
   padding: calc(var(--header-h) + 1.5rem) clamp(20px, 4vw, 56px) 1.5rem;
   display: flex;
   align-items: center;
@@ -686,7 +687,7 @@ main {
 
 .section {
   width: min(calc(100% - 32px), var(--max-width));
-  margin: 0 auto var(--space-2xl);
+  margin: 0 auto var(--section-spacing);
 }
 
 /* .section__header â€” tiÃªu Ä‘á» section */
@@ -815,9 +816,8 @@ main {
   position: relative;
   width: 100%;
   max-width: 1140px;
-  margin: 0 auto var(--space-2xl);
-  padding: clamp(38px, 5vw, 60px) clamp(12px, 2.5vw, 24px)
-    clamp(24px, 4vw, 40px);
+  margin: 0 auto;
+  padding: clamp(16px, 2.5vw, 28px) clamp(12px, 2.5vw, 24px) 0;
   background: transparent;
   border: none !important;
   outline: none !important;
@@ -922,8 +922,8 @@ main {
   font-family: var(--font-serif);
   font-style: italic;
   font-weight: 500;
-  font-size: clamp(1.6rem, 2.5vw, 2.25rem);
-  line-height: 1.25;
+  font-size: clamp(2.1rem, 3.6vw, 3.1rem);
+  line-height: 1.2;
   letter-spacing: -0.025em;
   color: var(--color-secondary);
   text-align: center;
@@ -1315,7 +1315,7 @@ main {
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .tech-slider {
-    padding: 36px 14px 28px;
+    padding: 18px 14px 0;
     border-radius: 20px;
   }
 
@@ -1326,9 +1326,10 @@ main {
   }
 
   .tech-slider__eyebrow,
-  .who-eyebrow {
-    font-size: clamp(1.2rem, 3.8vw, 1.45rem);
-    line-height: 1.25;
+  .who-eyebrow,
+  .process-eyebrow {
+    font-size: clamp(1.4rem, 4.5vw, 1.85rem);
+    line-height: 1.2;
   }
 
   .tech-slider__stage {
@@ -1435,21 +1436,20 @@ main {
    ========================================================================== */
 
 .who-section {
-  padding-top: clamp(48px, 6vw, 72px);
-  padding-bottom: var(--space-2xl);
+  padding: 0;
 }
 
 .who-header {
   text-align: center;
-  margin-bottom: clamp(48px, 6vw, 68px);
+  margin-bottom: clamp(36px, 4.5vw, 56px);
 }
 
 .who-eyebrow {
   font-family: var(--font-serif);
   font-style: italic;
   font-weight: 500;
-  font-size: clamp(1.6rem, 2.5vw, 2.25rem);
-  line-height: 1.25;
+  font-size: clamp(2.1rem, 3.6vw, 3.1rem);
+  line-height: 1.2;
   color: var(--color-secondary);
   margin: 0;
   letter-spacing: -0.025em;
@@ -1795,7 +1795,7 @@ main {
 
 .process-section {
   position: relative;
-  padding: clamp(64px, 8vw, 110px) 0 clamp(80px, 10vw, 130px);
+  padding: 0;
   overflow: visible;
 }
 
@@ -1820,7 +1820,7 @@ main {
 
 .process-header {
   text-align: center;
-  margin-bottom: clamp(48px, 6vw, 76px);
+  margin-bottom: clamp(36px, 4.5vw, 56px);
   position: relative;
   z-index: 1;
 }
@@ -1829,22 +1829,12 @@ main {
   font-family: var(--font-serif);
   font-style: italic;
   font-weight: 500;
-  font-size: clamp(1.6rem, 2.5vw, 2.25rem);
-  line-height: 1.25;
+  font-size: clamp(2.1rem, 3.6vw, 3.1rem);
+  line-height: 1.2;
   color: var(--color-secondary);
   margin: 0;
   letter-spacing: -0.025em;
   opacity: 0.95;
-}
-
-.process-title {
-  margin: 0;
-  font-family: var(--font-sans);
-  font-size: clamp(2.4rem, 4.5vw, 3.6rem);
-  font-weight: 400;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  color: #18181b;
 }
 
 .process-cards-wrap {
@@ -1855,7 +1845,7 @@ main {
   gap: clamp(16px, 2.5vw, 32px);
   max-width: 1120px;
   margin: 0 auto;
-  padding: 30px 16px 50px;
+  padding: 10px 16px 24px;
   z-index: 1;
 }
 
@@ -2211,7 +2201,7 @@ main {
 
 /* #contact â€” khá»‘i liÃªn há»‡: .contact-wrap, .contact-list */
 .section--contact {
-  margin-bottom: var(--space-xl);
+  margin-bottom: var(--section-spacing);
 }
 
 .contact-wrap {
@@ -2293,7 +2283,7 @@ main {
 /* .site-footer â€” dÃ²ng copyright cuá»‘i trang */
 .site-footer {
   text-align: center;
-  padding: var(--space-lg);
+  padding: clamp(28px, 4vw, 44px) var(--space-lg);
   font-size: 0.875rem;
   color: var(--color-text-muted);
 }

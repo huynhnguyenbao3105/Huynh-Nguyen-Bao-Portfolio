@@ -919,9 +919,12 @@
       });
     }
 
-    function goToSlide(newIndex) {
+    function goToSlide(newIndex, isUserAction) {
       currentIndex = ((newIndex % total) + total) % total;
       updateSlide(currentIndex);
+      if (isUserAction) {
+        resetAutoPlay();
+      }
     }
 
     dots.forEach(function (dot) {
@@ -929,7 +932,7 @@
         e.preventDefault();
         var idx = parseInt(dot.getAttribute("data-slide"), 10);
         if (!isNaN(idx)) {
-          goToSlide(idx);
+          goToSlide(idx, true);
         }
       });
     });
@@ -943,7 +946,7 @@
         var idx = parseInt(slide.getAttribute("data-index"), 10);
         if (!isNaN(idx) && idx !== currentIndex) {
           e.preventDefault();
-          goToSlide(idx);
+          goToSlide(idx, true);
         }
       });
     });
@@ -973,9 +976,9 @@
         isDragging = false;
         var diffX = currentX - startX;
         if (diffX < -40) {
-          goToSlide(currentIndex + 1);
+          goToSlide(currentIndex + 1, true);
         } else if (diffX > 40) {
-          goToSlide(currentIndex - 1);
+          goToSlide(currentIndex - 1, true);
         }
       });
 
@@ -990,10 +993,10 @@
     slider.addEventListener("keydown", function (e) {
       if (e.key === "ArrowLeft") {
         e.preventDefault();
-        goToSlide(currentIndex - 1);
+        goToSlide(currentIndex - 1, true);
       } else if (e.key === "ArrowRight") {
         e.preventDefault();
-        goToSlide(currentIndex + 1);
+        goToSlide(currentIndex + 1, true);
       }
     });
 
@@ -1002,8 +1005,80 @@
       updateSlide(currentIndex);
     });
 
+    // Auto-advance / Autoplay (tự động đổi slide công nghệ sau mỗi 4 giây)
+    var AUTO_PLAY_INTERVAL = 4000;
+    var autoPlayTimer = null;
+    var isHovered = false;
+    var isVisibleOnScreen = true;
+    var prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    function startAutoPlay() {
+      if (prefersReducedMotion) return;
+      stopAutoPlay();
+      autoPlayTimer = setInterval(function () {
+        if (!isHovered && isVisibleOnScreen && !document.hidden) {
+          goToSlide(currentIndex + 1, false);
+        }
+      }, AUTO_PLAY_INTERVAL);
+    }
+
+    function stopAutoPlay() {
+      if (autoPlayTimer) {
+        clearInterval(autoPlayTimer);
+        autoPlayTimer = null;
+      }
+    }
+
+    function resetAutoPlay() {
+      stopAutoPlay();
+      startAutoPlay();
+    }
+
+    // Pause on hover
+    slider.addEventListener("mouseenter", function () {
+      isHovered = true;
+      stopAutoPlay();
+    });
+
+    slider.addEventListener("mouseleave", function () {
+      isHovered = false;
+      startAutoPlay();
+    });
+
+    // Pause when tab is inactive
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden) {
+        stopAutoPlay();
+      } else {
+        startAutoPlay();
+      }
+    });
+
+    // Only autoplay when slider is visible in viewport
+    if ("IntersectionObserver" in window) {
+      var observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            isVisibleOnScreen = entry.isIntersecting;
+            if (entry.isIntersecting) {
+              startAutoPlay();
+            } else {
+              stopAutoPlay();
+            }
+          });
+        },
+        { threshold: 0.25 },
+      );
+      observer.observe(slider);
+    } else {
+      startAutoPlay();
+    }
+
     // Initial setup
     updateSlide(0);
+    startAutoPlay();
   }
 
   initTechSlider();
