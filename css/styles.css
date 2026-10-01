@@ -816,7 +816,7 @@ main {
   width: 100%;
   max-width: 1140px;
   margin: 0 auto var(--space-2xl);
-  padding: clamp(16px, 3vw, 32px) clamp(12px, 2.5vw, 24px) clamp(24px, 4vw, 40px);
+  padding: clamp(38px, 5vw, 60px) clamp(12px, 2.5vw, 24px) clamp(24px, 4vw, 40px);
   background: transparent;
   border: none !important;
   outline: none !important;
@@ -910,44 +910,23 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 28px;
-  margin-bottom: clamp(14px, 2.2vw, 20px);
-  padding: 0 4px;
+  min-height: 38px;
+  margin-bottom: clamp(20px, 2.8vw, 32px);
+  padding: clamp(10px, 1.6vw, 18px) 8px clamp(8px, 1.2vw, 14px);
 }
 
 .tech-slider__eyebrow {
   margin: 0;
+  padding: 4px 0;
   font-family: var(--font-serif);
   font-style: italic;
   font-weight: 500;
-  font-size: clamp(1.25rem, 2vw, 1.65rem);
-  line-height: 1.15;
-  letter-spacing: -0.03em;
+  font-size: clamp(1.6rem, 2.5vw, 2.25rem);
+  line-height: 1.25;
+  letter-spacing: -0.025em;
   color: var(--color-secondary);
   text-align: center;
   text-transform: none;
-}
-
-.tech-slider__counter {
-  position: absolute;
-  right: 4px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-family: var(--font-sans);
-  font-size: clamp(0.85rem, 1.1vw, 0.95rem);
-  font-weight: 600;
-  color: var(--theme-muted);
-  letter-spacing: 0.08em;
-}
-
-.tech-slider__counter-curr {
-  font-weight: 800;
-  color: var(--theme-text);
-}
-
-.tech-slider__counter-sep {
-  margin: 0 2px;
-  opacity: 0.5;
 }
 
 /* 3D Carousel Stage */
@@ -1113,7 +1092,7 @@ main {
 
 /* Active center logo */
 .tech-slide--active {
-  transform: translate(-50%, -28%) scale(1);
+  transform: translate(-50%, -16%) scale(1);
   opacity: 1;
   z-index: 10;
   pointer-events: auto;
@@ -1130,7 +1109,7 @@ main {
 
 /* Left flanking car */
 .tech-slide--prev {
-  transform: translate(calc(-50% - clamp(210px, 32vw, 360px)), -28%) scale(0.64);
+  transform: translate(calc(-50% - clamp(210px, 32vw, 360px)), -16%) scale(0.64);
   opacity: 0.38;
   z-index: 4;
   pointer-events: auto;
@@ -1139,12 +1118,12 @@ main {
 
 .tech-slide--prev:hover {
   opacity: 0.7;
-  transform: translate(calc(-50% - clamp(210px, 32vw, 360px)), -30%) scale(0.68);
+  transform: translate(calc(-50% - clamp(210px, 32vw, 360px)), -18%) scale(0.68);
 }
 
 /* Right flanking car */
 .tech-slide--next {
-  transform: translate(calc(-50% + clamp(210px, 32vw, 360px)), -28%) scale(0.64);
+  transform: translate(calc(-50% + clamp(210px, 32vw, 360px)), -16%) scale(0.64);
   opacity: 0.38;
   z-index: 4;
   pointer-events: auto;
@@ -1153,7 +1132,7 @@ main {
 
 .tech-slide--next:hover {
   opacity: 0.7;
-  transform: translate(calc(-50% + clamp(210px, 32vw, 360px)), -30%) scale(0.68);
+  transform: translate(calc(-50% + clamp(210px, 32vw, 360px)), -18%) scale(0.68);
 }
 
 /* Hidden car (if more than 3) */
@@ -1207,47 +1186,36 @@ main {
   z-index: 1;
 }
 
-.tech-slider__timeline-thumb {
-  position: absolute;
-  top: 50%;
-  left: 0%;
-  transform: translate(-50%, -50%);
-  width: 28px;
-  height: 10px;
-  border-radius: 999px;
-  background: var(--theme-thumb);
-  z-index: 3;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
-  transition: left 0.55s cubic-bezier(0.34, 1.25, 0.64, 1);
-  pointer-events: none;
-}
-
 .tech-slider__timeline-dot {
   position: relative;
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
-  background: var(--theme-pill-bg);
+  background: var(--theme-pill-bg, #ffffff);
   border: 2px solid var(--theme-muted);
   cursor: pointer;
   z-index: 2;
   padding: 0;
   outline: none;
   transition:
-    transform 0.25s ease,
+    transform 0.3s cubic-bezier(0.34, 1.3, 0.64, 1),
     border-color 0.25s ease,
-    background 0.25s ease;
+    background-color 0.25s ease,
+    box-shadow 0.3s ease;
 }
 
 .tech-slider__timeline-dot:hover {
-  transform: scale(1.3);
+  transform: scale(1.25);
   border-color: var(--theme-text);
 }
 
 .tech-slider__timeline-dot--active {
   background: var(--theme-thumb);
   border-color: var(--theme-thumb);
-  transform: scale(1.25);
+  transform: scale(1.35);
+  box-shadow:
+    0 0 0 4px var(--theme-glow, rgba(0, 0, 0, 0.18)),
+    0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Bottom info card */
@@ -1335,21 +1303,19 @@ main {
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .tech-slider {
-    padding: 20px 14px 28px;
+    padding: 36px 14px 28px;
     border-radius: 20px;
   }
 
   .tech-slider__topbar {
-    justify-content: space-between;
+    justify-content: center;
+    padding: 8px 4px 4px;
+    margin-bottom: 18px;
   }
 
   .tech-slider__eyebrow {
-    font-size: 0.92rem;
-  }
-
-  .tech-slider__counter {
-    position: static;
-    transform: none;
+    font-size: clamp(1.2rem, 3.8vw, 1.45rem);
+    line-height: 1.25;
   }
 
   .tech-slider__stage {
@@ -1357,12 +1323,12 @@ main {
   }
 
   .tech-slide--prev {
-    transform: translate(calc(-50% - clamp(140px, 38vw, 200px)), -28%) scale(0.55);
+    transform: translate(calc(-50% - clamp(140px, 38vw, 200px)), -16%) scale(0.55);
     opacity: 0.25;
   }
 
   .tech-slide--next {
-    transform: translate(calc(-50% + clamp(140px, 38vw, 200px)), -28%) scale(0.55);
+    transform: translate(calc(-50% + clamp(140px, 38vw, 200px)), -16%) scale(0.55);
     opacity: 0.25;
   }
 

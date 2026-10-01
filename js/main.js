@@ -45,7 +45,7 @@
       "about.title": "Giới thiệu",
       "about.greeting": "Hallo!",
       "about.heroStatement":
-        "tập trung vào kiến trúc hệ thống,<br>bảo mật API và tối ưu dữ liệu<br><span class=\"about-showcase__muted\">để xây dựng những giải pháp<br>giải quyết bài toán thực tế</span>",
+        'tập trung vào kiến trúc hệ thống,<br>bảo mật API và tối ưu dữ liệu<br><span class="about-showcase__muted">để xây dựng những giải pháp<br>giải quyết bài toán thực tế</span>',
       "about.pill1": ".NET & ASP.NET Core",
       "about.pill2": "Spring Boot & Java",
       "about.pill3": "PostgreSQL & Database",
@@ -54,7 +54,7 @@
       "about.pill6": "Docker & DevOps",
 
       "techSlider.badge": "CÔNG NGHỆ CỐT LÕI",
-      "techSlider.eyebrow": "Nền tảng kỹ thuật & kiến trúc",
+      "techSlider.eyebrow": "Nền tảng kỹ thuật và kiến trúc",
       "techSlider.dotnetCategory": "MICROSOFT ECOSYSTEM",
       "techSlider.dotnetFocus": "CLEAN ARCHITECTURE & SECURE APIS",
       "techSlider.dotnetTitle": ".NET & ASP.NET Core",
@@ -111,7 +111,7 @@
 
       "who.eyebrow": "/ Về bản thân tôi",
       "who.title":
-        "Chinh phục công nghệ <span class=\"who-title__muted\">từ 2021</span>",
+        'Chinh phục công nghệ <span class="who-title__muted">từ 2021</span>',
       "who.bio":
         "Kỹ sư Backend / Full-stack với niềm đam mê xây dựng các hệ thống web có khả năng mở rộng cao, bảo mật và trải nghiệm mượt mà. Tốt nghiệp Kỹ thuật Phần mềm tại Đại học FPT Cần Thơ, tôi đã tích lũy kinh nghiệm thực tế qua vai trò Team Lead tại FPT Software và các dự án thương mại điện tử, mạng xã hội quy mô lớn.",
       "who.authorRole": "Backend Developer",
@@ -130,11 +130,14 @@
 
       "process.title": "Quy trình làm việc",
       "process.step1Title": "Discover",
-      "process.step1Desc": "Thấu hiểu mục tiêu, yêu cầu người dùng và thách thức kỹ thuật thông qua nghiên cứu và chiến lược rõ ràng.",
+      "process.step1Desc":
+        "Thấu hiểu mục tiêu, yêu cầu người dùng và thách thức kỹ thuật thông qua nghiên cứu và chiến lược rõ ràng.",
       "process.step2Title": "Design",
-      "process.step2Desc": "Chuyển hóa giải pháp thành kiến trúc hệ thống trực quan, tinh gọn, bảo mật và trải nghiệm người dùng tối ưu.",
+      "process.step2Desc":
+        "Chuyển hóa giải pháp thành kiến trúc hệ thống trực quan, tinh gọn, bảo mật và trải nghiệm người dùng tối ưu.",
       "process.step3Title": "Deliver",
-      "process.step3Desc": "Kiểm thử toàn diện, tối ưu hóa hiệu năng và triển khai sản phẩm hoàn thiện với độ chính xác cao.",
+      "process.step3Desc":
+        "Kiểm thử toàn diện, tối ưu hóa hiệu năng và triển khai sản phẩm hoàn thiện với độ chính xác cao.",
 
       "exp.title": "Kinh nghiệm",
       "exp.meta1": "INTERN FPT Software",
@@ -232,7 +235,7 @@
       "about.title": "About",
       "about.greeting": "Hallo!",
       "about.heroStatement":
-        "focus is on clean architecture,<br>secure APIs, and data integrity<br><span class=\"about-showcase__muted\">to craft systems<br>that solve real problems</span>",
+        'focus is on clean architecture,<br>secure APIs, and data integrity<br><span class="about-showcase__muted">to craft systems<br>that solve real problems</span>',
       "about.pill1": ".NET & ASP.NET Core",
       "about.pill2": "Spring Boot & Java",
       "about.pill3": "PostgreSQL & Database",
@@ -241,7 +244,7 @@
       "about.pill6": "Docker & DevOps",
 
       "techSlider.badge": "CORE STACK",
-      "techSlider.eyebrow": "Core Technologies & Architecture",
+      "techSlider.eyebrow": "Core Technologies and Architecture",
       "techSlider.dotnetCategory": "MICROSOFT ECOSYSTEM",
       "techSlider.dotnetFocus": "CLEAN ARCHITECTURE & SECURE APIS",
       "techSlider.dotnetTitle": ".NET & ASP.NET Core",
@@ -298,7 +301,7 @@
 
       "who.eyebrow": "/ Who Am I",
       "who.title":
-        "Pushing Boundaries <span class=\"who-title__muted\">since 2021</span>",
+        'Pushing Boundaries <span class="who-title__muted">since 2021</span>',
       "who.bio":
         "A backend / full-stack developer passionate about engineering secure, scalable web architectures and intuitive digital experiences. Graduated in Software Engineering from FPT University Can Tho, I have gained solid hands-on experience through leading backend teams at FPT Software and building robust e-commerce &amp; learning platforms.",
       "who.authorRole": "Backend Developer",
@@ -317,11 +320,14 @@
 
       "process.title": "Here's how it works",
       "process.step1Title": "Discover",
-      "process.step1Desc": "Understanding your goals, users, and challenges through research and strategy.",
+      "process.step1Desc":
+        "Understanding your goals, users, and challenges through research and strategy.",
       "process.step2Title": "Design",
-      "process.step2Desc": "Transforming insights into intuitive, beautiful, and functional product experiences.",
+      "process.step2Desc":
+        "Transforming insights into intuitive, beautiful, and functional product experiences.",
       "process.step3Title": "Deliver",
-      "process.step3Desc": "Testing, refining, and launching the final product with clarity and precision.",
+      "process.step3Desc":
+        "Testing, refining, and launching the final product with clarity and precision.",
 
       "exp.title": "Experience",
       "exp.meta1": "INTERN FPT Software",
@@ -854,9 +860,9 @@
     var slides = Array.from(slider.querySelectorAll(".tech-slide"));
     var infoCards = Array.from(slider.querySelectorAll(".tech-info-card"));
     var bgTextEl = document.getElementById("techSliderBgText");
-    var currentCounterEl = document.getElementById("techSliderCurrent");
-    var thumbEl = document.getElementById("techSliderThumb");
-    var dots = Array.from(slider.querySelectorAll(".tech-slider__timeline-dot"));
+    var dots = Array.from(
+      slider.querySelectorAll(".tech-slider__timeline-dot"),
+    );
     var stage = document.getElementById("techSliderStage");
 
     var currentIndex = 0;
@@ -877,18 +883,13 @@
         bgTextEl.textContent = data.bgText;
       }
 
-      // Update counter
-      if (currentCounterEl) {
-        currentCounterEl.textContent = "0" + (index + 1);
-      }
-
       // Update 3D car positioning
       slides.forEach(function (slide, i) {
         slide.classList.remove(
           "tech-slide--active",
           "tech-slide--prev",
           "tech-slide--next",
-          "tech-slide--hidden"
+          "tech-slide--hidden",
         );
         if (i === index) {
           slide.classList.add("tech-slide--active");
@@ -905,11 +906,7 @@
         }
       });
 
-      // Update timeline indicator & dots
-      if (thumbEl) {
-        var pct = total > 1 ? (index / (total - 1)) * 100 : 0;
-        thumbEl.style.left = pct + "%";
-      }
+      // Update timeline dots
       dots.forEach(function (dot, i) {
         dot.classList.toggle("tech-slider__timeline-dot--active", i === index);
       });
