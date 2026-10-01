@@ -1444,7 +1444,7 @@ main {
 
 .who-title {
   margin: 0;
-  font-family: "Outfit", var(--font-sans);
+  font-family: var(--font-sans);
   font-size: clamp(2.4rem, 4.5vw, 3.6rem);
   font-weight: 400;
   line-height: 1.15;
@@ -1554,7 +1554,7 @@ main {
 
 .who-author__name {
   display: block;
-  font-family: "Outfit", var(--font-sans);
+  font-family: var(--font-sans);
   font-weight: 600;
   font-size: 0.95rem;
   color: #18181b;
@@ -1563,7 +1563,7 @@ main {
 
 .who-author__role {
   display: block;
-  font-family: "Outfit", var(--font-sans);
+  font-family: var(--font-sans);
   font-size: 0.825rem;
   font-weight: 400;
   color: #71717a;
@@ -1577,7 +1577,7 @@ main {
 
 .who-bio {
   margin: 0 0 clamp(36px, 4vw, 48px);
-  font-family: "Outfit", var(--font-sans);
+  font-family: var(--font-sans);
   font-size: 1.025rem;
   font-weight: 400;
   line-height: 1.68;
@@ -1599,7 +1599,7 @@ main {
   gap: 20px;
   padding: 18px 0;
   border-bottom: 1px solid rgba(15, 23, 42, 0.08);
-  font-family: "Outfit", var(--font-sans);
+  font-family: var(--font-sans);
   transition: padding-left 0.2s ease, background 0.2s ease;
 }
 
@@ -1609,7 +1609,7 @@ main {
 }
 
 .who-col--role {
-  font-family: "Outfit", var(--font-sans);
+  font-family: var(--font-sans);
   font-weight: 500;
   font-size: 0.95rem;
   color: #18181b;
@@ -1618,7 +1618,7 @@ main {
 }
 
 .who-col--org {
-  font-family: "Outfit", var(--font-sans);
+  font-family: var(--font-sans);
   font-weight: 400;
   font-size: 0.925rem;
   color: #71717a;
@@ -1627,7 +1627,7 @@ main {
 }
 
 .who-col--time {
-  font-family: "Outfit", var(--font-sans);
+  font-family: var(--font-sans);
   font-weight: 400;
   font-size: 0.9rem;
   color: #18181b;

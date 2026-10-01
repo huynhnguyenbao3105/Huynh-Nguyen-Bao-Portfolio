@@ -109,14 +109,14 @@
       "about.goalP2":
         "Hướng tới vị trí <strong>Backend / Full-stack Developer</strong> sau tốt nghiệp: chuyên sâu REST API, kiến trúc nhiều lớp, JWT và thiết kế cơ sở dữ liệu (Code First &amp; Database First). Luôn học thêm qua nghiên cứu, làm việc nhóm và tận dụng AI để tăng năng suất, đồng thời nâng dần tiếng Anh để làm việc với tài liệu và đội ngũ quốc tế.",
 
-      "who.eyebrow": "/ Về bản thân tôi",
+      "who.eyebrow": "Về bản thân tôi",
       "who.title":
         'Chinh phục công nghệ <span class="who-title__muted">từ 2021</span>',
       "who.bio":
         "Kỹ sư Backend / Full-stack với niềm đam mê xây dựng các hệ thống web có khả năng mở rộng cao, bảo mật và trải nghiệm mượt mà. Tốt nghiệp Kỹ thuật Phần mềm tại Đại học FPT Cần Thơ, tôi đã tích lũy kinh nghiệm thực tế qua vai trò Team Lead tại FPT Software và các dự án thương mại điện tử, mạng xã hội quy mô lớn.",
       "who.authorRole": "Backend Developer",
       "who.role1": "Full-stack Developer",
-      "who.org1": "AccountMarket (Sàn giao dịch)",
+      "who.org1": "AccountMarket — Sàn giao dịch",
       "who.time1": "03/2026 &rarr; 04/2026",
       "who.role2": "Backend Team Lead",
       "who.org2": "FUS — Mạng xã hội học tập",
@@ -299,14 +299,14 @@
       "about.goalP2":
         "Aiming for a <strong>Backend / Full-stack Developer</strong> role after graduation: deepening REST API design, layered architecture, JWT, and database design (Code First &amp; Database First). I keep learning through research, teamwork, and using AI to boost productivity, while improving English for international documentation and teams.",
 
-      "who.eyebrow": "/ Who Am I",
+      "who.eyebrow": "Who Am I",
       "who.title":
         'Pushing Boundaries <span class="who-title__muted">since 2021</span>',
       "who.bio":
         "A backend / full-stack developer passionate about engineering secure, scalable web architectures and intuitive digital experiences. Graduated in Software Engineering from FPT University Can Tho, I have gained solid hands-on experience through leading backend teams at FPT Software and building robust e-commerce &amp; learning platforms.",
       "who.authorRole": "Backend Developer",
       "who.role1": "Full-stack Developer",
-      "who.org1": "AccountMarket (Marketplace)",
+      "who.org1": "AccountMarket — Marketplace",
       "who.time1": "03/2026 &rarr; 04/2026",
       "who.role2": "Backend Team Lead",
       "who.org2": "FUS — Social Learning Platform",
