@@ -1149,7 +1149,7 @@ main {
   align-items: center;
   justify-content: center;
   gap: 16px;
-  margin: clamp(14px, 2vw, 24px) auto 0;
+  margin: clamp(40px, 5.5vw, 62px) auto 0;
   max-width: 480px;
   width: 100%;
 }
