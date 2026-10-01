@@ -18,7 +18,7 @@
   --color-text-muted: #6d6d78;
   --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
   --font-display: "Anton", "Arial Narrow", sans-serif;
-  --font-serif: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-serif: "Playfair Display", Georgia, "Times New Roman";
   --font-mono: "Plus Jakarta Sans", system-ui, sans-serif;
   --landing-bg: var(--color-page);
   --landing-glow: #ffe4a8;
@@ -816,7 +816,8 @@ main {
   width: 100%;
   max-width: 1140px;
   margin: 0 auto var(--space-2xl);
-  padding: clamp(38px, 5vw, 60px) clamp(12px, 2.5vw, 24px) clamp(24px, 4vw, 40px);
+  padding: clamp(38px, 5vw, 60px) clamp(12px, 2.5vw, 24px)
+    clamp(24px, 4vw, 40px);
   background: transparent;
   border: none !important;
   outline: none !important;
@@ -1047,7 +1048,9 @@ main {
   pointer-events: none;
   user-select: none;
   filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.16));
-  transition: filter 0.5s ease, transform 0.4s ease;
+  transition:
+    filter 0.5s ease,
+    transform 0.4s ease;
 }
 
 .tech-slide--active .tech-slide__car-img {
@@ -1060,10 +1063,17 @@ main {
   height: 18px;
   margin-top: 14px;
   border-radius: 50%;
-  background: radial-gradient(ellipse at 50% 50%, rgba(10, 10, 15, 0.32) 0%, rgba(10, 10, 15, 0.1) 50%, transparent 75%);
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    rgba(10, 10, 15, 0.32) 0%,
+    rgba(10, 10, 15, 0.1) 50%,
+    transparent 75%
+  );
   filter: blur(5px);
   pointer-events: none;
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
 }
 
 .tech-slide--active .tech-slide__shadow {
@@ -1071,7 +1081,8 @@ main {
 }
 
 @keyframes techLogoFloat {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px);
   }
   50% {
@@ -1080,7 +1091,8 @@ main {
 }
 
 @keyframes techShadowPulse {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
     opacity: 0.9;
   }
@@ -1262,7 +1274,7 @@ main {
   font-size: clamp(0.92rem, 1.15vw, 1.05rem);
   line-height: 1.6;
   color: var(--theme-muted);
-  max-width: 720px;
+  max-width: 780px;
   margin: 0 auto 16px;
 }
 
@@ -1324,12 +1336,14 @@ main {
   }
 
   .tech-slide--prev {
-    transform: translate(calc(-50% - clamp(140px, 38vw, 200px)), -16%) scale(0.55);
+    transform: translate(calc(-50% - clamp(140px, 38vw, 200px)), -16%)
+      scale(0.55);
     opacity: 0.25;
   }
 
   .tech-slide--next {
-    transform: translate(calc(-50% + clamp(140px, 38vw, 200px)), -16%) scale(0.55);
+    transform: translate(calc(-50% + clamp(140px, 38vw, 200px)), -16%)
+      scale(0.55);
     opacity: 0.25;
   }
 
@@ -1437,7 +1451,7 @@ main {
   font-size: clamp(1.6rem, 2.5vw, 2.25rem);
   line-height: 1.25;
   color: var(--color-secondary);
-  margin: 0 0 12px;
+  margin: 0;
   letter-spacing: -0.025em;
   opacity: 0.95;
 }
@@ -1498,7 +1512,11 @@ main {
 .who-photo-card__glow {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.08), transparent 70%);
+  background: radial-gradient(
+    circle at 50% 20%,
+    rgba(255, 255, 255, 0.08),
+    transparent 70%
+  );
   pointer-events: none;
 }
 
@@ -1536,7 +1554,10 @@ main {
   height: auto;
   border-radius: 0;
   opacity: 0.85;
-  transition: opacity 0.2s, transform 0.2s, color 0.2s;
+  transition:
+    opacity 0.2s,
+    transform 0.2s,
+    color 0.2s;
   text-decoration: none;
 }
 
@@ -1594,13 +1615,18 @@ main {
 
 .who-row {
   display: grid;
-  grid-template-columns: minmax(170px, 1.25fr) minmax(220px, 1.75fr) minmax(140px, 1fr);
+  grid-template-columns: minmax(170px, 1.25fr) minmax(220px, 1.75fr) minmax(
+      140px,
+      1fr
+    );
   align-items: center;
   gap: 20px;
   padding: 18px 0;
   border-bottom: 1px solid rgba(15, 23, 42, 0.08);
   font-family: var(--font-sans);
-  transition: padding-left 0.2s ease, background 0.2s ease;
+  transition:
+    padding-left 0.2s ease,
+    background 0.2s ease;
 }
 
 .who-row:hover {
@@ -1799,13 +1825,25 @@ main {
   z-index: 1;
 }
 
+.process-eyebrow {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(1.6rem, 2.5vw, 2.25rem);
+  line-height: 1.25;
+  color: var(--color-secondary);
+  margin: 0;
+  letter-spacing: -0.025em;
+  opacity: 0.95;
+}
+
 .process-title {
   margin: 0;
-  font-family: "Outfit", var(--font-sans);
+  font-family: var(--font-sans);
   font-size: clamp(2.4rem, 4.5vw, 3.6rem);
   font-weight: 400;
   line-height: 1.15;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.02em;
   color: #18181b;
 }
 
@@ -1870,7 +1908,7 @@ main {
 }
 
 .process-card__number {
-  font-family: "Outfit", var(--font-sans);
+  font-family: var(--font-sans);
   font-size: clamp(2.8rem, 4vw, 3.6rem);
   font-weight: 300;
   color: #18181b;
@@ -1886,7 +1924,7 @@ main {
 
 .process-card__title {
   margin: 0;
-  font-family: "Outfit", var(--font-sans);
+  font-family: var(--font-sans);
   font-size: 1.85rem;
   font-weight: 400;
   letter-spacing: -0.02em;
@@ -1895,7 +1933,7 @@ main {
 
 .process-card__desc {
   margin: 0;
-  font-family: "Outfit", var(--font-sans);
+  font-family: var(--font-sans);
   font-size: 0.95rem;
   font-weight: 300;
   color: #52525b;
