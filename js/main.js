@@ -164,8 +164,7 @@
         "Chủ động đề xuất giải pháp trong các buổi code review, nhanh chóng nhận diện và xử lý dứt điểm các điểm nghẽn kỹ thuật (technical bottlenecks) phát sinh trong quá trình vận hành.",
       "exp.linkDemo": "Live demo",
       "exp.linkRepo": "Mã nguồn GitLab",
-
-      "projects.title": "Dự án",
+      "projects.title": "/ Dự án tiêu biểu",
       "projects.g1mart.desc":
         "Nền tảng thương mại điện tử: <strong>storefront</strong> cho khách và <strong>admin/staff</strong> vận hành sản phẩm, kho, đơn, voucher, banner, shipper, hoàn trả, báo cáo. API <strong>Controller → Service → Repository → PostgreSQL</strong>, Spring Security + JWT, COD/VNPay, Cloudinary, dashboard thống kê. Monorepo: React 18 + Vite + MUI, Spring Boot 3.3 + Spring Data JPA, PostgreSQL, Swagger.",
       "projects.account.desc":
@@ -355,8 +354,7 @@
         "Proposed solutions in code reviews and addressed technical bottlenecks during delivery.",
       "exp.linkDemo": "Live demo",
       "exp.linkRepo": "GitLab repo",
-
-      "projects.title": "Projects",
+      "projects.title": "/ Best Projects",
       "projects.g1mart.desc":
         "E-commerce platform with <strong>storefront</strong> and <strong>admin/staff</strong> ops for products, inventory, orders, vouchers, banners, shippers, returns, and reporting. API architecture: <strong>Controller → Service → Repository → PostgreSQL</strong>, Spring Security + JWT, COD/VNPay, Cloudinary, analytics dashboard. Monorepo: React 18 + Vite + MUI; Spring Boot 3.3 + Spring Data JPA; PostgreSQL; Swagger.",
       "projects.account.desc":
