@@ -26,12 +26,13 @@
 
       "header.logo": "Portfolio",
       "header.langGroupAria": "Ngôn ngữ",
-      "header.langTooltip": "Chuyển ngôn ngữ",
       "header.menuAria": "Mở menu",
 
+      "nav.home": "Trang chủ",
       "nav.about": "Giới thiệu",
       "nav.experience": "Kinh nghiệm",
       "nav.projects": "Dự án",
+      "nav.blog": "Blog",
       "nav.contact": "Liên hệ",
 
       "landing.aria": "Trang chào mừng",
@@ -173,12 +174,10 @@
         "Mạng xã hội học tập: bài viết, bình luận, nhóm, tài liệu, sự kiện, tìm thành viên dự án, phản hồi, báo cáo vi phạm. Backend <strong>ClientService → APIService → Services → Repository → SQL Server</strong>; JWT Bearer, Cookie Auth, Google OAuth, Azure Blob, chat/thông báo <strong>SignalR</strong>; admin &amp; dashboard theo vai trò. .NET 8, EF Core Database First, MVC client + REST API.",
       "projects.liveDemo": "Live demo",
 
-      "contact.title": "Liên hệ",
+      "contact.title": "Let's Make It Happen",
       "contact.lead":
-        "Sẵn sàng trao đổi về cơ hội thực tập, fresher hoặc dự án phần mềm.",
-      "contact.emailLabel": "Email",
-      "contact.phoneLabel": "Điện thoại",
-      "contact.cta": "Gửi email",
+        "always open to new opportunities, collaborations, and creative challenges. Let's work together to bring your ideas to life",
+      "contact.cta": "Get In Touch",
 
       "fab.tooltip": "Thao tác nhanh",
       "fab.scrollTop": "Lên đầu trang",
@@ -206,7 +205,7 @@
         "Cảm ơn câu hỏi! Đây là bản demo UI — hãy dùng các gợi ý bên dưới hoặc cuộn xem portfolio.",
 
       "footer.copy":
-        '&copy; <span id="year"></span> Huỳnh Nguyên Bảo. Portfolio cá nhân.',
+        '&copy; <span id="year"></span> Huỳnh Nguyên Bảo. All rights reserved.',
     },
 
     en: {
@@ -219,9 +218,11 @@
       "header.langTooltip": "Switch language",
       "header.menuAria": "Open menu",
 
+      "nav.home": "Home",
       "nav.about": "About",
       "nav.experience": "Experience",
-      "nav.projects": "Projects",
+      "nav.projects": "Portfolio",
+      "nav.blog": "Blog",
       "nav.contact": "Contact",
 
       "landing.aria": "Landing",
@@ -363,12 +364,10 @@
         "Learning social platform: posts, comments, groups, documents, events, project matching, feedback, and reports. Backend: <strong>ClientService → APIService → Services → Repository → SQL Server</strong>; JWT Bearer, Cookie Auth, Google OAuth, Azure Blob, real-time chat/notifications via <strong>SignalR</strong>; role-based admin dashboard. .NET 8, EF Core Database First, MVC client + REST API.",
       "projects.liveDemo": "Live demo",
 
-      "contact.title": "Contact",
+      "contact.title": "Let's Make It Happen",
       "contact.lead":
-        "Open to internship, fresher roles, or freelance software projects.",
-      "contact.emailLabel": "Email",
-      "contact.phoneLabel": "Phone",
-      "contact.cta": "Send email",
+        "always open to new opportunities, collaborations, and creative challenges. Let's work together to bring your ideas to life",
+      "contact.cta": "Get In Touch",
 
       "fab.tooltip": "Quick actions",
       "fab.scrollTop": "Scroll to top",
@@ -396,7 +395,7 @@
         "Thanks for asking! This is a UI demo — try the suggestion chips or browse the portfolio.",
 
       "footer.copy":
-        '&copy; <span id="year"></span> Huynh Nguyen Bao. Personal portfolio.',
+        '&copy; <span id="year"></span> Huynh Nguyen Bao. All rights reserved.',
     },
   };
 
@@ -754,10 +753,9 @@
       card.style.setProperty("--reveal-delay", String(i * 85) + "ms");
     });
 
-    var contact = document.querySelector(".contact-wrap");
+    var contact = document.querySelector(".contact-banner, .contact-wrap");
     if (contact) {
       contact.classList.add("reveal", "reveal--scale");
-      setupStaggerGroup(contact, ".contact-list__item", 90);
     }
 
     var footer = document.querySelector(".site-footer");
